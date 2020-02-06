@@ -1,0 +1,98 @@
+= STARTING WITH FITZHÌ
+
+== INSTALLATION
+
+First of all, you will need to export the GitHub repository.
+
+. Download fitzhì
+[source, shell]
+---
+git clone https://github.com/frvidal/fitzhì.git
+rm -rf .git
+---
+
+A directory fitzhì will be downloaded with this content :
+
+* front-fitzhi (the Angular front-end project)
+* back-fitzhi  (the Spring back-end project)
+
+=== BACK-END INSTALLATION
+
+fitzhì has the following prerequisites:::
+* Java 8 or higher
+* Maven 3 or higher
+* Git 2 or higher installed on the back-end server
+
+
+The installation of the back-end is very simple. Just type :
+
+[source, shell]
+----
+cd fitzhì
+./init.sh
+----
+
+|===
+|Directory |Version
+|deploy
+|Main deployment directory
+|deploy/backend-fitzhì
+|the directory of the executable fitzhì.jar
+|deploy/data
+|the data directories used by fitzhì
+|deploy/data/application
+|the data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). 
+All of your updates will be stored there.
+|deploy/data/referential
+|the referential data which contains the static data used by the application
+|===
+
+You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
+The back-end URL, therefore, will be http://localhost:8080 
+
+
+To start the back-end fitzhì, just type:
+[source, shell]
+----
+deploy/backend-fitzhì/fitzhì.jar 
+----
+
+To test if the server is started, just visit the url http://localhost:8080/ping , or http://<<hostname>>:8080/ping  
+ 
+
+
+=== FRONT-END INSTALLATION
+
+The easiest installation involved no-installation. +
+The last stable release of front-fitzhì is available here https://frvidal.github.io/fitzhì/ . +
+This URL hosts only a static web server which delivers JS files. So just go there.
+
+If you prefer to deploy the front-end on-premise, like any other Angular application. +
+Just type 
+[source, shell]
+----
+cd front-fitzhì
+ng build --prod 
+----
+
+A *dist* (by default) directory will be created. +
+Just copy everything within the output folder to a folder on your server.
+For more precision, just RTFM, https://angular.io/guide/deployment
+
+ 
+== FIRST LAUNCH OF fitzhì
+
+The common sense might consider that there only can be one first launch. 
+In fact, *two* are available with Lombok : the first launch and the *very* first launch. +
+
+
+=== THE VERY FIRST LAUNCH
+The first user of Lombok will the first administrative user. +
+
+image::assets/img/installation/very-first-connection-1.png[400,300]
+
+
+
+
+
+ 
