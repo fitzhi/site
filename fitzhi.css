@@ -5,6 +5,11 @@ body {
 
 #carouselFitzhi {
 }
+
 .carousel-item {
   height: 500px !important;
+}
+
+div.carousel-fitzhi {
+  background-color: lightgrey;
 }
