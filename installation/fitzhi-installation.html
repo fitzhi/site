@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>STARTING WITH FITZHÌ</title>
+<title>STARTING WITH FITZHÌ&#169;</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,9 +438,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>STARTING WITH FITZHÌ</h1>
+<h1>STARTING WITH FITZHÌ<sub>&#169;</sub></h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_overview">OVERVIEW</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The architecture of Fitzhì is quite simple.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A Javascript frontend which might be launched from a remote host</p>
+</li>
+<li>
+<p>A Backend which has to be installed on a computer inside your network.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="main.png" alt="main" width="844" height="507">
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_installation">INSTALLATION</h2>
 <div class="sectionbody">
@@ -454,7 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">---
-git clone https://github.com/frvidal/fitzhì.git
+git clone https://www.github.com/fitzhi/application.git
 rm -rf .git
 ---</code></pre>
 </div>
@@ -463,7 +486,7 @@ rm -rf .git
 </ol>
 </div>
 <div class="paragraph">
-<p>A directory fitzhì will be downloaded with this content :</p>
+<p>A directory Application will be downloaded with this content :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -502,7 +525,7 @@ rm -rf .git
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">cd fitzhì
+<pre class="highlight"><code class="language-shell" data-lang="shell">cd application
 ./init.sh</code></pre>
 </div>
 </div>
@@ -521,7 +544,7 @@ rm -rf .git
 <td class="tableblock halign-left valign-top"><p class="tableblock">Main deployment directory</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/backend-fitzhì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/backend-fitzhi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">the directory of the executable fitzhì.jar</p></td>
 </tr>
 <tr>
@@ -530,8 +553,7 @@ rm -rf .git
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/application</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories where your corporate data will be stored (e.g. staff.json, project.json &amp; skill.json).
-All of your updates will be stored there.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories where your corporate data will be stored (e.g. staff.json, project.json &amp; skill.json). All of your updates will be stored there.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/referential</p></td>
@@ -548,11 +570,12 @@ The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">deploy/backend-fitzhì/fitzhì.jar</code></pre>
+<pre class="highlight"><code class="language-shell" data-lang="shell">./run.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To test if the server is started, just visit the url <a href="http://localhost:8080/ping" class="bare">http://localhost:8080/ping</a> , or <a href="http://<a href="#hostname">[hostname]</a>:8080/ping" class="bare">http://<a href="#hostname">[hostname]</a>:8080/ping</a></p>
+<p>To test if the server is started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare">http://localhost:8080/api/test/ping</a> , or <a href="http://<a href="#hostname">[hostname]</a>:8080/api/test/ping" class="bare">http://<a href="#hostname">[hostname]</a>:8080/api/test/ping</a> <br>
+A <strong>Pong</strong> response is expected.</p>
 </div>
 </div>
 <div class="sect2">
@@ -603,7 +626,7 @@ In fact, <strong>two</strong> are available with Lombok : the first launch and t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-02-06 18:19:06 +0100
+Last updated 2020-02-13 19:58:00 UTC
 </div>
 </div>
 </body>

@@ -1,4 +1,52 @@
-= STARTING WITH FITZHÌ
+= STARTING WITH FITZHÌ~(C)~
+
+== OVERVIEW
+
+The architecture of Fitzhì is quite simple.
+
+* A Javascript frontend which might be launched from a remote host
+* A Backend which has to be installed on a computer inside your network.
+
+
+[graphviz, "main"]
+....
+digraph G {
+  { 
+    subgraph clusterFrontend { 
+        margin=20
+        label="Frontend"
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+        f [fillcolor="#28a745" label="Angular frontend"]
+        s1 [fillcolor=lightGrey label="Sonar server 1"]
+        sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
+    }
+
+    subgraph clusterBackend { 
+        margin=30
+        label="backend"
+
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+        b [fillcolor="#28a745" label="Spring Boot backend"]
+
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
+        d [fillcolor=grey label=<<font point-size="16">Fitzhì data</font><br/>in JSON format>]
+        
+        node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
+        temp [fillcolor=whiteSmoke label=<<I>GIT local repository<br/>(in temp folders)</I>>]
+
+        node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
+        git [label="GitHub, GitLab..."]
+    }
+  }
+  sn -> f [color="grey" style="dotted"]
+  s1 -> f
+  f -> {b} [dir=both]
+  b -> temp [color="grey" style="dotted"]
+  b -> {d}
+  git -> b
+
+}
+....
 
 == INSTALLATION
 
@@ -7,11 +55,11 @@ First of all, you will need to export the GitHub repository.
 . Download fitzhì
 [source, shell]
 ---
-git clone https://github.com/frvidal/fitzhì.git
+git clone https://www.github.com/fitzhi/application.git
 rm -rf .git
 ---
 
-A directory fitzhì will be downloaded with this content :
+A directory Application will be downloaded with this content :
 
 * front-fitzhi (the Angular front-end project)
 * back-fitzhi  (the Spring back-end project)
@@ -28,7 +76,7 @@ The installation of the back-end is very simple. Just type :
 
 [source, shell]
 ----
-cd fitzhì
+cd application
 ./init.sh
 ----
 
@@ -36,13 +84,12 @@ cd fitzhì
 |Directory |Version
 |deploy
 |Main deployment directory
-|deploy/backend-fitzhì
+|deploy/backend-fitzhi
 |the directory of the executable fitzhì.jar
 |deploy/data
 |the data directories used by fitzhì
 |deploy/data/application
-|the data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). 
-All of your updates will be stored there.
+|the data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). All of your updates will be stored there.
 |deploy/data/referential
 |the referential data which contains the static data used by the application
 |===
@@ -54,11 +101,11 @@ The back-end URL, therefore, will be http://localhost:8080
 To start the back-end fitzhì, just type:
 [source, shell]
 ----
-deploy/backend-fitzhì/fitzhì.jar 
+./run.sh
 ----
 
-To test if the server is started, just visit the url http://localhost:8080/ping , or http://<<hostname>>:8080/ping  
- 
+To test if the server is started, just visit the url http://localhost:8080/api/test/ping , or http://<<hostname>>:8080/api/test/ping  +
+A **Pong** response is expected.
 
 
 === FRONT-END INSTALLATION
