@@ -1,4 +1,8 @@
-= STARTING WITH FITZHÌ~(C)~
+....
+....
+
+
+= STARTING WITH FITZHÌ
 
 == OVERVIEW
 
@@ -111,7 +115,7 @@ A **Pong** response is expected.
 === FRONT-END INSTALLATION
 
 The easiest installation involved no-installation. +
-The last stable release of front-fitzhì is available here https://frvidal.github.io/fitzhì/ . +
+The last stable release of front-fitzhì is available here https://www.fitzhi.com/docs . +
 This URL hosts only a static web server which delivers JS files. So just go there.
 
 If you prefer to deploy the front-end on-premise, like any other Angular application. +

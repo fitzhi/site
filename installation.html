@@ -41,6 +41,13 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="fitzhi.css" rel="stylesheet">
+
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+    </script>    
+
 </head>
 
 <body>
@@ -48,42 +55,11 @@
     <div id="nav-placeholder">
     </div>
 
-    <main role="main">
-
-        <div class="jumbotron">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-center">
-                    <span class="logo logo-big">质</span><span class="title-big">Fitzhì : the Single Point Of
-                        Quality</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Our Vision</h2>
-                    <p>...</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Our backlog</h2>
-                    <p>...</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Partnership</h2>
-                    <p>...</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        </div> <!-- /container -->
-
-    </main>
+    <!-- We load the installation procedure -->
+    <iframe id="install" src="./generated/fitzhi-installation.html" 
+        title="Installation of Fitzhì" width="100%"
+        onload="resizeIframe(this)">
+    </iframe>
 
     <footer class="container">
         <p>&copy; Fitzhì 2020</p>

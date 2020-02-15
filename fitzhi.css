@@ -3,28 +3,33 @@ body {
   padding-top: 3.5rem;
 }
 
-#carouselFitzhi {
-  border: 1px solid black;
+:root {
+  --color-selected: #28a745; 
+  --color-error: darkred;
 }
 
-.carousel-item {
-  height: 500px !important;
+span.logo-big {
+  font-size: 100px;
 }
 
-div.slide-fitzhi {
-  background-color: lightgrey;
-  padding: 10px;
+span.title-big {
+  font-size: 40px;
 }
 
-
-span.carousel-control-prev-icon {
-  width: 40px;
-  height: 40px;
-  margin-left: 30px;
+span.logo-small {
+  font-size: 20px;
 }
 
-span.carousel-control-next-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 30px;
+.logo {
+  background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+#install {
+  position: ;
+  top: 50px;
+  bottom: 10;
 }
