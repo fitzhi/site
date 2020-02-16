@@ -1,1 +1,1 @@
-docker run -it -v /Users/frvidal/work/projets/site/installation:/documents/ asciidoctor/docker-asciidoctor
+docker run -it -v /Users/frvidal/work/projets/site/generated:/documents/ asciidoctor/docker-asciidoctor

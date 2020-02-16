@@ -1,7 +1,3 @@
-....
-....
-
-
 = STARTING WITH FITZHÌ
 
 == OVERVIEW
@@ -58,10 +54,10 @@ First of all, you will need to export the GitHub repository.
 
 . Download fitzhì
 [source, shell]
----
+----
 git clone https://www.github.com/fitzhi/application.git
 rm -rf .git
----
+----
 
 A directory Application will be downloaded with this content :
 
@@ -115,14 +111,15 @@ A **Pong** response is expected.
 === FRONT-END INSTALLATION
 
 The easiest installation involved no-installation. +
-The last stable release of front-fitzhì is available here https://www.fitzhi.com/docs . +
+The last stable release of front-fitzhì is available here https://fitzhi.github.io/spoq . +
 This URL hosts only a static web server which delivers JS files. So just go there.
 
 If you prefer to deploy the front-end on-premise, like any other Angular application. +
 Just type 
 [source, shell]
 ----
-cd front-fitzhì
+cd front-fitzhi
+npm install
 ng build --prod 
 ----
 
@@ -140,7 +137,7 @@ In fact, *two* are available with Lombok : the first launch and the *very* first
 === THE VERY FIRST LAUNCH
 The first user of Lombok will the first administrative user. +
 
-image::assets/img/installation/very-first-connection-1.png[400,300]
+image::/assets/img/installation/very-first-connection-1.png[400,300]
 
 
 
