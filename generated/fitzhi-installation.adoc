@@ -128,19 +128,34 @@ Just copy everything within the output folder to a folder on your server.
 For more precision, just RTFM, https://angular.io/guide/deployment
 
  
-== FIRST LAUNCH OF fitzhì
+== FIRST START OF FITZHI
 
-The common sense might consider that there only can be one first launch. 
-In fact, *two* are available with Lombok : the first launch and the *very* first launch. +
-
-
-=== THE VERY FIRST LAUNCH
-The first user of Lombok will the first administrative user. +
-
-image::/assets/img/installation/very-first-connection-1.png[400,300]
+The common sense might consider that there can be *only* one first launch. 
+In fact, *two* are available for Fitzhì : the first launch and the *very* first launch. +
 
 
+=== THE VERY FIRST START
+The first ever user inside Fitzhì will be the first administrative user, and therefore its owner. +
+_At the beginning, God enters in Fitzhì and performs all initialization_. +
+Fitzhì detects the first ever interaction & creates the file **connection.txt** to save & _(in a way)_ celebrate this first connection. +
+Then you just have to follow the steppers +
 
+image::/assets/img/installation/very-first-connection-1.png[600,500]
 
+IMPORTANT: The first panel saves in the permanent local storage the URL of your backend server. Default is localhost:8080. You will have to remove this entry if you plan to move this server _(an entry in the backlog will simplify this operation)_.
 
- 
+=== THE FIRST START 
+Each user in Fitzhì will experience a first launch. +
+Depending on a property set in file `*application.properties*`, Fitzhi users can self-register themselves, or not. If not, they have to be already created _(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)_. + 
+Default settings allow the self-registration.
+
+[source]
+....
+#
+# Does Fitzhì allow self registration ?
+# Either, everyone can create his own user, by simply connecting to the Fitzhi URL
+# Or a login must be already present for each new user in the staff collection.
+#
+allowSelfRegistration=true
+....
+
