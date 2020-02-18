@@ -1,2 +1,24 @@
 = OUR AMBITION WITH FITZHÌ
 :nofooter:
+
+== OVERVIEW
+Fitzhì aims to gather all technical evaluation regarding your application portfolio into a comprehensive Single Point. Our goal is to provide a 10-seconds-dashboard which resumes in one single panel, your current situation and your historic trend. 
+
+* _Which percentage of your portfolio is covered by your actual IT crew ?_
+* _Who are the key peoples of your organization regarding their application knowledge ?_
+* _What is the Sonar global evaluation for the entire portfolio ?_
+* _Which skill is lacking of Senior developer ?_
+* _How did the last audit value your application ?_ 
+* _Did the actual turnover downgrade our mastery on our own applications ?_
+
+Every project declared in Fitzhì, has an IT medal which synthesize its technical state. +
+This medal is summarizing 3 evaluations : the Staff, the Sonar, the Audit
+
+image::/assets/img/vision/tech-medal.png[200, 192]
+
+== THE STAFF 
+First key topic for a project is the level of active developers who have worked on this application ? +
+We retrieve this evaluation from Git(TM)
+A graphic that the one below displays the 
+
+image::/assets/img/vision/staff-coverage.png[400, 400]
