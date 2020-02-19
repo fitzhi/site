@@ -12,10 +12,6 @@ span.logo-big {
   font-size: 100px;
 }
 
-span.title-big {
-  font-size: 40px;
-}
-
 span.logo-small {
   font-size: 20px;
 }
@@ -28,8 +24,24 @@ span.logo-small {
   text-align: center;
 }
 
+span.title-big {
+  animation: pulse 20s;
+  color: var(--color-selected);
+  font-size: 40px;
+}
+
+@keyframes pulse {
+  0% {
+    color:var(--color-error);
+    font-size: 39px;
+  }
+  100% {
+    color: var(--color-selected);
+    font-size: 40px;
+  }
+}
+
 #install {
-  position: ;
   top: 50px;
   bottom: 10;
 }

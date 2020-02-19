@@ -9,7 +9,7 @@ Ideally the target for Fitzhì will be ONE single dashboard, one Single Point Po
 
 Fitzhì aims to answer multiple questions such as :
 
-* **_Did we technically improve our IT portfolio last year ? _**  
+* _**Did we technically improve our IT portfolio last year ? **_  
 * _Did the actual turnover downgrade, or not, our mastery in our applications ?_
 * _What is the code quality evaluation for the whole portfolio ?_
 * _Can we globally assess the IT assets of this company over which we just have taken control ?_
@@ -38,18 +38,17 @@ Fitzhì will crawl the history of your Git repository, gather your commiters and
  and generates charts like this one below.
 
 [.text-center]
-image::/assets/img/vision/staff-coverage.png[400, 400]
+image::/assets/img/vision/staff-coverage.png[width=40%]
 
 * The full green slices are packages with sufficient active developers.
 * Dark green are desert. Cross your fingers that nothing appends there.  
 
 == THE CODE
+Fitzhì links each application with its Sonar(TM) perspective(s). It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
 
 image::/assets/img/vision/project-form.png[width=50%]
 
 image::/assets/img/vision/project-sonar.png[width=50%]
-
-Fitzhì links each application with its Sonar(TM) perspective(s). It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
 
 == THE DESIGN
 Automatic tool cannot completly evaluate your applications. +
