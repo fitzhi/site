@@ -17,8 +17,22 @@ This medal is summarizing 3 evaluations : the Staff, the Sonar, the Audit
 image::/assets/img/vision/tech-medal.png[200, 192]
 
 == THE STAFF 
-First key topic for a project is the level of active developers who have worked on this application ? +
-We retrieve this evaluation from Git(TM)
-A graphic that the one below displays the 
+Primary concern regarding an application is the staff active, e.g. the **team available** to maintain the source code, the team with the required skill & functional knowledge. +
+You need to be able to answer questions such as 
 
+* _Who has worked on this project ?_
+* _Who's still here_ ?
+* _Do we still have someone available to fix this issue in this core feature_ ?
+* _Does the technical mastery of the actual team cover all parts of the project ? Or do we face some risk there ?_
+
+To fulfill that purpose, Fitzhì manages a staff registry with all of your developers. 
+They are registeted as `active` or `inactive`, `external` or not. +
+Fitzhì crawls your Git repository and generates charts like this one below.
+
+* Full green slices are packages with sufficient active developers.
+* Dark green are desert.
+
+[.text-center]
 image::/assets/img/vision/staff-coverage.png[400, 400]
+
+

@@ -128,7 +128,85 @@ A *dist* (by default) directory will be created. +
 Just copy everything within the output folder to a folder on your server.
 For more precision, just RTFM, https://angular.io/guide/deployment
 
- 
+== THE BROWER AND THE CORS ISSUE
+If you are not familiar with the mechanism of CORS, you can refer to https://en.wikipedia.org/wiki/Cross-origin_resource_sharing[this simple presentation, window=_blank]. +
+This protection feature is activated inside your browser, when your executes multiple cross-domain requests. +
+With Fitzhì, you have 2 cross domain sources.
+
+* Your single back-end of Fitzhì
+* The Sonar server(s) available on your network.
+
+Therefore you might have have to configure 2 types of servers.
+
+
+=== THE PIRATE WAY
+The first solution, and the simplest one, is **NO SECURITY, NO PROBLEM WITH SECURITY...** +
+*For testing purpose*, your can disable the CORS protection inside your browser. 
+
+With Chrome, you just need to pass the argument `--disable-web-security` at start-up. +
+A startup file `*chrome.sh*`, is provided in the project folder. 
+
+* Control that no instance of Chrome is running
+* and then just launch that script.
+
+CAUTION: Avoid using that instance to surf on the Web.
+
+=== THE BACKEND OF FITZHÌ
+You will setup your CORS policy with the property `*allowedOrigins*` located in the `*application.properties*` file. +
+You will find below an extract from this file.
+
+[source]
+----
+#
+# This property is necessary to declare the host from where the front-end will access this server.
+# In order to prevent any CORS exception, you have to setup your front-end URL.
+# Default setting accepts 2 URL :
+# - The local default URL is you have installed the front-end directly on your machine
+# - the https://spoq.io hosting the front-end on the WWW
+#
+allowedOrigins=http://localhost:4200,https://spoq.io
+----
+
+=== THE SONAR CONFIGURATION
+Sonar server is deployed on a Tomcat server. +
+Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file `*web.xml*`.
+
+You just need to declare the CORS filter and its settings. +
+Your can add the lines below to your `web.xml` file. We guess that these tag are enoughly explicit.
+
+https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter[You can refer to this documentation if you need further explanation, window=_blank].
+
+[source, xml]
+----
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+    <param-name>cors.allowed.origins</param-name>
+    <param-value>http://localhost:4200, https://spoq.io</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.methods</param-name>
+    <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.headers</param-name>
+    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.exposed.headers</param-name>
+    <param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+----
+
+
+
 == FIRST START OF FITZHI
 
 The common sense might consider that there can be *only* one first launch. 
