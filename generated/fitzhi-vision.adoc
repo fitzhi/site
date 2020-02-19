@@ -2,37 +2,61 @@
 :nofooter:
 
 == OVERVIEW
-Fitzhì aims to gather all technical evaluation regarding your application portfolio into a comprehensive Single Point. Our goal is to provide a 10-seconds-dashboard which resumes in one single panel, your current situation and your historic trend. 
+Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal. 
+Of course, we plan to provide our own quality tools. The actual release introduces our *Staff Coverage Sunburst* in Beta test. But we plan as well, to aggregate other sources of evaluation, such as the popular Sonar(TM) ratings. +
 
+Ideally the target for Fitzhì will be ONE single dashboard, one Single Point Point Of Quality, available for the CIO, and ready to resume in one view, 10 seconds, your current situation and your historic trend. +
+
+Fitzhì aims to answer multiple questions such as :
+
+* **_Did we technically improve our IT portfolio last year ? _**  
+* _Did the actual turnover downgrade, or not, our mastery in our applications ?_
+* _What is the code quality evaluation for the whole portfolio ?_
+* _Can we globally assess the IT assets of this company over which we just have taken control ?_
+* _Who are the key peoples of my organization regarding their application knowledge ?_
+* _Which skill is lacking of Senior developer regarding the need of my applications?_
 * _Which percentage of your portfolio is covered by your actual IT crew ?_
-* _Who are the key peoples of your organization regarding their application knowledge ?_
-* _What is the Sonar global evaluation for the entire portfolio ?_
-* _Which skill is lacking of Senior developer ?_
 * _How did the last audit value your application ?_ 
-* _Did the actual turnover downgrade our mastery on our own applications ?_
 
-Every project declared in Fitzhì, has an IT medal which synthesize its technical state. +
-This medal is summarizing 3 evaluations : the Staff, the Sonar, the Audit
+Each project declared in Fitzhì, has an IT medal, which synthesizes its quality valuation. +
+This medal has 3 dimensions : the team, the code, the global design.
 
 image::/assets/img/vision/tech-medal.png[200, 192]
 
 == THE STAFF 
-Primary concern regarding an application is the staff active, e.g. the **team available** to maintain the source code, the team with the required skill & functional knowledge. +
+The staff coverage is a build-in feature of Fitzhì.
+An important concern regarding your IT legacy is the staff, more precisely the **staff relevant and available** to maintain and develop your applications. Do you have the best team with the required skill & functional knowledge, that prevents anything from falling through the net ?
 You need to be able to answer questions such as 
 
 * _Who has worked on this project ?_
-* _Who's still here_ ?
-* _Do we still have someone available to fix this issue in this core feature_ ?
-* _Does the technical mastery of the actual team cover all parts of the project ? Or do we face some risk there ?_
+* _Do we still have someone available to fix this issue in this antique application from your legacy_ ?
+* _Does the technical mastery of the actual team cover all parts of the project ? Or do we face some risks there ?_
 
 To fulfill that purpose, Fitzhì manages a staff registry with all of your developers. 
-They are registeted as `active` or `inactive`, `external` or not. +
-Fitzhì crawls your Git repository and generates charts like this one below.
-
-* Full green slices are packages with sufficient active developers.
-* Dark green are desert.
+They are registered as `active` or `inactive`, `external` or not. +
+Fitzhì will crawl the history of your Git repository, gather your commiters and their operations 
+ and generates charts like this one below.
 
 [.text-center]
 image::/assets/img/vision/staff-coverage.png[400, 400]
 
+* The full green slices are packages with sufficient active developers.
+* Dark green are desert. Cross your fingers that nothing appends there.  
+
+== THE CODE
+
+image::/assets/img/vision/project-form.png[width=50%]
+
+image::/assets/img/vision/project-sonar.png[width=50%]
+
+Fitzhì links each application with its Sonar(TM) perspective(s). It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
+
+== THE DESIGN
+Automatic tool cannot completly evaluate your applications. +
+More or less regularly, experts audit your applications and assess their qualities in terms of good practices on several themes which appear to you to be key and significant for these applications. +
+In the example below, the `General organization`, the `Build process` and the `Documentation` were considered important for evaluating an application. We could add `Performance`, `Technical design`...
+
+image::/assets/img/vision/project-audit.png[width=50%]
+
+In the end a score is assigned which summarizes the technical evaluation of an application according to expert opinions.
 
