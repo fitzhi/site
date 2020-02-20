@@ -44,7 +44,7 @@ image::/assets/img/vision/staff-coverage.png[width=40%]
 * Dark green are desert. Cross your fingers that nothing appends there.  
 
 == THE CODE
-Fitzhì links each application with its Sonar(TM) perspective(s). It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
+Fitzhì links each application with its Sonar(TM) perspective. It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
 
 image::/assets/img/vision/project-form.png[width=50%]
 
