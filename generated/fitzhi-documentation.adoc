@@ -14,7 +14,6 @@ class Project {
 ..
 + {field} string : connectionSettings
 + {field} string : urlRepository
-+ {field} number : connectionSettings 
 + {field} string : username
 + {field} string : password
 + {field} string : filename
@@ -97,6 +96,19 @@ AuditTopic "1" *-- "many" AttachmentFile : has
 @enduml
 ....
 
+
+A project in Fitzhì 
+
+* is defined by an `*id*`, and a `*name*`.
+* has an url hosting the Git repository set in `*urlRepository*`
+* has a `connectionSettings` which might by equal to *1*, or *2*.
+** If equal to *1*, the backend will connect to the Git SCM, with the `*username*` and `*password*`.
+** If equal to *2*, the backend will connect to the Git SCM, using a settings file declared in `*filename*`.
+* has an url hosting the Sonar server parsing the project in the property `*urlSonarServer*``
+* has an array of `*SonarProject*` associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.
+** Each Sonar project has its own configuration with the chosen evaluation metrics and their relative weights. The file `/deploy/data/referential/*supported-metrics.json*` contains the default template of settings which might be overriden for each project.
+** Each Sonar project has an array of `*FileStats*` with the `*language*` and the `*numberOfFiles*`` detected for this language
+** A global `*SonarEvaluation*` and the `*totalNumberLinesOfCode*`
 
 
 == A DEVELOPER INSIDE FITZHÌ

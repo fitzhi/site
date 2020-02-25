@@ -442,17 +442,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_a_project_in_fitzhì">A PROJECT IN FITZHÌ</h2>
+<h2 id="_a_project_declared_in_fitzhì">A PROJECT DECLARED IN FITZHÌ</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="class-diagram-project.png" alt="class diagram project" width="962" height="575">
+<img src="class-diagram-project.png" alt="class diagram project" width="962" height="562">
 </div>
+</div>
+<div class="paragraph">
+<p>A project in Fitzhì</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is defined by an <code><strong>id</strong></code>, and a <code><strong>name</strong></code>.</p>
+</li>
+<li>
+<p>has an url hosting the Git repository set in <code><strong>urlRepository</strong></code></p>
+</li>
+<li>
+<p>has a <code>connectionSettings</code> which might by equal to <strong>1</strong>, or <strong>2</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>1</strong>, the backend will connect to the Git SCM, with the <code><strong>username</strong></code> and <code><strong>password</strong></code>.</p>
+</li>
+<li>
+<p>If equal to <strong>2</strong>, the backend will connect to the Git SCM, using a settings file declared in <code><strong>filename</strong></code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>has an url hosting the Sonar server parsing the project in the property <code><strong>urlSonarServer</strong>`</code></p>
+</li>
+<li>
+<p>has an array of <code><strong>SonarProject</strong></code> associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Each Sonar project has its own configuration with the chosen evaluation metrics and their relative weights. The file <code>/deploy/data/referential/<strong>supported-metrics.json</strong></code> contains the default template of settings which might be overriden for each project.</p>
+</li>
+<li>
+<p>Each Sonar project has an array of <code><strong>FileStats</strong></code> with the <code><strong>language</strong></code> and the <code><strong>numberOfFiles</strong>`</code> detected for this language</p>
+</li>
+<li>
+<p>A global <code><strong>SonarEvaluation</strong></code> and the <code><strong>totalNumberLinesOfCode</strong></code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_developer_in_fitzhì">A DEVELOPER IN FITZHÌ</h2>
+<h2 id="_a_developer_inside_fitzhì">A DEVELOPER INSIDE FITZHÌ</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">

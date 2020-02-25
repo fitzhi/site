@@ -16,12 +16,12 @@ span.logo-small {
   font-size: 20px;
 }
 
-.logo {
+.gradient {
+  text-align: center;
   background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
 }
 
 span.title-big {
@@ -39,6 +39,9 @@ span.title-big {
     color: var(--color-selected);
     font-size: 40px;
   }
+}
+
+.gradient {
 }
 
 #install {
