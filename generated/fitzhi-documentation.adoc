@@ -1,0 +1,158 @@
+= DOCUMENTATION
+:nofooter:
+
+
+== A PROJECT DECLARED IN FITZHÌ
+
+[plantuml, "class-diagram-project"]
+....
+@startuml
+
+class Project {
++ {field} number : id
++ {field} string : name
+..
++ {field} string : connectionSettings
++ {field} string : urlRepository
++ {field} number : connectionSettings 
++ {field} string : username
++ {field} string : password
++ {field} string : filename
+..
++ {field} string : urlSonarServer (Sonar url assigned to this project)
+..
++ {field} number : staffEvaluation 
++ {field} number : auditEvaluation 
+}
+
+class Skill {
++ {field} number : id
++ {field} string : title
+}
+
+class Library {
++ {field} string : exclusionDir
++ {field} string : type (type of library : detected or declared)
+}
+
+class Library {
++ {field} string : exclusionDir
++ {field} string : type (type of library : detected or declared)
+}
+
+class SonarProject {
++ {field} string : key
++ {field} string : name
+}
+
+class SonarEvaluation {
++ {field} number : evaluation
++ {field} number : totalNumberLinesOfCode
+}
+
+class ProjectSonarMetricValue {
++ {field} string : key
++ {field} number : weight
++ {field} number : value
+}
+
+class FilesStats {
++ {field} string : language
++ {field} number : numberOfFiles
+}
+
+class AuditTopic {
++ {field} number : idTopic
++ {field} number : evaluation
++ {field} number : weight
++ {field} string report
+}
+
+class AttachmentFile {
++ {field} number : idFile
++ {field} string fileName
++ {field} number : typeOfFile?
++ {field} string label?
+}
+
+class Ecosystem {
++ {field} number : id
++ {field} string title
++ {field} string awesomeTitle
++ {field} string pattern: string
+}
+
+Project "1" *-- "many" Skill : involves >
+Project "1" *-- "many" Library : excludes >
+Project "1" *-- "many" SonarProject : rates < 
+Project "1" *-- "many" AuditTopic : rates <
+Project "1" *-- "many" Ecosystem : belongs <
+
+SonarProject "1" *-- "1" SonarEvaluation : synthesizes
+SonarProject "1" *-- "many" ProjectSonarMetricValue : measures
+SonarProject "1" *-- "many" FilesStats : concerns
+
+AuditTopic "1" *-- "many" AttachmentFile : has
+
+@enduml
+....
+
+
+
+== A DEVELOPER INSIDE FITZHÌ
+
+[plantuml, "class-diagram-staff"]
+....
+
+class Staff {
++ {field} number : idStaff
++ {field} string : firstName
++ {field} string : lastName
++ {field} string : nickName:
++ {field} string : login
++ {field} string : email
++ {field} string : level
++ {field} boolean : active
++ {field} date : dateInactive
++ {field} string : application
++ {field} number : typeOfApplication
++ {field} boolean : external
+}
+
+class Experience {
+	public level: number;
+}
+
+class Skill {
++ {field} number : id
++ {field} string : title
+}
+
+class Mission {
++ {field} number : idProject
++ {field} string : name
++ {field} date : firstCommit
++ {field} date : lastCommit
++ {field} number : numberOfCommits
++ {field} number : numberOfFiles
+}
+
+class Contributor {
++ {field} number : idStaff
++ {field} string : fullname
++ {field} boolean : active
++ {field} boolean : external
++ {field} date : firstCommit
++ {field} date : lastCommit
++ {field} number : numberOfCommits
++ {field} number : numberOfFiles
+}
+
+Staff "1" *-- "many" Experience : get >
+Staff "1" *-- "many" Mission : works on >
+Contributor "1" --- "1" Staff : is a >
+
+Experience "1" o-- "1" Skill
+
+@enduml
+....

@@ -13,3 +13,5 @@ We plan to support TFS as version control system and open Fitzhì to the .Net Ec
 ===== Technical age
 We plan to measure the technical age of a project and the average age of an asset. We can say, as an example, that a Struts application that would be maintained and still active in 2019, has an real age of 1 year and a technical age of 20. This measure would give an obsolescence indicator for your IT.
 
+===== Skills level
+We plan to evaluate the skill level of developers per language from the *GIT* point of view. Of course, nothing beats self-assessment, or peer assessment. But based on 4 years of commit of a developer, Fitzhì might be able to reach an idea on his level in *Java*, or *Spring*...
