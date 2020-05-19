@@ -101,10 +101,29 @@ A project in Fitzhì
 
 * is defined by an `*id*`, and a `*name*`.
 * has an url hosting the Git repository set in `*urlRepository*`
-* has a `connectionSettings` which might by equal to *1*, or *2*.
-** If equal to *1*, the backend will connect to the Git SCM, with the `*username*` and `*password*`.
-** If equal to *2*, the backend will connect to the Git SCM, using a settings file declared in `*filename*`.
-* has an url hosting the Sonar server parsing the project in the property `*urlSonarServer*``
+* has a `connectionSettings` which might be equal to *1*, or *2*.
+** If equal to *1*, the backend will connect to the Git SCM, with the given `*username*` and `*password*`.
+
+IMPORTANT: The password will be encrypted in the project record. For this first release, we assume that the NSA, or a very skilled hacker, might be able to break this code. But we remind you as well that **this projects file is stored on your file system on your own network**.
+
+* ...
+** If equal to *2*, the backend will connect to the Git SCM, using a settings file declared in `*filename*`. The location of this file is setup in the `*application.properties*` file.
+[source]
+----
+#
+# Local directory where are stored the properties files containing the connection settings to GIT
+# Each file contains 3 properties
+# - an optional property with the SCM URL
+# - a "user" property
+# - a "password" property
+#
+versionControl.ConnectionSettings=../data/application/repository-settings/
+----
+
+* the Fitzhì project has the url of the Sonar server deployed on your network `*urlSonarServer*` to validate your own code. 
+
+NOTE: Multiple Sonar servers might be available on your network. This list is declared inside the referential file `*sonar-servers.json*`. *But we assume that your project has not been distributed on multiple servers*. This is a relation (n) Fitzhì projects <-> (1) Sonar server.
+
 * has an array of `*SonarProject*` associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.
 ** Each Sonar project has its own configuration with the chosen evaluation metrics and their relative weights. The file `/deploy/data/referential/*supported-metrics.json*` contains the default template of settings which might be overriden for each project.
 ** Each Sonar project has an array of `*FileStats*` with the `*language*` and the `*numberOfFiles*`` detected for this language

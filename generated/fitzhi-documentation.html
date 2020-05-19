@@ -461,21 +461,76 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>has an url hosting the Git repository set in <code><strong>urlRepository</strong></code></p>
 </li>
 <li>
-<p>has a <code>connectionSettings</code> which might by equal to <strong>1</strong>, or <strong>2</strong>.</p>
+<p>has a <code>connectionSettings</code> which might be equal to <strong>1</strong>, or <strong>2</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If equal to <strong>1</strong>, the backend will connect to the Git SCM, with the <code><strong>username</strong></code> and <code><strong>password</strong></code>.</p>
-</li>
-<li>
-<p>If equal to <strong>2</strong>, the backend will connect to the Git SCM, using a settings file declared in <code><strong>filename</strong></code>.</p>
+<p>If equal to <strong>1</strong>, the backend will connect to the Git SCM, with the given <code><strong>username</strong></code> and <code><strong>password</strong></code>.</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The password will be encrypted in the project record. For this first release, we assume that the NSA, or a very skilled hacker, might be able to break this code. But we remind you as well that <strong>this projects file is stored on your file system on your own network</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>has an url hosting the Sonar server parsing the project in the property <code><strong>urlSonarServer</strong>`</code></p>
+<p>&#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>2</strong>, the backend will connect to the Git SCM, using a settings file declared in <code><strong>filename</strong></code>. The location of this file is setup in the <code><strong>application.properties</strong></code> file.</p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#
+# Local directory where are stored the properties files containing the connection settings to GIT
+# Each file contains 3 properties
+# - an optional property with the SCM URL
+# - a "user" property
+# - a "password" property
+#
+versionControl.ConnectionSettings=../data/application/repository-settings/</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the Fitzhì project has the url of the Sonar server deployed on your network <code><strong>urlSonarServer</strong></code> to validate your own code.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Multiple Sonar servers might be available on your network. This list is declared inside the referential file <code><strong>sonar-servers.json</strong></code>. <strong>But we assume that your project has not been distributed on multiple servers</strong>. This is a relation (n) fitzhì projects &lt;&#8594; (1) Sonar server.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>has an array of <code><strong>SonarProject</strong></code> associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.</p>
 <div class="ulist">
