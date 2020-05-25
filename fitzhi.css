@@ -41,10 +41,20 @@ span.title-big {
   }
 }
 
-.gradient {
-}
-
 #install {
   top: 50px;
   bottom: 10;
+}
+
+div.my-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: whitesmoke;
+  height: 30px;
+  width: 100%;
+}
+
+table.my-footer {
+  margin-left: 10px;
+  margin-right: 10px;
 }

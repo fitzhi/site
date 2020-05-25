@@ -1,11 +1,23 @@
 = OUR AMBITION WITH FITZHÌ
+:site: https://mamaitresse.github.io/CE2-2019-2020 
+// :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
 == OVERVIEW
-Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal. 
-Of course, we plan to provide our own quality tools. The actual release introduces our *Staff Coverage Sunburst* in Beta test. But we plan as well, to aggregate other sources of evaluation, such as the popular Sonar(TM) ratings. +
+Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal.
+Of course Fitzhi delivers analysis and assessments at the project scope, but its main target is the portfolio. Our main ambition is to provide a global, and dynamic vision of the technical risk for your IT. 
+Our killer-feature for Fitzhì should be the ONE single dashboard, one Single Point Point Of Quality, available for the CIO, and ready to resume in one second, one view, the current situation and the historic trend. 
 
-Ideally the target for Fitzhì will be ONE single dashboard, one Single Point Point Of Quality, available for the CIO, and ready to resume in one view, 10 seconds, your current situation and your historic trend. +
+Fitzhi is integrated with existing solutions, such as Sonar(TM), but Fitzhì also provides his own assessment tools. +
+This actual release introduces 3 charts _in Beta test_ :
+
+.For your portfolio
+* the Skills tiles coverage +
+* The global Pie view
+
+.For each project
+* the Staff Coverage Sunburst
+
 
 Fitzhì aims to answer multiple questions such as :
 
@@ -18,12 +30,55 @@ Fitzhì aims to answer multiple questions such as :
 * _Which percentage of your portfolio is covered by your actual IT crew ?_
 * _How did the last audit value your application ?_ 
 
+== THE PORTFOLIO
+
+=== THE SKILLS TILES COVERAGE
+
+This Treemap chart below, represents the technical coverage for the portfolio of applications registered in Fitzhì. +
+It compares the volume of code of the registered applications and the active teams which are ready to maintain them. 
+
+[cols="1a,1a", frame="no", grid="rows"]
+|===
+|
+[.text-center]
+image::{site}/assets/img/vision/skill-tiles.png[width=100%]
+|
+* Each tile represents an ecosystem (with a maximum of 10 tiles), in proportion to its importance in the portfolio.
+* Each tile has a color that figures the level of risk on the ecosystem. Green is under control. Red is at high risk. _In the given example, Javascript is better covered than Java. Typescript is risky._
+* It is possible to include, or not, the *external* developers inside the analysis.
+* It is possible as well to filter your developers starting from a *minimal skill level* (from 1 to 5)
+|===
+
+=== THE GLOBAL PIE VIEW
+This sector diagram seeks to summarize on a single diagram, the quality of the portfolio on the 3 dimensions currently analyzed by Fitzhì :
+
+* the Staff coverage
+* the Code quality
+* the global design
+
+Therefore, the pie is divided in 3 parts, and each part has 4 possible sectors of a different size..
+
+[.text-center]
+image::{site}/assets/img/vision/global-pie.png[width=40%]
+
+== THE PROJECT
+
+[cols="1a,3a", frame="no", grid="rows"]
+|===
+|
+image::{site}//assets/img/vision/tech-medal.png[200, 192]
+|
 Each project declared in Fitzhì, has an IT medal, which synthesizes its quality valuation. +
-This medal has 3 dimensions : the team, the code, the global design.
+This medal has 3 dimensions : 
 
-image::/assets/img/vision/tech-medal.png[200, 192]
+* the staff 
+* the code
+* the global design
 
-== THE STAFF 
+|===
+
+
+=== THE STAFF 
 The staff coverage is a build-in feature of Fitzhì.
 An important concern regarding your IT legacy is the staff, more precisely the **staff relevant and available** to maintain and develop your applications. Do you have the best team with the required skill & functional knowledge, that prevents anything from falling through the net ?
 You need to be able to answer questions such as 
@@ -38,24 +93,27 @@ Fitzhì will crawl the history of your Git repository, gather your commiters and
  and generates charts like this one below.
 
 [.text-center]
-image::/assets/img/vision/staff-coverage.png[width=40%]
+image::{site}/assets/img/vision/staff-coverage.png[width=40%]
 
 * The full green slices are packages with sufficient active developers.
 * Dark green are desert. Cross your fingers that nothing appends there.  
 
-== THE CODE
+=== THE CODE
 Fitzhì links each application with its Sonar(TM) perspective. It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
 
-image::/assets/img/vision/project-form.png[width=50%]
+[.text-center]
+image::{site}//assets/img/vision/project-form.png[width=50%]
 
-image::/assets/img/vision/project-sonar.png[width=50%]
+[.text-center]
+image::{site}//assets/img/vision/project-sonar.png[width=50%]
 
-== THE DESIGN
+=== THE DESIGN
 Automatic tool cannot completly evaluate your applications. +
 More or less regularly, experts audit your applications and assess their qualities in terms of good practices on several themes which appear to you to be key and significant for these applications. +
 In the example below, the `General organization`, the `Build process` and the `Documentation` were considered important for evaluating an application. We could add `Performance`, `Technical design`...
 
-image::/assets/img/vision/project-audit.png[width=50%]
+[.text-center]
+image::{site}//assets/img/vision/project-audit.png[width=50%]
 
 In the end a score is assigned which summarizes the technical evaluation of an application according to expert opinions.
 
