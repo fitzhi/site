@@ -1,5 +1,5 @@
 = OUR AMBITION WITH FITZHÌ
-:site: https://mamaitresse.github.io/CE2-2019-2020 
+:site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
