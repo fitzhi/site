@@ -2,9 +2,7 @@
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
-= OUR AMBITION WITH FITZHÌ
-
-== OVERVIEW
+== OUR AMBITION WITH FITZHÌ
 Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal.
 Of course Fitzhi delivers analysis and assessments at the project scope, but its main target is the portfolio. Our main ambition is to provide a global, and dynamic vision of the technical risk for your IT. 
 Our killer-feature for Fitzhì should be the ONE single dashboard, one Single Point Point Of Quality, available for the CIO, and ready to resume in one second, one view, the current situation and the historic trend. 
