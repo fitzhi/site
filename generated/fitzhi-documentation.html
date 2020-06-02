@@ -1,96 +1,9 @@
 <div class="sect1">
 <h2 id="_a_project_declared_in_fitzhì">A PROJECT DECLARED IN FITZHÌ</h2>
 <div class="sectionbody">
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>@startuml
-
-class Project {
-+ {field} number : id
-+ {field} string : name
-..
-+ {field} string : connectionSettings
-+ {field} string : urlRepository
-+ {field} string : username
-+ {field} string : password
-+ {field} string : filename
-..
-+ {field} string : urlSonarServer (Sonar url assigned to this project)
-..
-+ {field} number : staffEvaluation
-+ {field} number : auditEvaluation
-}
-
-class Skill {
-+ {field} number : id
-+ {field} string : title
-}
-
-class Library {
-+ {field} string : exclusionDir
-+ {field} string : type (type of library : detected or declared)
-}
-
-class Library {
-+ {field} string : exclusionDir
-+ {field} string : type (type of library : detected or declared)
-}
-
-class SonarProject {
-+ {field} string : key
-+ {field} string : name
-}
-
-class SonarEvaluation {
-+ {field} number : evaluation
-+ {field} number : totalNumberLinesOfCode
-}
-
-class ProjectSonarMetricValue {
-+ {field} string : key
-+ {field} number : weight
-+ {field} number : value
-}
-
-class FilesStats {
-+ {field} string : language
-+ {field} number : numberOfFiles
-}
-
-class AuditTopic {
-+ {field} number : idTopic
-+ {field} number : evaluation
-+ {field} number : weight
-+ {field} string report
-}
-
-class AttachmentFile {
-+ {field} number : idFile
-+ {field} string fileName
-+ {field} number : typeOfFile?
-+ {field} string label?
-}
-
-class Ecosystem {
-+ {field} number : id
-+ {field} string title
-+ {field} string awesomeTitle
-+ {field} string pattern: string
-}
-
-Project "1" *-- "many" Skill : involves &gt;
-Project "1" *-- "many" Library : excludes &gt;
-Project "1" *-- "many" SonarProject : rates &lt;
-Project "1" *-- "many" AuditTopic : rates &lt;
-Project "1" *-- "many" Ecosystem : belongs &lt;
-
-SonarProject "1" *-- "1" SonarEvaluation : synthesizes
-SonarProject "1" *-- "many" ProjectSonarMetricValue : measures
-SonarProject "1" *-- "many" FilesStats : concerns
-
-AuditTopic "1" *-- "many" AttachmentFile : has
-
-@enduml</pre>
+<img src="class-diagram-project.png" alt="class diagram project" width="962" height="562">
 </div>
 </div>
 <div class="paragraph">
@@ -198,59 +111,9 @@ Multiple Sonar servers might be available on your network. This list is declared
 <div class="sect1">
 <h2 id="_a_developer_inside_fitzhì">A DEVELOPER INSIDE FITZHÌ</h2>
 <div class="sectionbody">
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>class Staff {
-+ {field} number : idStaff
-+ {field} string : firstName
-+ {field} string : lastName
-+ {field} string : nickName:
-+ {field} string : login
-+ {field} string : email
-+ {field} string : level
-+ {field} boolean : active
-+ {field} date : dateInactive
-+ {field} string : application
-+ {field} number : typeOfApplication
-+ {field} boolean : external
-}
-
-class Experience {
-	public level: number;
-}
-
-class Skill {
-+ {field} number : id
-+ {field} string : title
-}
-
-class Mission {
-+ {field} number : idProject
-+ {field} string : name
-+ {field} date : firstCommit
-+ {field} date : lastCommit
-+ {field} number : numberOfCommits
-+ {field} number : numberOfFiles
-}
-
-class Contributor {
-+ {field} number : idStaff
-+ {field} string : fullname
-+ {field} boolean : active
-+ {field} boolean : external
-+ {field} date : firstCommit
-+ {field} date : lastCommit
-+ {field} number : numberOfCommits
-+ {field} number : numberOfFiles
-}
-
-Staff "1" *-- "many" Experience : get &gt;
-Staff "1" *-- "many" Mission : works on &gt;
-Contributor "1" --- "1" Staff : is a &gt;
-
-Experience "1" o-- "1" Skill
-
-@enduml</pre>
+<img src="class-diagram-staff.png" alt="class diagram staff" width="372" height="845">
 </div>
 </div>
 </div>
