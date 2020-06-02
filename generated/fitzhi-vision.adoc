@@ -1,7 +1,8 @@
-= OUR AMBITION WITH FITZHÌ
 :site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
+
+= OUR AMBITION WITH FITZHÌ
 
 == OVERVIEW
 Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal.
