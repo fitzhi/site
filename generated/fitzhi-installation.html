@@ -16,44 +16,9 @@
 </li>
 </ul>
 </div>
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>digraph G {
-  {
-    subgraph clusterFrontend {
-        margin=20
-        label="Frontend"
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-        f [fillcolor="#28a745" label="Angular frontend"]
-        s1 [fillcolor=lightGrey label="Sonar server 1"]
-        sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
-    }
-
-    subgraph clusterBackend {
-        margin=30
-        label="backend"
-
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-        b [fillcolor="#28a745" label="Spring Boot backend"]
-
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
-        d [fillcolor=grey label=&lt;&lt;font point-size="16"&gt;Fitzhì data&lt;/font&gt;&lt;br/&gt;in JSON format&gt;]
-
-        node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
-        temp [fillcolor=whiteSmoke label=&lt;&lt;I&gt;GIT local repository&lt;br/&gt;(in temp folders)&lt;/I&gt;&gt;]
-
-        node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
-        git [label="GitHub, GitLab..."]
-    }
-  }
-  sn -&gt; f [color="grey" style="dotted"]
-  s1 -&gt; f
-  f -&gt; {b} [dir=both]
-  b -&gt; temp [color="grey" style="dotted"]
-  b -&gt; {d}
-  git -&gt; b
-
-}</pre>
+<img src="main.png" alt="main" width="844" height="507">
 </div>
 </div>
 </div>
