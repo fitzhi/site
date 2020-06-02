@@ -26,10 +26,6 @@ body {
   color:var(--black);
 }
 
-#_overview {
-  margin-top: 80px;
-}
-
 h1 {
   color:var(--primarycolor) !important;
   font-family:"Montserrat",sans-serif;
