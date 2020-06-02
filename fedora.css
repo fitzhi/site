@@ -10,7 +10,7 @@
 --primarycolor:#294172; /* Fedora Dark Blue */
 --secondarycolor:#3c6eb4; /* Fedora Blue */
 --tertiarycolor:#CCCCCC;
---highlightcolor:#e59728; /* Features Orange */
+--highlightcolor: transparent; /* Features Orange */
 --sidebarbackground:#CACACA;
 --linkcolor:#0D47A1;
 --linkcoloralternate:#db3279; /* Friends Magneta */
