@@ -1,8 +1,8 @@
-= DOCUMENTATION
 :nofooter:
 
+== DOCUMENTATION
 
-== A PROJECT DECLARED IN FITZHÌ
+=== A PROJECT DECLARED IN FITZHÌ
 
 [plantuml, "class-diagram-project"]
 ....
@@ -130,7 +130,7 @@ NOTE: Multiple Sonar servers might be available on your network. This list is de
 ** A global `*SonarEvaluation*` and the `*totalNumberLinesOfCode*`
 
 
-== A DEVELOPER INSIDE FITZHÌ
+=== A DEVELOPER INSIDE FITZHÌ
 
 [plantuml, "class-diagram-staff"]
 ....
