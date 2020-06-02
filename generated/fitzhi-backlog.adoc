@@ -1,4 +1,4 @@
-= WHAT'S NEXT ?
+== WHAT'S NEXT ?
 :nofooter:
 
 You'll find below new features & which list. We have not yet arbitrated between all these improvements.

@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Frédéric VIDAL">
-    <title>Fitzhì documentation</title>
+    <title>Fitzhì the vision</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -46,48 +46,312 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="fitzhi.css" rel="stylesheet">
+    <link href="fedora.css" rel="stylesheet">
 
-    <script>
-        function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-        }
-        function onLoad() {
-            document.getElementById('menuIndex').setAttribute('class', 'nav-item');
-            document.getElementById('menuInstallation').setAttribute('class', 'nav-item active');
-        }
-    </script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
 
 </head>
 
-<body onload="onLoad()">
-    <!-- We load the navigation bar -->
-    <div id="nav-placeholder">
+<body class="article">
+    <div id="content">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="#"><span class="gradient logo-small">质 Fitzhì</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li id="menuIndex" class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li id="menuInstallation" class="nav-item">
+                <a class="nav-link" href="./installation.html">Install</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="mailto://contact@fitzhi.com">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://fitzhi.github.io/spoq">Run</a>
+            </li>
     </div>
+</nav>
+<div class="sect1">
+<h2 id="_a_project_declared_in_fitzhì">A PROJECT DECLARED IN FITZHÌ</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>@startuml
 
-    <!-- We load the installation procedure -->
-    <iframe id="install" src="./generated/fitzhi-documentation.html" 
-        title="Documentation of Fitzhì" 
-        width="100%"
-        onload="resizeIframe(this)">
-    </iframe>
+class Project {
++ {field} number : id
++ {field} string : name
+..
++ {field} string : connectionSettings
++ {field} string : urlRepository
++ {field} string : username
++ {field} string : password
++ {field} string : filename
+..
++ {field} string : urlSonarServer (Sonar url assigned to this project)
+..
++ {field} number : staffEvaluation
++ {field} number : auditEvaluation
+}
 
-    <footer class="container">
-        <p>&copy; Fitzhì 2020</p>
-    </footer>
+class Skill {
++ {field} number : id
++ {field} string : title
+}
 
+class Library {
++ {field} string : exclusionDir
++ {field} string : type (type of library : detected or declared)
+}
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous"></script>
+class Library {
++ {field} string : exclusionDir
++ {field} string : type (type of library : detected or declared)
+}
 
-    <script>
-        $(function(){
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
+class SonarProject {
++ {field} string : key
++ {field} string : name
+}
 
-</body>
+class SonarEvaluation {
++ {field} number : evaluation
++ {field} number : totalNumberLinesOfCode
+}
+
+class ProjectSonarMetricValue {
++ {field} string : key
++ {field} number : weight
++ {field} number : value
+}
+
+class FilesStats {
++ {field} string : language
++ {field} number : numberOfFiles
+}
+
+class AuditTopic {
++ {field} number : idTopic
++ {field} number : evaluation
++ {field} number : weight
++ {field} string report
+}
+
+class AttachmentFile {
++ {field} number : idFile
++ {field} string fileName
++ {field} number : typeOfFile?
++ {field} string label?
+}
+
+class Ecosystem {
++ {field} number : id
++ {field} string title
++ {field} string awesomeTitle
++ {field} string pattern: string
+}
+
+Project "1" *-- "many" Skill : involves &gt;
+Project "1" *-- "many" Library : excludes &gt;
+Project "1" *-- "many" SonarProject : rates &lt;
+Project "1" *-- "many" AuditTopic : rates &lt;
+Project "1" *-- "many" Ecosystem : belongs &lt;
+
+SonarProject "1" *-- "1" SonarEvaluation : synthesizes
+SonarProject "1" *-- "many" ProjectSonarMetricValue : measures
+SonarProject "1" *-- "many" FilesStats : concerns
+
+AuditTopic "1" *-- "many" AttachmentFile : has
+
+@enduml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A project in Fitzhì</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is defined by an <code><strong>id</strong></code>, and a <code><strong>name</strong></code>.</p>
+</li>
+<li>
+<p>has an url hosting the Git repository set in <code><strong>urlRepository</strong></code></p>
+</li>
+<li>
+<p>has a <code>connectionSettings</code> which might be equal to <strong>1</strong>, or <strong>2</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>1</strong>, the backend will connect to the Git SCM, with the given <code><strong>username</strong></code> and <code><strong>password</strong></code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The password will be encrypted in the project record. For this first release, we assume that the NSA, or a very skilled hacker, might be able to break this code. But we remind you as well that <strong>this projects file is stored on your file system on your own network</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>2</strong>, the backend will connect to the Git SCM, using a settings file declared in <code><strong>filename</strong></code>. The location of this file is setup in the <code><strong>application.properties</strong></code> file.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#
+# Local directory where are stored the properties files containing the connection settings to GIT
+# Each file contains 3 properties
+# - an optional property with the SCM URL
+# - a "user" property
+# - a "password" property
+#
+versionControl.ConnectionSettings=../data/application/repository-settings/</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the Fitzhì project has the url of the Sonar server deployed on your network <code><strong>urlSonarServer</strong></code> to validate your own code.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Multiple Sonar servers might be available on your network. This list is declared inside the referential file <code><strong>sonar-servers.json</strong></code>. <strong>But we assume that your project has not been distributed on multiple servers</strong>. This is a relation (n) Fitzhì projects &lt;&#8594; (1) Sonar server.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>has an array of <code><strong>SonarProject</strong></code> associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Each Sonar project has its own configuration with the chosen evaluation metrics and their relative weights. The file <code>/deploy/data/referential/<strong>supported-metrics.json</strong></code> contains the default template of settings which might be overriden for each project.</p>
+</li>
+<li>
+<p>Each Sonar project has an array of <code><strong>FileStats</strong></code> with the <code><strong>language</strong></code> and the <code><strong>numberOfFiles</strong>`</code> detected for this language</p>
+</li>
+<li>
+<p>A global <code><strong>SonarEvaluation</strong></code> and the <code><strong>totalNumberLinesOfCode</strong></code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_developer_inside_fitzhì">A DEVELOPER INSIDE FITZHÌ</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>class Staff {
++ {field} number : idStaff
++ {field} string : firstName
++ {field} string : lastName
++ {field} string : nickName:
++ {field} string : login
++ {field} string : email
++ {field} string : level
++ {field} boolean : active
++ {field} date : dateInactive
++ {field} string : application
++ {field} number : typeOfApplication
++ {field} boolean : external
+}
+
+class Experience {
+	public level: number;
+}
+
+class Skill {
++ {field} number : id
++ {field} string : title
+}
+
+class Mission {
++ {field} number : idProject
++ {field} string : name
++ {field} date : firstCommit
++ {field} date : lastCommit
++ {field} number : numberOfCommits
++ {field} number : numberOfFiles
+}
+
+class Contributor {
++ {field} number : idStaff
++ {field} string : fullname
++ {field} boolean : active
++ {field} boolean : external
++ {field} date : firstCommit
++ {field} date : lastCommit
++ {field} number : numberOfCommits
++ {field} number : numberOfFiles
+}
+
+Staff "1" *-- "many" Experience : get &gt;
+Staff "1" *-- "many" Mission : works on &gt;
+Contributor "1" --- "1" Staff : is a &gt;
+
+Experience "1" o-- "1" Skill
+
+@enduml</pre>
+</div>
+</div>
+</div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2020</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
 
 </html>
