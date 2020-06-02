@@ -52,6 +52,7 @@ div.my-footer {
   background-color: whitesmoke;
   height: 35px;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 table.my-footer {
