@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158908694-1');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -36,47 +46,88 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="fitzhi.css" rel="stylesheet">
+    <link href="fedora.css" rel="stylesheet">
 
-    <script>
-        function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-        }
-        function onLoad() {
-            document.getElementById('menuIndex').setAttribute('class', 'nav-item');
-            document.getElementById('menuInstallation').setAttribute('class', 'nav-item active');
-        }
-    </script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
 
 </head>
 
-<body onload="onLoad()">
-    <!-- We load the navigation bar -->
-    <div id="nav-placeholder">
+<body class="article">
+    <div id="content">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="#"><span class="gradient logo-small">质 Fitzhì</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li id="menuIndex" class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li id="menuInstallation" class="nav-item">
+                <a class="nav-link" href="./installation.html">Install</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="mailto://contact@fitzhi.com">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://fitzhi.github.io/spoq">Run</a>
+            </li>
     </div>
+</nav>
+<div class="sect1">
+<h2 id="_whats_next">WHAT&#8217;S NEXT ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You&#8217;ll find below new features &amp; which list. We have not yet arbitrated between all these improvements.
+This list is ordered arbitrary. This is in no way an indication of importance.</p>
+</div>
+<div class="sect4">
+<h5 id="_perfect_view">Perfect view</h5>
+<div class="paragraph">
+<p>We strive to develop the best synthesis to reflect the general technical situation of an application portfolio. The current version offers a sector diagram.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_support_of_tfs">Support of TFS</h5>
+<div class="paragraph">
+<p>We plan to support TFS as version control system and open Fitzhì to the .Net Ecosystem.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_technical_age">Technical age</h5>
+<div class="paragraph">
+<p>We plan to measure the technical age of a project and the average age of an asset. We can say, as an example, that a Struts application that would be maintained and still active in 2019, has an real age of 1 year and a technical age of 20. This measure would give an obsolescence indicator for your IT, from the technical point of view.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_skills_level">Skills level</h5>
+<div class="paragraph">
+<p>We plan to evaluate the skill level of developers per language from the <strong>GIT</strong> point of view. Of course, nothing beats self-assessment, or peer assessment. But based on 4 years of commit of a developer, Fitzhì might be able to reach an idea on his level in <strong>Java</strong>, or <strong>Spring</strong>&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2020</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
 
-    <!-- We load the installation procedure -->
-    <iframe id="vision" src="./generated/fitzhi-backlog.html" 
-        title="Our vision with Fitzhì" width="100%"
-        onload="resizeIframe(this)">
-    </iframe>
-
-    <footer class="container">
-        <p>&copy; Fitzhì 2020</p>
-    </footer>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous"></script>
-
-    <script>
-        $(function(){
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
-
-</body>
+    </body>
 
 </html>
