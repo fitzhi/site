@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158908694-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Frédéric VIDAL">
+    <title>Fitzhì the vision</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/assets/img/zhi.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/assets/img/zhi.ico">
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="fitzhi.css" rel="stylesheet">
+
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+        function onLoad() {
+            document.getElementById('menuIndex').setAttribute('class', 'nav-item');
+            document.getElementById('menuInstallation').setAttribute('class', 'nav-item active');
+        }
+    </script>    
+
+</head>
+
+<body onload="onLoad()">
+    <!-- We load the navigation bar -->
+    <div id="nav-placeholder">
+    </div>
+<div class="sect1">
+<h2 id="_overview">OVERVIEW</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fitzhì aims to gather all technical data regarding your application portfolio into <strong>ONE</strong> single portal.
+Of course Fitzhi delivers analysis and assessments at the project scope, but its main target is the portfolio. Our main ambition is to provide a global, and dynamic vision of the technical risk for your IT.
+Our killer-feature for Fitzhì should be the ONE single dashboard, one Single Point Point Of Quality, available for the CIO, and ready to resume in one second, one view, the current situation and the historic trend.</p>
+</div>
+<div class="paragraph">
+<p>Fitzhi is integrated with existing solutions, such as Sonar&#8482;, but Fitzhì also provides his own assessment tools.<br>
+This actual release introduces 3 charts <em>in Beta test</em> :</p>
+</div>
+<div class="ulist">
+<div class="title">For your portfolio</div>
+<ul>
+<li>
+<p>the Skills tiles coverage<br></p>
+</li>
+<li>
+<p>The global Pie view</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">For each project</div>
+<ul>
+<li>
+<p>the Staff Coverage Sunburst</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Fitzhì aims to answer multiple questions such as :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em><strong>Did we technically improve our IT portfolio last year ? </strong></em></p>
+</li>
+<li>
+<p><em>Did the actual turnover downgrade, or not, our mastery in our applications ?</em></p>
+</li>
+<li>
+<p><em>What is the code quality evaluation for the whole portfolio ?</em></p>
+</li>
+<li>
+<p><em>Can we globally assess the IT assets of this company over which we just have taken control ?</em></p>
+</li>
+<li>
+<p><em>Who are the key peoples of my organization regarding their application knowledge ?</em></p>
+</li>
+<li>
+<p><em>Which skill is lacking of Senior developer regarding the need of my applications?</em></p>
+</li>
+<li>
+<p><em>Which percentage of your portfolio is covered by your actual IT crew ?</em></p>
+</li>
+<li>
+<p><em>How did the last audit value your application ?</em></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_portfolio">THE PORTFOLIO</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_the_skills_tiles_coverage">THE SKILLS TILES COVERAGE</h3>
+<div class="paragraph">
+<p>This Treemap chart below, represents the technical coverage for the portfolio of applications registered in Fitzhì.<br>
+It compares the volume of code of the registered applications and the active teams which are ready to maintain them.</p>
+</div>
+<table class="tableblock frame-no grid-rows stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com/assets/img/vision/skill-tiles.png" alt="skill tiles" width="100%">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Each tile represents an ecosystem (with a maximum of 10 tiles), in proportion to its importance in the portfolio.</p>
+</li>
+<li>
+<p>Each tile has a color that figures the level of risk on the ecosystem. Green is under control. Red is at high risk. <em>In the given example, Javascript is better covered than Java. Typescript is risky.</em></p>
+</li>
+<li>
+<p>It is possible to include, or not, the <strong>external</strong> developers inside the analysis.</p>
+</li>
+<li>
+<p>It is possible as well to filter your developers starting from a <strong>minimal skill level</strong> (from 1 to 5)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_the_global_pie_view">THE GLOBAL PIE VIEW</h3>
+<div class="paragraph">
+<p>This sector diagram seeks to summarize on a single diagram, the quality of the portfolio on the 3 dimensions currently analyzed by Fitzhì :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the Staff coverage</p>
+</li>
+<li>
+<p>the Code quality</p>
+</li>
+<li>
+<p>the global design</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Therefore, the pie is divided in 3 parts, and each part has 4 possible sectors of a different size..</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com/assets/img/vision/global-pie.png" alt="global pie" width="40%">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_project">THE PROJECT</h2>
+<div class="sectionbody">
+<table class="tableblock frame-no grid-rows stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="http://www.fitzhi.com//assets/img/vision/tech-medal.png" alt="200" width="192">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Each project declared in Fitzhì, has an IT medal, which synthesizes its quality valuation.<br>
+This medal has 3 dimensions :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the staff</p>
+</li>
+<li>
+<p>the code</p>
+</li>
+<li>
+<p>the global design</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_the_staff">THE STAFF</h3>
+<div class="paragraph">
+<p>The staff coverage is a build-in feature of Fitzhì.
+An important concern regarding your IT legacy is the staff, more precisely the <strong>staff relevant and available</strong> to maintain and develop your applications. Do you have the best team with the required skill &amp; functional knowledge, that prevents anything from falling through the net ?
+You need to be able to answer questions such as</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Who has worked on this project ?</em></p>
+</li>
+<li>
+<p><em>Do we still have someone available to fix this issue in this antique application from your legacy</em> ?</p>
+</li>
+<li>
+<p><em>Does the technical mastery of the actual team cover all parts of the project ? Or do we face some risks there ?</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To fulfill that purpose, Fitzhì manages a staff registry with all of your developers.
+They are registered as <code>active</code> or <code>inactive</code>, <code>external</code> or not.<br>
+Fitzhì will crawl the history of your Git repository, gather your commiters and their operations
+ and generates charts like this one below.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com/assets/img/vision/staff-coverage.png" alt="staff coverage" width="40%">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The full green slices are packages with sufficient active developers.</p>
+</li>
+<li>
+<p>Dark green are desert. Cross your fingers that nothing appends there.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_code">THE CODE</h3>
+<div class="paragraph">
+<p>Fitzhì links each application with its Sonar&#8482; perspective. It processes a <strong>unique</strong> note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com//assets/img/vision/project-form.png" alt="project form" width="50%">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com//assets/img/vision/project-sonar.png" alt="project sonar" width="50%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_design">THE DESIGN</h3>
+<div class="paragraph">
+<p>Automatic tool cannot completly evaluate your applications.<br>
+More or less regularly, experts audit your applications and assess their qualities in terms of good practices on several themes which appear to you to be key and significant for these applications.<br>
+In the example below, the <code>General organization</code>, the <code>Build process</code> and the <code>Documentation</code> were considered important for evaluating an application. We could add <code>Performance</code>, <code>Technical design</code>&#8230;&#8203;</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="http://www.fitzhi.com//assets/img/vision/project-audit.png" alt="project audit" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>In the end a score is assigned which summarizes the technical evaluation of an application according to expert opinions.</p>
+</div>
+</div>
+</div>
+</div>
+    <footer class="container">
+        <p>&copy; Fitzhì 2020</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
