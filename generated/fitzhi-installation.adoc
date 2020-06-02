@@ -1,7 +1,7 @@
-= STARTING WITH FITZHÌ
+== STARTING WITH FITZHÌ
 :nofooter:
 
-== OVERVIEW
+=== OVERVIEW
 
 The architecture of Fitzhì is quite simple.
 
@@ -49,7 +49,7 @@ digraph G {
 }
 ....
 
-== INSTALLATION
+=== INSTALLATION
 
 First of all, you will need to export the GitHub repository.
 
@@ -65,7 +65,7 @@ A directory Application will be downloaded with this content :
 * front-fitzhi (the Angular front-end project)
 * back-fitzhi  (the Spring back-end project)
 
-=== BACK-END INSTALLATION
+==== BACK-END INSTALLATION
 
 fitzhì has the following prerequisites:::
 * Java 8 or higher
@@ -109,7 +109,7 @@ To test if the server is started, just visit the url http://localhost:8080/api/t
 A **Pong** response is expected.
 
 
-=== FRONT-END INSTALLATION
+==== FRONT-END INSTALLATION
 
 The easiest installation involved no-installation. +
 The last stable release of front-fitzhì is available here https://fitzhi.github.io/spoq[window=_blank]. +
@@ -128,7 +128,7 @@ A *dist* (by default) directory will be created. +
 Just copy everything within the output folder to a folder on your server.
 For more precision, just RTFM, https://angular.io/guide/deployment
 
-== THE BROWER AND THE CORS ISSUE
+=== THE BROWER AND THE CORS ISSUE
 If you are not familiar with the mechanism of CORS, you can refer to https://en.wikipedia.org/wiki/Cross-origin_resource_sharing[this simple presentation, window=_blank]. +
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests. +
 With Fitzhì, you have 2 cross domain sources.
@@ -139,7 +139,7 @@ With Fitzhì, you have 2 cross domain sources.
 Therefore you might have have to configure 2 types of servers.
 
 
-=== THE PIRATE WAY
+==== THE PIRATE WAY
 The first solution, and the simplest one, is **NO SECURITY, NO PROBLEM WITH SECURITY...** +
 *For testing purpose*, your can disable the CORS protection inside your browser. 
 
@@ -151,7 +151,7 @@ A startup file `*chrome.sh*`, is provided in the project folder.
 
 CAUTION: Avoid using that instance to surf on the Web.
 
-=== THE BACKEND OF FITZHÌ
+==== THE BACKEND OF FITZHÌ
 You will setup your CORS policy with the property `*allowedOrigins*` located in the `*application.properties*` file. +
 You will find below an extract from this file.
 
@@ -167,7 +167,7 @@ You will find below an extract from this file.
 allowedOrigins=http://localhost:4200,https://spoq.io
 ----
 
-=== THE SONAR CONFIGURATION
+==== THE SONAR CONFIGURATION
 Sonar server is deployed on a Tomcat server. +
 Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file `*web.xml*`.
 
@@ -207,13 +207,13 @@ https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter[You can 
 
 
 
-== FIRST START OF FITZHI
+=== FIRST START OF FITZHI
 
 The common sense might consider that there can be *only* one first launch. 
 In fact, *two* are available for Fitzhì : the first launch and the *very* first launch. +
 
 
-=== THE VERY FIRST START
+==== THE VERY FIRST START
 The first ever user inside Fitzhì will be the first administrative user, and therefore its owner. +
 _At the beginning, God enters in Fitzhì and performs all initialization_. +
 Fitzhì detects the first ever interaction & creates the file **connection.txt** to save & _(in a way)_ celebrate this first connection. +
@@ -223,7 +223,7 @@ image::/assets/img/installation/very-first-connection-1.png[600,500]
 
 IMPORTANT: The first panel saves in the permanent local storage the URL of your backend server. Default is localhost:8080. You will have to remove this entry if you plan to move this server _(an entry in the backlog will simplify this operation)_.
 
-=== THE FIRST START 
+==== THE FIRST START 
 Each user in Fitzhì will experience a first launch. +
 Depending on a property set in file `*application.properties*`, Fitzhi users can self-register themselves, or not. If not, they have to be already created _(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)_. + 
 Default settings allow the self-registration.

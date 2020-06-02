@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Frédéric VIDAL">
-    <title>Fitzhì</title>
+    <title>Fitzhì the vision</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -46,47 +46,418 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="fitzhi.css" rel="stylesheet">
+    <link href="fedora.css" rel="stylesheet">
 
-    <script>
-        function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-        }
-        function onLoad() {
-            document.getElementById('menuIndex').setAttribute('class', 'nav-item');
-            document.getElementById('menuInstallation').setAttribute('class', 'nav-item active');
-        }
-    </script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
 
 </head>
 
-<body onload="onLoad()">
-    <!-- We load the navigation bar -->
-    <div id="nav-placeholder">
+<body class="article">
+    <div id="content">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="#"><span class="gradient logo-small">质 Fitzhì</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li id="menuIndex" class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li id="menuInstallation" class="nav-item">
+                <a class="nav-link" href="./installation.html">Install</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="mailto://contact@fitzhi.com">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://fitzhi.github.io/spoq">Run</a>
+            </li>
     </div>
+</nav>
+<div class="sect1">
+<h2 id="_starting_with_fitzhì">STARTING WITH FITZHÌ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview">OVERVIEW</h3>
+<div class="paragraph">
+<p>The architecture of Fitzhì is quite simple.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A Javascript frontend which might be launched from a remote host</p>
+</li>
+<li>
+<p>A Backend which has to be installed on a computer inside your network.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>digraph G {
+  {
+    subgraph clusterFrontend {
+        margin=20
+        label="Frontend"
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+        f [fillcolor="#28a745" label="Angular frontend"]
+        s1 [fillcolor=lightGrey label="Sonar server 1"]
+        sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
+    }
 
-    <!-- We load the installation procedure -->
-    <iframe id="install" src="./generated/fitzhi-installation.html" 
-        title="Installation of Fitzhì" width="100%"
-        onload="resizeIframe(this)">
-    </iframe>
+    subgraph clusterBackend {
+        margin=30
+        label="backend"
 
-    <footer class="container">
-        <p>&copy; Fitzhì 2020</p>
-    </footer>
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+        b [fillcolor="#28a745" label="Spring Boot backend"]
 
+        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
+        d [fillcolor=grey label=&lt;&lt;font point-size="16"&gt;Fitzhì data&lt;/font&gt;&lt;br/&gt;in JSON format&gt;]
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous"></script>
+        node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
+        temp [fillcolor=whiteSmoke label=&lt;&lt;I&gt;GIT local repository&lt;br/&gt;(in temp folders)&lt;/I&gt;&gt;]
 
-    <script>
-        $(function(){
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
+        node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
+        git [label="GitHub, GitLab..."]
+    }
+  }
+  sn -&gt; f [color="grey" style="dotted"]
+  s1 -&gt; f
+  f -&gt; {b} [dir=both]
+  b -&gt; temp [color="grey" style="dotted"]
+  b -&gt; {d}
+  git -&gt; b
 
-</body>
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installation">INSTALLATION</h3>
+<div class="paragraph">
+<p>First of all, you will need to export the GitHub repository.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download fitzhì</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://www.github.com/fitzhi/application.git
+rm -rf .git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A directory Application will be downloaded with this content :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>front-fitzhi (the Angular front-end project)</p>
+</li>
+<li>
+<p>back-fitzhi  (the Spring back-end project)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_back_end_installation">BACK-END INSTALLATION</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">fitzhì has the following prerequisites</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 8 or higher</p>
+</li>
+<li>
+<p>Maven 3 or higher</p>
+</li>
+<li>
+<p>Git 2 or higher installed on the back-end server</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The installation of the back-end is very simple. Just type :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">cd application
+./init.sh</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main deployment directory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/backend-fitzhi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the directory of the executable fitzhì.jar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories used by fitzhì</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories where your corporate data will be stored (e.g. staff.json, project.json &amp; skill.json). All of your updates will be stored there.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/referential</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the referential data which contains the static data used by the application</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
+The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare">http://localhost:8080</a></p>
+</div>
+<div class="paragraph">
+<p>To start the back-end fitzhì, just type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">./run.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To test if the server is started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:8080/api/test/ping</a> , or <a href="http://<a href="#hostname">[hostname]</a>:8080/api/test/ping" class="bare">http://<a href="#hostname">[hostname]</a>:8080/api/test/ping</a> <br>
+A <strong>Pong</strong> response is expected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_front_end_installation">FRONT-END INSTALLATION</h4>
+<div class="paragraph">
+<p>The easiest installation involved no-installation.<br>
+The last stable release of front-fitzhì is available here <a href="https://fitzhi.github.io/spoq" class="bare" target="_blank" rel="noopener">https://fitzhi.github.io/spoq</a>.<br>
+This URL hosts only a static web server which delivers JS files. So just go there.</p>
+</div>
+<div class="paragraph">
+<p>If you prefer to deploy the front-end on-premise, like any other Angular application.<br>
+Just type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">cd front-fitzhi
+npm install
+ng build --prod</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <strong>dist</strong> (by default) directory will be created.<br>
+Just copy everything within the output folder to a folder on your server.
+For more precision, just RTFM, <a href="https://angular.io/guide/deployment" class="bare">https://angular.io/guide/deployment</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_brower_and_the_cors_issue">THE BROWER AND THE CORS ISSUE</h3>
+<div class="paragraph">
+<p>If you are not familiar with the mechanism of CORS, you can refer to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noopener">this simple presentation</a>.<br>
+This protection feature is activated inside your browser, when your executes multiple cross-domain requests.<br>
+With Fitzhì, you have 2 cross domain sources.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your single back-end of Fitzhì</p>
+</li>
+<li>
+<p>The Sonar server(s) available on your network.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Therefore you might have have to configure 2 types of servers.</p>
+</div>
+<div class="sect3">
+<h4 id="_the_pirate_way">THE PIRATE WAY</h4>
+<div class="paragraph">
+<p>The first solution, and the simplest one, is <strong>NO SECURITY, NO PROBLEM WITH SECURITY&#8230;&#8203;</strong><br>
+<strong>For testing purpose</strong>, your can disable the CORS protection inside your browser.</p>
+</div>
+<div class="paragraph">
+<p>With Chrome, you just need to pass the argument <code>--disable-web-security</code> at start-up.<br>
+A startup file <code><strong>chrome.sh</strong></code>, is provided in the project folder.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Control that no instance of Chrome is running</p>
+</li>
+<li>
+<p>and then just launch that script.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Avoid using that instance to surf on the Web.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_backend_of_fitzhì">THE BACKEND OF FITZHÌ</h4>
+<div class="paragraph">
+<p>You will setup your CORS policy with the property <code><strong>allowedOrigins</strong></code> located in the <code><strong>application.properties</strong></code> file.<br>
+You will find below an extract from this file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>#
+# This property is necessary to declare the host from where the front-end will access this server.
+# In order to prevent any CORS exception, you have to setup your front-end URL.
+# Default setting accepts 2 URL :
+# - The local default URL is you have installed the front-end directly on your machine
+# - the https://spoq.io hosting the front-end on the WWW
+#
+allowedOrigins=http://localhost:4200,https://spoq.io</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_sonar_configuration">THE SONAR CONFIGURATION</h4>
+<div class="paragraph">
+<p>Sonar server is deployed on a Tomcat server.<br>
+Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file <code><strong>web.xml</strong></code>.</p>
+</div>
+<div class="paragraph">
+<p>You just need to declare the CORS filter and its settings.<br>
+Your can add the lines below to your <code>web.xml</code> file. We guess that these tag are enoughly explicit.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter" target="_blank" rel="noopener">You can refer to this documentation if you need further explanation</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;filter&gt;
+  &lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
+  &lt;filter-class&gt;org.apache.catalina.filters.CorsFilter&lt;/filter-class&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;cors.allowed.origins&lt;/param-name&gt;
+    &lt;param-value&gt;http://localhost:4200, https://spoq.io&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;cors.allowed.methods&lt;/param-name&gt;
+    &lt;param-value&gt;GET,POST,HEAD,OPTIONS,PUT&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;cors.allowed.headers&lt;/param-name&gt;
+    &lt;param-value&gt;Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;cors.exposed.headers&lt;/param-name&gt;
+    &lt;param-value&gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&lt;/param-value&gt;
+  &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+  &lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
+  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_first_start_of_fitzhi">FIRST START OF FITZHI</h3>
+<div class="paragraph">
+<p>The common sense might consider that there can be <strong>only</strong> one first launch.
+In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.<br></p>
+</div>
+<div class="sect3">
+<h4 id="_the_very_first_start">THE VERY FIRST START</h4>
+<div class="paragraph">
+<p>The first ever user inside Fitzhì will be the first administrative user, and therefore its owner.<br>
+<em>At the beginning, God enters in Fitzhì and performs all initialization</em>.<br>
+Fitzhì detects the first ever interaction &amp; creates the file <strong>connection.txt</strong> to save &amp; <em>(in a way)</em> celebrate this first connection.<br>
+Then you just have to follow the steppers<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/img/installation/very-first-connection-1.png" alt="600" width="500">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The first panel saves in the permanent local storage the URL of your backend server. Default is localhost:8080. You will have to remove this entry if you plan to move this server <em>(an entry in the backlog will simplify this operation)</em>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_first_start">THE FIRST START</h4>
+<div class="paragraph">
+<p>Each user in Fitzhì will experience a first launch.<br>
+Depending on a property set in file <code><strong>application.properties</strong></code>, Fitzhi users can self-register themselves, or not. If not, they have to be already created <em>(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)</em>.<br>
+Default settings allow the self-registration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>#
+# Does Fitzhì allow self registration ?
+# Either, everyone can create his own user, by simply connecting to the Fitzhi URL
+# Or a login must be already present for each new user in the staff collection.
+#
+allowSelfRegistration=true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2020</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
 
 </html>
