@@ -20,10 +20,26 @@
 
 /* Text styles */
 
-body{font-family: "Open Sans",sans-serif;background-color: var(--maincolor);color:var(--black);}
+body {
+  font-family: "Open Sans",sans-serif;
+  background-color: var(--maincolor);
+  color:var(--black);
+}
 
-h1{color:var(--primarycolor) !important;font-family:"Montserrat",sans-serif;}
-h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Montserrat",sans-serif;}
+#header {
+  margin-top: 80px;
+}
+
+h1 {
+  color:var(--primarycolor) !important;
+  font-family:"Montserrat",sans-serif;
+}
+
+h2,h3,h4,h5,h6 {
+  color:var(--secondarycolor) !important;
+  font-family:"Montserrat",sans-serif;
+}
+
 .title{color:var(--black) !important;font-family:"Open Sans",sans-serif;font-style: normal; font-weight: normal;}
 a{text-decoration: none;}
 p{font-family: "Open Sans",sans-serif ! important}
