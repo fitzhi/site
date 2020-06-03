@@ -39,7 +39,7 @@ h2 {
   background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: lightgray; 
   font-family:"Montserrat",sans-serif;
   font-size: 40px;
 }
