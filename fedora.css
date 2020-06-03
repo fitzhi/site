@@ -10,7 +10,7 @@
 --primarycolor:#294172; /* Fedora Dark Blue */
 --secondarycolor:#3c6eb4; /* Fedora Blue */
 --tertiarycolor:#CCCCCC;
---highlightcolor: transparent; /* Features Orange */
+--highlightcolor: lightgray; /* Features Orange */
 --sidebarbackground:#CACACA;
 --linkcolor:#0D47A1;
 --linkcoloralternate:#db3279; /* Friends Magneta */
@@ -39,7 +39,7 @@ h2 {
   background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: lightgray; 
+  -webkit-text-fill-color: transparent; 
   font-family:"Montserrat",sans-serif;
   font-size: 40px;
 }
