@@ -10,7 +10,7 @@
 --primarycolor:#294172; /* Fedora Dark Blue */
 --secondarycolor:#3c6eb4; /* Fedora Blue */
 --tertiarycolor:#CCCCCC;
---highlightcolor: transparent; /* Features Orange */
+--highlightcolor: #F7F7F8; /* Features Orange */
 --sidebarbackground:#CACACA;
 --linkcolor:#0D47A1;
 --linkcoloralternate:#db3279; /* Friends Magneta */
@@ -57,8 +57,8 @@ blockquote{color:var(--linkcoloralternate) !important}
 .quoteblock blockquote:before{color:var(--linkcoloralternate)}
 
 code{
-  color:var(--white);
-  background-color:lightGray !important
+  color:var(--black);
+  background-color: #F7F7F8 !important
 }
 
 mark{background-color: var(--highlightcolor)} /* Text highlighting color */
