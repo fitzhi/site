@@ -56,7 +56,7 @@ p{font-family: "Open Sans",sans-serif ! important}
 blockquote{color:var(--linkcoloralternate) !important}
 .quoteblock blockquote:before{color:var(--linkcoloralternate)}
 
-code{
+code {
   color:var(--black);
   background-color: #F7F7F8 !important
 }
