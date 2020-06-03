@@ -14,15 +14,16 @@ span.logo-big {
 
 span.logo-small {
   font-size: 20px;
+  text-align: center;
 }
 
 .gradient {
-  text-align: center;
   background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 span.title-big {
   animation: pulse 20s;

@@ -48,7 +48,7 @@ image::{site}/assets/img/vision/skill-tiles.png[width=100%]
 * It is possible as well to filter your developers starting from a *minimal skill level* (from 1 to 5)
 |===
 
-=== THE GLOBAL PIE VIEW
+=== THE PORTFOLIO PIE CHART
 This sector diagram seeks to summarize on a single diagram, the quality of the portfolio on the 3 dimensions currently analyzed by Fitzhì :
 
 * the Staff coverage

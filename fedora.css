@@ -35,8 +35,17 @@ h1 {
   font-family:"Montserrat",sans-serif;
 }
 
-h2,h3,h4,h5,h6 {
-  color:var(--secondarycolor) !important;
+h2 {
+  background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  font-family:"Montserrat",sans-serif;
+  font-size: 40px;
+}
+
+h3,h4,h5,h6 {
+  color:var(--color-selected) !important;
   font-family:"Montserrat",sans-serif;
 }
 
