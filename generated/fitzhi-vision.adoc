@@ -1,6 +1,7 @@
 :site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
+:stem:
 
 == OUR AMBITION
 Fitzhì aims to gather all technical data regarding your application portfolio into *ONE* single portal.
@@ -47,6 +48,22 @@ image::{site}/assets/img/vision/skill-tiles.png[width=100%]
 * It is possible to include, or not, the *external* developers inside the analysis.
 * It is possible as well to filter your developers starting from a *minimal skill level* (from 1 to 5)
 |===
+
+This chart is processed by evaluating the activity for each skill. We currently limit the view to the 9 most important skills, as declared in your portfolio, and a 10th gathering this rest. 
+
+This limitation to 10, can by setup in the Front application. +
+The size of each tile is proportional to this underlying activity. 
+
+[.left-center]
+image::{site}/assets/img/vision/activity-rate.png[]
+
+Then we evaluate the number of active developers identified in the application. You can filter the chart with, or without, the external developers.
+[.left-center]
+image::{site}/assets/img/vision/staff-rate.png[]
+
+The color is chosen based on the risk evaluated as below.
+[.left-center]
+image::{site}/assets/img/vision/color-risk.png[]
 
 === THE PORTFOLIO PIE CHART
 This sector diagram seeks to summarize on a single diagram, the quality of the portfolio on the 3 dimensions currently analyzed by Fitzhì :

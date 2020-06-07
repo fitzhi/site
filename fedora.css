@@ -57,7 +57,7 @@ blockquote{color:var(--linkcoloralternate) !important}
 .quoteblock blockquote:before{color:var(--linkcoloralternate)}
 
 code {
-  color:var(--black);
+  color: var(--black);
   background-color: #F7F7F8 !important
 }
 

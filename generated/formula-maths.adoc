@@ -1,0 +1,12 @@
+= Marthematical equations displayed on the website
+Frédéric VIDAL
+:stem: 
+
+stem:[obrace("activity"(color(blue)(skillunderset(i)( ))) = sum_(skill=(color(blue)(skillunderset(i)( )))) ("size of file"))^"Activity in KO detected in a skill"]
+
+stem:[obrace("staff"(color(blue)(skillunderset(i)( ))) = sum_(skill=(color(blue)(skillunderset(i)( )))) ("staff count"))^"Number of developers active in a skill"]
+
+stem:[
+    color(darkGreen)("Risk level") = (( 1 - ("staff"(color(blue)(skillunderset(i)( )))) / ( "activity"(color(blue)(skillunderset(i)( ))) xx theta) ) xx 10 )
+]
+where stem:[theta] is the optimal number of developers per 1000 KO of code.
