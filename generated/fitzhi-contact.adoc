@@ -1,7 +1,8 @@
 :site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
-:stem:
+
+== OUR AMBITION
 
 [cols="1a,10a", frame="no", grid="rows", width="500px"]
 |===
