@@ -1,10 +1,10 @@
+== CONTACT
 :site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
-= CONTACT
 
-== CONTACT
+=== CONTACT
 
 [cols="1a,10a", frame="no", grid="rows", width="500px"]
 |===
@@ -14,13 +14,13 @@ image::{site}/assets/img/zhi.png[width=50px]
 
 |
 [.text-left]
-is our logo because it means quality in Chinese, in one unique sign, concise, + 
+This ideogram is our logo because it means quality in Chinese, designed in one single sign, unique, concise, + 
 and because a man _(we figure out, he's a developer)_ is standing on it. 
 |===
 
-Skilled people matters in all project and we're looking for skilled developers. +
+Skilled people matters for all projects and of course we're looking for skilled developers. +
 Fitzhi is an open-source project under the AGPL-3.0 licence. And we are looking for contributors. 
 
-You are all welcome to join us and you are welcome to contact the link:mailto:team@fitzhi.com[team].
+You are all welcome to join us and you are warmly invited to contact the link:mailto:team@fitzhi.com[team].
 
-For any partnership and any business related matter, you can contact a link:mailto:team@fitzhi.com[brave old developer] hebind Fitzhì.
+For any partnership or any business related matter, you can contact a link:mailto:team@fitzhi.com[brave old developer] behind Fitzhì.
