@@ -1,10 +1,8 @@
-== CONTACT
 :site: http://www.fitzhi.com
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
-
-=== CONTACT
+== CONTACT
 
 [cols="1a,10a", frame="no", grid="rows", width="500px"]
 |===
