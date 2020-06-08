@@ -49,10 +49,10 @@ image::{site}/assets/img/vision/skill-tiles.png[width=100%]
 * It is possible as well to filter your developers starting from a *minimal skill level* (from 1 to 5)
 |===
 
-This chart is processed by evaluating the activity for each skill. We currently limit the view to the 9 most important skills, as declared in your portfolio, and a 10th gathering this rest. 
+This chart is processed by evaluating the activity for each skill. We currently limit the view to the 9 most important skills, as declared in your portfolio, plus a 10th gathering the rest. 
 
-This limitation to 10, can by setup in the Front application. +
-The size of each tile is proportional to this underlying activity. 
+This limitation to 10 entries can by setup in the Front application. +
+The size of each skill-tile is proportional to its underlying activity. 
 
 [.left-center]
 image::{site}/assets/img/vision/activity-rate.png[]

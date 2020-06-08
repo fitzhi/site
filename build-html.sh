@@ -4,4 +4,5 @@ mv generated/*.png .
 cat header.html nav.html generated/fitzhi-installation.html footer.html > installation.html
 cat header.html nav.html generated/fitzhi-documentation.html footer.html > documentation.html
 cat header.html nav.html generated/fitzhi-vision.html footer.html > vision.html
+cat header.html nav.html generated/fitzhi-contact.html footer.html > contact.html
 

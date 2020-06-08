@@ -8,5 +8,6 @@ stem:[obrace("staff"(color(blue)(skillunderset(i)( ))) = sum_(skill=(color(blue)
 
 stem:[
     color(darkGreen)("Risk level") = (( 1 - ("staff"(color(blue)(skillunderset(i)( )))) / ( "activity"(color(blue)(skillunderset(i)( ))) xx theta) ) xx 10 )
+
 ]
 where stem:[theta] is the optimal number of developers per 1000 KO of code.
