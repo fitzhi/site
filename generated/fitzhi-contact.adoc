@@ -2,7 +2,9 @@
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
-== OUR AMBITION
+= CONTACT
+
+== CONTACT
 
 [cols="1a,10a", frame="no", grid="rows", width="500px"]
 |===
