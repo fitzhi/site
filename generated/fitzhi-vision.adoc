@@ -1,4 +1,4 @@
-:site: http://www.fitzhi.com
+:site: 
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 :stem:
@@ -82,7 +82,7 @@ image::{site}/assets/img/vision/global-pie.png[width=40%]
 [cols="1a,3a", frame="no", grid="rows"]
 |===
 |
-image::{site}//assets/img/vision/tech-medal.png[200, 192]
+image::{site}/assets/img/vision/tech-medal.png[200, 192]
 |
 Each project declared in Fitzhì, has an IT medal, which synthesizes its quality valuation. +
 This medal has 3 dimensions : 
@@ -118,10 +118,10 @@ image::{site}/assets/img/vision/staff-coverage.png[width=40%]
 Fitzhì links each application with its Sonar(TM) perspective. It processes a *unique* note, based on metrics affected by their weights. Our application Fitzhì had a note of 72%, long time ago in the past.
 
 [.text-center]
-image::{site}//assets/img/vision/project-form.png[width=50%]
+image::{site}/assets/img/vision/project-form.png[width=50%]
 
 [.text-center]
-image::{site}//assets/img/vision/project-sonar.png[width=50%]
+image::{site}/assets/img/vision/project-sonar.png[width=50%]
 
 === THE DESIGN
 Automatic tool cannot completly evaluate your applications. +
@@ -129,7 +129,7 @@ More or less regularly, experts audit your applications and assess their qualiti
 In the example below, the `General organization`, the `Build process` and the `Documentation` were considered important for evaluating an application. We could add `Performance`, `Technical design`...
 
 [.text-center]
-image::{site}//assets/img/vision/project-audit.png[width=50%]
+image::{site}/assets/img/vision/project-audit.png[width=50%]
 
 In the end a score is assigned which summarizes the technical evaluation of an application according to expert opinions.
 
