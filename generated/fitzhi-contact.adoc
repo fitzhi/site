@@ -1,4 +1,4 @@
-:site: http://www.fitzhi.com
+:site: 
 // :site: file:///users/frvidal/work/projets/site/
 :nofooter:
 
