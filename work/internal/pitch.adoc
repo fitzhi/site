@@ -1,0 +1,42 @@
+= Ordinary people
+
+== What is Fitzhì ?
+
+A tropical island ?
+
+== How does this work ?
+
+Nobody knows. It's probably a miracle.
+
+
+= Monsieur tout le monde
+
+== C'est quoi Fitzhì ?
+
+Fitzhì est un système développé par une startup Française, qui permet de mesurer et de piloter, le niveau technique d'une société, du point de vue de son système d'information. 
+Fitzhì répond à des questions comme :
+
+- Si je pouvais donner une moyenne générale à mes applications, à toutes mes applications informatiques, quelle note donnerais-je donner ? _(ce qu'on l'on appelle le patrimoine dans notre métier)_
+- Et cette note technique, si elle existait... elle s'améliore ? Ou elle se dégrade ?
+- Mes équipes ? Quel est le niveau technique de mes développeurs ? Quel est le niveau technique des développeurs intérimaires qui travaillent avec vous ?
+- Ce niveau technique s'améliore-t'il ? Ou baisse-t'il ? _(Naturellement le niveau technique d'un développeur ne se dégrade dans la réalité. Evidemment tout le monde s'améliorer. Cet indicateur mesure en fait le remplacement des développeurs expérimentés qui sont partis ou qui sont promus par des juniors qu'on vient d'embaucher. Si ce renouvellement est plus rapide que le "vieillissement naturel" des troupes, on peut en conclure alors que le niveau baisse...)_
+- Quels sont les développeurs **critiques** dans ma société ? _(les key people... Si ma société est un échiquier, quels seraient les pièces maitresses, les tours, les fous, les cavaliers)_
+- Quelle est la répartition technologique de mes applications ? _(En informatique il existe plusieurs systèmes de développement, avec leur langage et leurs spécificités)_
+- La compétence de mes équipes couvrent-elles techniquement toutes nos applications ? _(Y a t'il par exemple un désert ? Par désert j'entends une partie des applications sur laquelle plus personne n'a travaillé, un programme orphelin)
+
+== Comment marche Fitzhì ?
+
+Fitzhì demande très peu de saisie. Parce que le temps est compté pour tout le monde. Personne n'a le temps de construire des tableaux de bord comme ceux que Fitzhì construit. Fitzhì agrège des informations qui sont produites par les développeurs et leurs outils. +
+La principale source d'information de Fitzhì est un outil qui s'appelle **Git**. Git, c'est la bibliothèque des programmes. +
+Avec des différences importantes : il y a plusieurs différences essentiels entre un livre dans une bibliothèque, et un programme dans Git:
+
+- Un livre, ça a souvent un seul auteur. Chaque programme est une oeuvre collective.
+- Le livre ne se souvient pas de l'ordre dans lequel il a été écrit. Dans Git, on peut voir chronologiquement toutes les contributions réalisées par tous les développeurs
+- Enfin, le livre est un miroir du résultat final. Dans Git, tu as toute l'histoire, toutes les versions, toutes les étapes qui ont conduit au résultat final. Il existe la ligne droite vers le programme final, et il y a la ligne poursuivie par les développeurs pour arriver à ce résultat. Tous les lacets, toutes les circovonlutions tracés en chemin, signalent du temps perdu, donc d'une certaine manière de l'argent perdu.  
+
+Avec Fitzhì tu peux analyser et rejouer les parties passées, et réféchir à comment améliorer les parties en cours. +
+
+Voilà, + 
+Je suis assez content de moi parce que j'ai pu réfépter 10 fois Fitzhì pendant cette présentations, +
+Opps non ! En fait, 11 fois en fait... :-)
+
