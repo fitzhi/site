@@ -62,27 +62,56 @@
 <body class="article">
     <h1 style="visibility: hidden;">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
     <div id="content">
-<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-    <a class="navbar-brand" href="#"><span class="gradient logo-small">质 Fitzhì</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+
+    <a class="navbar-brand" href="/index.html">
+        <span class="gradient logo-small">质 Fitzhì</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationMenus"
+        aria-expanded="false" 
+        aria-controls="navbarsExampleDefault"
+        aria-label="Toggle navigation">
+        <!--
         <span class="navbar-toggler-icon"></span>
+        -->
+        N
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+    <div class="collapse navbar-collapse" id="navigationMenus">
         <ul class="navbar-nav mr-auto">
-            <li id="menuIndex" class="nav-item active">
-                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+
+            <li id="menuHome" class="nav-item">
+                <a class="nav-link text-light" href="/index.html">Home</a>
             </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link text-light" 
+                    data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Dashboards
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item text-success menu" href="#rising-skyline">Rising skyline</a>
+                  <a class="dropdown-item text-success menu" href="#skills-treechart">Skills treechart</a>
+                  <a class="dropdown-item text-success menu" href="#skills-coverage">Skills coverage</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item text-success menu" href="#project-dashboard">Project dashboard</a>
+                </div>
+            </li>
+
             <li id="menuInstallation" class="nav-item">
-                <a class="nav-link" href="./installation.html">Install</a>
+                <a class="nav-link text-light" href="/installation.html">Install</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact</a>
+                <a class="nav-link text-light" href="/contact.html">Contact</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://fitzhi.github.io/spoq">Run</a>
+                <a class="nav-link text-light" target="_blank" href="https://fitzhi.github.io/spoq">Run</a>
             </li>
+        </ul>
     </div>
 </nav>
 <div class="sect1">
@@ -216,7 +245,7 @@ The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare
 </div>
 </div>
 <div class="paragraph">
-<p>To test if the server is started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:8080/api/test/ping</a> , or <a href="http://<a href="#hostname">[hostname]</a>:8080/api/test/ping" class="bare">http://<a href="#hostname">[hostname]</a>:8080/api/test/ping</a> <br/>
+<p>To test if the server is started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:8080/api/test/ping</a> , or <a href="http://hostname:8080/api/test/ping" class="bare">http://hostname:8080/api/test/ping</a> <br/>
 A <strong>Pong</strong> response is expected.</p>
 </div>
 </div>
@@ -319,6 +348,8 @@ allowedOrigins=http://localhost:4200,https://spoq.io</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_the_sonar_configuration">THE SONAR CONFIGURATION</h4>
+<div class="sect4">
+<h5 id="_allowing_the_fitzhi_origin_into_sonar">ALLOWING THE FITZHI ORIGIN INTO SONAR</h5>
 <div class="paragraph">
 <p>Sonar server is deployed on a Tomcat server.<br/>
 Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file <code><strong>web.xml</strong></code>.</p>
@@ -333,29 +364,110 @@ Your can add the lines below to your <code>web.xml</code> file. We guess that th
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;filter&gt;
-  &lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
-  &lt;filter-class&gt;org.apache.catalina.filters.CorsFilter&lt;/filter-class&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;cors.allowed.origins&lt;/param-name&gt;
-    &lt;param-value&gt;http://localhost:4200, https://spoq.io&lt;/param-value&gt;
-  &lt;/init-param&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;cors.allowed.methods&lt;/param-name&gt;
-    &lt;param-value&gt;GET,POST,HEAD,OPTIONS,PUT&lt;/param-value&gt;
-  &lt;/init-param&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;cors.allowed.headers&lt;/param-name&gt;
-    &lt;param-value&gt;Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers&lt;/param-value&gt;
-  &lt;/init-param&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;cors.exposed.headers&lt;/param-name&gt;
-    &lt;param-value&gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&lt;/param-value&gt;
-  &lt;/init-param&gt;
+	&lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
+	&lt;filter-class&gt;org.apache.catalina.filters.CorsFilter&lt;/filter-class&gt;
+	&lt;init-param&gt;
+		&lt;param-name&gt;cors.allowed.origins&lt;/param-name&gt;
+		&lt;param-value&gt;http://localhost:4200, https://spoq.io&lt;/param-value&gt;
+	&lt;/init-param&gt;
+	&lt;init-param&gt;
+		&lt;param-name&gt;cors.allowed.methods&lt;/param-name&gt;
+		&lt;param-value&gt;GET,POST,HEAD,OPTIONS,PUT&lt;/param-value&gt;
+	&lt;/init-param&gt;
+	&lt;init-param&gt;
+		&lt;param-name&gt;cors.allowed.headers&lt;/param-name&gt;
+		&lt;param-value&gt;Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers&lt;/param-value&gt;
+	&lt;/init-param&gt;
+	&lt;init-param&gt;
+		&lt;param-name&gt;cors.exposed.headers&lt;/param-name&gt;
+		&lt;param-value&gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&lt;/param-value&gt;
+	&lt;/init-param&gt;
 &lt;/filter&gt;
 &lt;filter-mapping&gt;
-  &lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
-  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+	&lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;
+	&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+For some unexplained reason, some versions of Sonar are inert with respect to these parameters. The installation of a reverse proxy, such as NGINX becomes essential.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_allowing_the_fitzhi_origin_from_sonar">ALLOWING THE FITZHI ORIGIN FROM SONAR</h5>
+<div class="paragraph">
+<p>First, you need to download <a href="http://nginx.org/en/docs/njs/index.html" target="_blank" rel="noopener">NGINX</a> if you have not.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+NGINX is not a prerequisite, you can use either Apache, or Haproxy, or any other solution as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After installation, the configuration is very simple. You just have to configure the <strong>nginx.conf</strong> file as below.
+With this setting, your appplication will be available at <a href="http://localhost:8081" class="bare">http://localhost:8081</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">server {
+	listen       8081;
+	server_name  localhost;
+
+	location / {
+		root   /the/path/to/your/application/dir;
+		index  index.html index.htm;
+	}
+
+	location /sonarqube {
+		proxy_pass http://localhost:9000/sonarqube;
+
+		proxy_set_header Host $http_host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+	}
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at <a href="http://localhost:8081/sonarqube" class="bare">http://localhost:8081/sonarqube</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We assume in this configuration file that your Sonar instance is located behind the url <a href="http://localhost:9000/sonarqube" class="bare">http://localhost:9000/sonarqube</a>. Your <strong>sonar.properties</strong> has these settings :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json"># Web context. When set, it must start with forward slash (for example /sonarqube).
+# The default value is root context (empty value).
+sonar.web.context=/sonarqube
+# TCP port for incoming HTTP connections. Default value is 9000.
+sonar.web.port=9000</code></pre>
+</div>
 </div>
 </div>
 </div>

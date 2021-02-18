@@ -12,39 +12,39 @@ The architecture of Fitzhì is quite simple.
 [graphviz, "main"]
 ....
 digraph G {
-  { 
-    subgraph clusterFrontend { 
-        margin=20
-        label="Frontend"
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-        f [fillcolor="#28a745" label="Angular frontend"]
-        s1 [fillcolor=lightGrey label="Sonar server 1"]
-        sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
-    }
+	{ 
+		subgraph clusterFrontend { 
+				margin=20
+				label="Frontend"
+				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+				f [fillcolor="#28a745" label="Angular frontend"]
+				s1 [fillcolor=lightGrey label="Sonar server 1"]
+				sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
+		}
 
-    subgraph clusterBackend { 
-        margin=30
-        label="backend"
+		subgraph clusterBackend { 
+				margin=30
+				label="backend"
 
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-        b [fillcolor="#28a745" label="Spring Boot backend"]
+				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+				b [fillcolor="#28a745" label="Spring Boot backend"]
 
-        node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
-        d [fillcolor=grey label=<<font point-size="16">Fitzhì data</font><br/>in JSON format>]
-        
-        node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
-        temp [fillcolor=whiteSmoke label=<<I>GIT local repository<br/>(in temp folders)</I>>]
+				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
+				d [fillcolor=grey label=<<font point-size="16">Fitzhì data</font><br/>in JSON format>]
+				
+				node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
+				temp [fillcolor=whiteSmoke label=<<I>GIT local repository<br/>(in temp folders)</I>>]
 
-        node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
-        git [label="GitHub, GitLab..."]
-    }
-  }
-  sn -> f [color="grey" style="dotted"]
-  s1 -> f
-  f -> {b} [dir=both]
-  b -> temp [color="grey" style="dotted"]
-  b -> {d}
-  git -> b
+				node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
+				git [label="GitHub, GitLab..."]
+		}
+	}
+	sn -> f [color="grey" style="dotted"]
+	s1 -> f
+	f -> {b} [dir=both]
+	b -> temp [color="grey" style="dotted"]
+	b -> {d}
+	git -> b
 
 }
 ....
@@ -105,7 +105,7 @@ To start the back-end fitzhì, just type:
 ./run.sh
 ----
 
-To test if the server is started, just visit the url http://localhost:8080/api/test/ping[window=_blank] , or http://<<hostname>>:8080/api/test/ping  +
+To test if the server is started, just visit the url http://localhost:8080/api/test/ping[window=_blank] , or http://hostname:8080/api/test/ping  +
 A **Pong** response is expected.
 
 
@@ -168,6 +168,9 @@ allowedOrigins=http://localhost:4200,https://spoq.io
 ----
 
 ==== THE SONAR CONFIGURATION
+
+===== ALLOWING THE FITZHI ORIGIN INTO SONAR
+
 Sonar server is deployed on a Tomcat server. +
 Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file `*web.xml*`.
 
@@ -179,33 +182,76 @@ https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter[You can 
 [source, xml]
 ----
 <filter>
-  <filter-name>CorsFilter</filter-name>
-  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-  <init-param>
-    <param-name>cors.allowed.origins</param-name>
-    <param-value>http://localhost:4200, https://spoq.io</param-value>
-  </init-param>
-  <init-param>
-    <param-name>cors.allowed.methods</param-name>
-    <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
-  </init-param>
-  <init-param>
-    <param-name>cors.allowed.headers</param-name>
-    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
-  </init-param>
-  <init-param>
-    <param-name>cors.exposed.headers</param-name>
-    <param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
-  </init-param>
+	<filter-name>CorsFilter</filter-name>
+	<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	<init-param>
+		<param-name>cors.allowed.origins</param-name>
+		<param-value>http://localhost:4200, https://spoq.io</param-value>
+	</init-param>
+	<init-param>
+		<param-name>cors.allowed.methods</param-name>
+		<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+	</init-param>
+	<init-param>
+		<param-name>cors.allowed.headers</param-name>
+		<param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+	</init-param>
+	<init-param>
+		<param-name>cors.exposed.headers</param-name>
+		<param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
+	</init-param>
 </filter>
 <filter-mapping>
-  <filter-name>CorsFilter</filter-name>
-  <url-pattern>/*</url-pattern>
+	<filter-name>CorsFilter</filter-name>
+	<url-pattern>/*</url-pattern>
 </filter-mapping>
 
 ----
 
+WARNING: For some unexplained reason, some versions of Sonar are inert with respect to these parameters. The installation of a reverse proxy, such as NGINX becomes essential.
 
+===== ALLOWING THE FITZHI ORIGIN FROM SONAR
+
+First, you need to download link:http://nginx.org/en/docs/njs/index.html[NGINX, window=_blank] if you have not. 
+
+TIP: NGINX is not a prerequisite, you can use either Apache, or Haproxy, or any other solution as well.
+
+After installation, the configuration is very simple. You just have to configure the **nginx.conf** file as below. 
+With this setting, your appplication will be available at http://localhost:8081
+[source, json]
+----
+server {
+	listen       8081;
+	server_name  localhost;
+
+	location / {
+		root   /the/path/to/your/application/dir;
+		index  index.html index.htm;
+	}
+
+	location /sonarqube {
+		proxy_pass http://localhost:9000/sonarqube;
+		
+		proxy_set_header Host $http_host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+	}
+}
+----
+
+CAUTION: The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at http://localhost:8081/sonarqube 
+
+We assume in this configuration file that your Sonar instance is located behind the url http://localhost:9000/sonarqube. Your **sonar.properties** has these settings :
+
+[source, json]
+----
+# Web context. When set, it must start with forward slash (for example /sonarqube).
+# The default value is root context (empty value).
+sonar.web.context=/sonarqube
+# TCP port for incoming HTTP connections. Default value is 9000.
+sonar.web.port=9000
+----
 
 === FIRST START OF FITZHI
 
