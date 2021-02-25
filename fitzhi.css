@@ -82,7 +82,7 @@ ul.lateral-coins li {
 }
 
 img.skill-tiles {
-	max-height: 600px;
+	max-height: 500px;
 	width: auto;
 }
 
@@ -118,6 +118,11 @@ img.rising-skyline {
 h1.head-title {
 	font-size: 50px;
 	padding-top: 100px;
-	padding-bottom: 50px;
+	padding-bottom: 10px;
 
+}
+
+img.project-audit {
+	width: 80%;
+	height: auto;
 }
