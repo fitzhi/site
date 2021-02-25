@@ -1,63 +1,123 @@
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
-body {
-  padding-top: 3.5rem;
+#nav-placeholder {
+	height: 5.5rem;
 }
 
 :root {
-  --color-selected: #28a745; 
-  --color-error: darkred;
+	--color-selected: #198754;
+	--color-error: #dc3545;
 }
 
 span.logo-big {
-  font-size: 100px;
+	font-size: 120px;
 }
 
 span.logo-small {
-  font-size: 20px;
-  text-align: center;
+	font-size: 35px;
+	text-align: center;
+}
+
+#navigationMenus {
+	font-size: 30px;
 }
 
 .gradient {
-  background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-span.title-big {
-  animation: pulse 20s;
-  color: var(--color-selected);
-  font-size: 40px;
+	background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 @keyframes pulse {
-  0% {
-    color:var(--color-error);
-    font-size: 39px;
-  }
-  100% {
-    color: var(--color-selected);
-    font-size: 40px;
-  }
+	0% {
+		color:var(--color-error);
+		font-size: 39px;
+	}
+	100% {
+		color: var(--color-selected);
+		font-size: 40px;
+	}
 }
 
 #install {
-  top: 50px;
-  bottom: 10;
+	top: 50px;
+	bottom: 10;
 }
 
 div.my-footer {
-  position: fixed;
-  bottom: 0;
-  background-color: whitesmoke;
-  height: 35px;
-  width: 100%;
-  margin-bottom: 5px;
-  margin-top: 5px;
+	position: fixed;
+	bottom: 0;
+	background-color: whitesmoke;
+	height: 35px;
+	width: 100%;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 table.my-footer {
-  margin-left: 10px;
-  margin-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.menu {
+	font-size: 24px;
+}
+
+img.chart {
+	width: 100%;
+	height: 100%;
+}
+
+div.text {
+	font-size: 24px;
+	text-align: justify;
+}
+
+div.text span.bold {
+	font-weight: 600;
+}
+
+ul.lateral-coins li {
+	margin-bottom: 30px;
+}
+
+img.skill-tiles {
+	max-height: 600px;
+	width: auto;
+}
+
+div.equation {
+	padding: 30px;
+}
+
+div.equation img {
+	margin: 0 auto;
+}
+
+div.project-dashboard {
+	height:350px;
+	padding: 10px;
+}
+
+img.staff-coverage, img.project-form, img.project-sonar {
+	height: 30%; 
+	margin-top: 20px;
+	max-width: 100%;;
+}
+
+img.project-form, img.project-sonar {
+	height: 300px; 
+	margin-top: 20px;
+}
+
+img.rising-skyline {
+	width: auto;
+	min-height: 600px;
+}
+
+h1.head-title {
+	font-size: 50px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+
 }
