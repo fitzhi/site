@@ -81,7 +81,7 @@ ul.lateral-coins li {
 	margin-bottom: 30px;
 }
 
-img.skill-tiles, img.tech-medal, img.project-audit {
+img.skill-tiles, img.tech-medal, img.project-audit, div.equation img, div.global-pie img {
 	object-fit: scale-down;
 	width: 100%;
 	height: auto;
