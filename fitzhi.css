@@ -82,7 +82,7 @@ ul.lateral-coins li {
 }
 
 img.skill-tiles, img.tech-medal, img.project-audit {
-	object-fit: cover;
+	object-fit: scale-down;
 	width: 100%;
 	height: auto;
 }
