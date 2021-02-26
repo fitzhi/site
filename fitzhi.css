@@ -78,7 +78,7 @@ div.text span.bold {
 }
 
 ul.lateral-coins li {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 div.equation img {
@@ -145,4 +145,8 @@ h1.head-title {
 	padding-top: 100px;
 	padding-bottom: 10px;
 
+}
+
+mark {
+	background-color: lightgreen !important;
 }
