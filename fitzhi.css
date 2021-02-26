@@ -81,18 +81,17 @@ ul.lateral-coins li {
 	margin-bottom: 30px;
 }
 
-img.skill-tiles, img.tech-medal, img.project-audit, div.equation img, div.global-pie {
+img.skill-tiles, img.tech-medal, img.project-audit, div.equation img, img.global-pie {
 	object-fit: scale-down;
 	width: 100%;
 	height: auto;
 }
 
-@media (min-width: 576px) { 
+@media (max-width: 576px) { 
 	img.staff-coverage, img.project-form, img.project-sonar {
 		object-fit: scale-down;
 		width: 100%;
 		height: auto;
-		background-color: #198754;
 	}
 	
 }
@@ -108,7 +107,6 @@ img.skill-tiles, img.tech-medal, img.project-audit, div.equation img, div.global
 		object-fit: scale-down;
 		width: 70%;
 		height: auto;
-		background-color: red;
 	}
 }
 
