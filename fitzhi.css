@@ -141,9 +141,10 @@ img.rising-skyline {
 }
 
 p.head-title {
-	font-size: 50px;
+	font-size: 200%;
 	padding-top: 100px;
 	padding-bottom: 10px;
+	width: 100%;
 
 }
 
