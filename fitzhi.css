@@ -81,7 +81,8 @@ ul.lateral-coins li {
 	margin-bottom: 30px;
 }
 
-img.skill-tiles, img.tech-medal {
+img.skill-tiles, img.tech-medal, img.project-audit {
+	object-fit: cover;
 	width: 100%;
 	height: auto;
 }
@@ -115,9 +116,4 @@ h1.head-title {
 	padding-top: 100px;
 	padding-bottom: 10px;
 
-}
-
-img.project-audit {
-	width: 80%;
-	height: auto;
 }
