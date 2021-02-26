@@ -101,9 +101,8 @@ div.project-dashboard {
 }
 
 img.staff-coverage, img.project-form, img.project-sonar {
+	width: 100%;;
 	height: auto; 
-	margin-top: 10px;
-	max-width: 80%;;
 }
 
 img.rising-skyline {
