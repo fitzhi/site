@@ -1,11 +1,16 @@
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
-#nav-placeholder {
-	height: 5.5rem;
-}
-
 :root {
 	--color-selected: #198754;
 	--color-error: #dc3545;
+	--nav-height: 100px;
+}
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+#nav-placeholder {
+	height: var(--nav-height);
+}
+
+#rising-skyline, #skills-treechart, #portfolio-pie-chart {
+	padding-top: var(--nav-height);
 }
 
 span.logo-big {
@@ -140,13 +145,12 @@ img.rising-skyline {
 	min-height: 500px;
 }
 
-p.head-title {
+h1.head-title {
 	font-size: 50px;
-	padding-top: 100px;
 	padding-bottom: 10px;
-	width: 100%;
 }
 
 mark {
 	background-color: lightgreen !important;
 }
+
