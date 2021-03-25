@@ -172,3 +172,8 @@ img.fitzhi-screen-copy:hover {
 	height:60px;
 	line-height: 60px;
 }
+
+/* To overide a setting for asciidoctor.css margin-left: 1.5em */
+#navigationMenus ul {
+	margin-left: 0;
+}
