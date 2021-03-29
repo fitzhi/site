@@ -4,6 +4,14 @@
 	--nav-height: 100px;
 }
 
+p.good {
+	color: var(--color-selected);
+}
+
+p.bad {
+	color: var(--color-error);
+}
+
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
 #nav-placeholder {
 	height: var(--nav-height);
@@ -59,39 +67,20 @@ div.my-footer {
 	margin-top: 5px;
 }
 
-table.my-footer {
-	margin-left: 10px;
-	margin-right: 10px;
-}
 
 .menu {
 	font-size: 24px;
 }
 
-img.chart {
-	width: 100%;
-	height: 100%;
-}
-
-div.text {
-	font-size: 24px;
-	text-align: justify;
-}
-
 div.text span.bold {
 	font-weight: 600;
 }
-
+*/
 ul.lateral-coins li {
 	margin-bottom: 10px;
 }
 
-div.equation img {
-	object-fit: cover;
-	width: 100%;
-	height: auto;
-}
-
+/*
 img.skill-tiles, img.tech-medal, img.project-audit {
 	object-fit: scale-down;
 	width: 100%;
@@ -103,7 +92,7 @@ img.global-pie {
 	width: 80%;
 	height: auto;
 }
-
+*/
 @media (max-width: 576px) { 
 	img.staff-coverage, img.project-form, img.project-sonar {
 		object-fit: scale-down;
@@ -140,16 +129,12 @@ div.project-dashboard {
 	padding: 10px;
 }
 
+/*
 img.rising-skyline {
 	width: auto;
 	min-height: 500px;
 }
-
-h1.head-title {
-	font-size: 50px;
-	padding-bottom: 10px;
-}
-
+*/
 mark {
 	background-color: lightgreen !important;
 }
@@ -171,4 +156,8 @@ img.fitzhi-screen-copy:hover {
 /* To overide a setting for asciidoctor.css margin-left: 1.5em */
 #navigationMenus ul {
 	margin-left: 0;
+}
+
+ul.question li {
+	font-style: italic;
 }
