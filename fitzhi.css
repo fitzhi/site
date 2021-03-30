@@ -17,8 +17,10 @@ p.bad {
 	height: var(--nav-height);
 }
 
-#rising-skyline, #skills-treechart, #portfolio-pie-chart, #project-dashboard {
+#rising-skyline, #skills-treechart, #portfolio-pie-chart, #project-dashboard, 
+#project-dashboard-staff, #project-dashboard-sonar, #project-dashboard-audit    {
 	padding-top: var(--nav-height);
+	height: 1px;
 }
 
 span.logo-big {
@@ -75,45 +77,9 @@ div.my-footer {
 div.text span.bold {
 	font-weight: 600;
 }
-*/
+
 ul.lateral-coins li {
 	margin-bottom: 10px;
-}
-
-/*
-img.skill-tiles, img.tech-medal, img.project-audit {
-	object-fit: scale-down;
-	width: 100%;
-	height: auto;
-}
-
-img.global-pie {
-	object-fit: scale-down;
-	width: 80%;
-	height: auto;
-}
-*/
-@media (max-width: 576px) { 
-	img.staff-coverage, img.project-form, img.project-sonar {
-		object-fit: scale-down;
-		width: 100%;
-		height: auto;
-	}
-	
-}
-
-@media (min-width: 768px) { 
-	img.staff-coverage {
-		object-fit: scale-down;
-		width: 50%;
-		height: auto;
-	}
-
-	img.project-form, img.project-sonar {
-		object-fit: scale-down;
-		width: 70%;
-		height: auto;
-	}
 }
 
 div.equation {
@@ -129,12 +95,6 @@ div.project-dashboard {
 	padding: 10px;
 }
 
-/*
-img.rising-skyline {
-	width: auto;
-	min-height: 500px;
-}
-*/
 mark {
 	background-color: lightgreen !important;
 }
