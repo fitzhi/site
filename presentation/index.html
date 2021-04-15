@@ -78,7 +78,7 @@
 						<script>
 							const color = d3.scaleOrdinal(d3.schemePaired);
 					
-							fetch('spring-framework-sunburst.json', { method: 'GET', headers: {"Content-Type": "application/json",
+							fetch('/presentation/spring-framework-sunburst.json', { method: 'GET', headers: {"Content-Type": "application/json",
 								Accept: "application/json"}, mode: 'cors', cache: 'default' })
 										.then(res => res.json()).then(data => {
 										Sunburst()
