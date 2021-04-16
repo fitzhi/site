@@ -13,30 +13,54 @@ The architecture of Fitzhì is quite simple.
 ....
 digraph G {
 	{ 
+		
+		subgraph clusterSonar1 {
+			margin=20
+			label="Host Sonar"
+			s1 [fillcolor=lightGrey shape=rectangle label="Sonar server 1"]
+		}
+
+		subgraph clusterSonarN { 
+			margin=20
+			label="Host Sonar (n)"
+			sn [fillcolor=whiteSmoke fontcolor=darkGrey shape=rectangle label="Sonar server (n)"]
+		}
+
+		subgraph codeFactor { 
+			label="Additional quality solution"
+
+			cf [fillcolor=whiteSmoke fontcolor=darkBlue shape=polygon sides=12 label=<<br/><font point-size="14">Additional Quality Solution(s)</font><br/><i><font point-size="10">such as codeFactor</font></i><br/> >]
+		}
+
 		subgraph clusterFrontend { 
-				margin=20
-				label="Frontend"
-				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-				f [fillcolor="#28a745" label="Angular frontend"]
-				s1 [fillcolor=lightGrey label="Sonar server 1"]
-				sn [fillcolor=whiteSmoke fontcolor=darkGrey label="Sonar server (n)"]
+			margin=40
+			label="Fitzhi Frontend"
+			node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+			f [fillcolor="#28a745" label="Angular frontend"]
+
+			node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
+			g [fillcolor=grey label=<<i><font point-size="12">local storage</font></i><br/>>]
 		}
 
 		subgraph clusterBackend { 
-				margin=30
-				label="backend"
+			margin=30
+			label="Fitzhi Backend"
 
-				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
-				b [fillcolor="#28a745" label="Spring Boot backend"]
+			node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=rectangle style=filled]
+			b [fillcolor="#28a745" label="Spring Boot backend"]
 
-				node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
-				d [fillcolor=grey label=<<font point-size="16">Fitzhì data</font><br/>in JSON format>]
-				
-				node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
-				temp [fillcolor=whiteSmoke label=<<I>GIT local repository<br/>(in temp folders)</I>>]
+			node [margin=0.1 fontcolor=black fontsize=12 width=0.5 shape=folder style=filled]
+			d [fillcolor=grey label=<<font point-size="16">Fitzhì data</font><br/>in JSON format>]
+			
+			node [margin=0.1 fontcolor=darkGrey fontsize=12 width=0.5 shape=folder style="filled"]
+			temp [fillcolor=whiteSmoke label=<<I>GIT local repository<br/>(in temp folders)</I>>]
+		}
 
-				node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
-				git [label="GitHub, GitLab..."]
+		subgraph clusterGit { 
+			margin=30
+			label="Projects Repositories"
+			node [margin=0.1 fontcolor=black fontsize=12 shape=rectangle width=0.5 style="filled"]
+			git [label="GitHub, GitLab..."]
 		}
 	}
 	sn -> f [color="grey" style="dotted"]
@@ -45,6 +69,8 @@ digraph G {
 	b -> temp [color="grey" style="dotted"]
 	b -> {d}
 	git -> b
+	f -> g
+	cf -> f
 
 }
 ....

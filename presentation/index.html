@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Presentation de Fitzhi</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="./fitzhi.css">
+		<link rel="stylesheet" href="./img-effect.css">
+
+		<!-- dependencies for the Project staff coverage -->
+		<script src="http://unpkg.com/d3"></script>
+		<script src="http://unpkg.com/sunburst-chart"></script>
+		<!--<script src="../../dist/sunburst-chart.js"></script>-->
+		<style>
+			body {
+				margin: 0
+			}
+			.sunburst-viz .text-contour {
+				stroke: none;
+			}
+		</style>
+
+		<!-- dependencies for the Project audit -->
+		<link rel="stylesheet" href="./project-audit.css">
+
+		<!-- dependencies for the Project badge -->
+		<link rel="stylesheet" href="./project-badge.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<div class="display: flex">
+							<p class="gradient logo-big m-0">质</p> 
+							<p class="text m-0">Fitzhi</p>
+						</div>
+					</section>
+					<section>
+						Fitzhi, son histoire
+					</section>
+					<section>
+						Dimensions du SI
+					</section>
+				</section>
+				<section>
+					<section>
+						Les effectifs
+					</section>
+					<section>
+						<img src="img/controlled-rising-skyline.gif"/>
+					</section>
+					<section>
+						<div style="display: inline-flex">
+							<img src="img/spring-framework.png" style="width: 50px; height: 50px;"/> 
+							<span style="font-size: smaller; margin-top: 20px; margin-left: 10px;">Zoom sur le projet Spring Framework</span>
+						</div> 
+						<!--
+						<div class="thumb">
+							<a href="#">
+								  <span>the optimist lives on</span>
+							</a>
+					  	</div>
+						-->
+						<img src="img/project-staff-list.png" style="width: 800px;"/>
+					</section>
+					<section>
+						<p>
+							Couverture staffing Projet
+						</p>
+						<div id="chart"></div>
+						<script>
+							const color = d3.scaleOrdinal(d3.schemePaired);
+					
+							fetch('spring-framework-sunburst.json', { method: 'GET', headers: {"Content-Type": "application/json",
+								Accept: "application/json"}, mode: 'cors', cache: 'default' })
+										.then(res => res.json()).then(data => {
+										Sunburst()
+											.data(data)
+											.width(500)
+											.height(500)
+											.minSliceAngle(2)
+											.label('location')
+											.size('importance')
+											.color('color')
+											(document.getElementById('chart'));
+									});
+						</script>
+					</section>							
+					<section>
+						<img src="img/skill-tiles.png"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>Les projets</p>
+						<div style="display: inline-flex;">
+							<img src="img/project-badge-3.png" style="width: 160px; height: 400px"/>
+						</div>
+					</section>
+					<section>
+						<p>Pour chaque projet, 3 sources</p>
+						<div style="display: inline-flex;">
+							<img src="img/project-badge-3.png" style="width: 160px; height: 400px"/>
+							<div style="margin-top: 40px; width: 200px; height: 300px; ">
+								<div class="badge-icon">
+									<img src="img/git.png" style="margin: 0"/>
+								</div>
+								<div class="badge-icon">
+									<img src="img/SonarQube.png" />
+								</div>
+								<div class="badge-icon">
+									<img src="img/expert.png" style="width: 80px; height: 80px"/>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						La vision Sonar
+						<img src="img/project-sonar.png" />
+					</section>
+					<section>
+						Audit, évaluation à dire d'experts
+						<div> <img src="img/project-audit.png" style="z-index: 1"/> </div>
+					</section>
+					<section>
+						Champ d'étude spécifique
+						<div> <img src="img/project-audit.png" style="z-index: 1"/> </div>
+						<div style="position: relative; ; border: solid 1px; width: 300px; height: 400px; margin-top: -30px; margin-left: 500px; background-color: white; z-index: 5;">
+							<table style="width: 100%">
+								<tr>
+									<td class="checkbox"><input type="checkbox" checked/></td>
+									<td class="subject-audit">General organisation</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox"/></td>
+									<td class="subject-audit">Technical design</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox"/></td>
+									<td class="subject-audit">Data organization & design</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox" checked/></td>
+									<td class="subject-audit">Build process</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox"/></td>
+									<td class="subject-audit">Virtualization</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox"/></td>
+									<td class="subject-audit">Security</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox"/></td>
+									<td class="subject-audit">Testability</td>
+								</tr>
+								<tr>
+									<td class="checkbox"><input type="checkbox" checked/></td>
+									<td class="subject-audit">General documentation</td>
+								</tr>
+							</table>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						Architecture et installation 
+					</section>
+					<section>
+						Architecture
+						<img src="img/main.png" />
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
