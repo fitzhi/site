@@ -38,6 +38,20 @@
 
 	<!-- Custom styles for this template -->
 	<link href="fitzhi.css" rel="stylesheet">
+
+	<!-- dependencies for the Project staff coverage -->
+	<script src="http://unpkg.com/d3"></script>
+	<script src="http://unpkg.com/sunburst-chart"></script>
+	<!--<script src="../../dist/sunburst-chart.js"></script>-->
+	<style>
+		body {
+			margin: 0
+		}
+		.sunburst-viz .text-contour {
+			stroke: none;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -245,7 +259,26 @@
 			</div>
 			<div class="row m-1 ml-md-5 mr-md-5">
 				<div class="col-12 col-md-4">
-					<img class="img-fluid" src="assets/img/vision/staff-coverage.png" />
+
+					<div id="chart"></div>
+					<script>
+						const color = d3.scaleOrdinal(d3.schemePaired);
+				
+						fetch('spring-framework-sunburst.json', { method: 'GET', headers: {"Content-Type": "application/json",
+							Accept: "application/json"}, mode: 'cors', cache: 'default' })
+									.then(res => res.json()).then(data => {
+									Sunburst()
+										.data(data)
+										.width(400)
+										.height(400)
+										.minSliceAngle(2)
+										.label('location')
+										.size('importance')
+										.color('color')
+										(document.getElementById('chart'));
+								});
+					</script>
+
 					<p class="good p-0 m-0">
 						The full green slices are packages with sufficient active developers in the company.
 					</p>
