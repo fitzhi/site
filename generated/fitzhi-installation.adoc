@@ -119,6 +119,8 @@ cd application
 |the data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). All of your updates will be stored there.
 |deploy/data/referential
 |the referential data which contains the static data used by the application
+|deploy/data/repos
+|the repository directory which contains all local cloned repository
 |===
 
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
