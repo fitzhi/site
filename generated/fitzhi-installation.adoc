@@ -120,7 +120,7 @@ cd application
 |deploy/data/referential
 |the referential data which contains the static data used by the application
 |deploy/data/repos
-|the directory which contains all local GIT repository
+|the directory which contains all local GIT repositories
 |===
 
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
