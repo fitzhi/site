@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158908694-1');
+    </script>
+
+    <title>Fitzhì : Quality IT assets portal and skills management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Frédéric VIDAL @Fitzhì" />
+    <meta name="description" content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal." />
+    <meta name="keywords" content="Open Source Skills Management software" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.ico" />
+    <meta name="theme-color" content="#563d7c" />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+	<!-- Custom styles for this template -->
+	<link href="/fitzhi.css" rel="stylesheet">
+	
+	<!-- Custom javascript -->
+	<script src="/fitzhi.js" crossorigin="anonymous"></script>
+
+    <link href="fedora.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body class="article">
+    <h1 style="visibility: hidden;">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
+    <div id="content">
+<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+
+    <a class="navbar-brand" href="/index.html">
+        <span class="gradient logo-small">质 Fitzhì</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationMenus"
+        aria-expanded="false" 
+        aria-controls="navbarsExampleDefault"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navigationMenus">
+        <ul class="navbar-nav mr-auto">
+
+            <li id="menuHome" class="nav-item">
+                <a class="nav-link text-light" href="/index.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link text-light" 
+                    data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Dashboards
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item text-success menu" href="/index.html#rising-skyline">Rising skyline</a>
+                  <a class="dropdown-item text-success menu" href="/index.html#skills-treechart">Skills treechart</a>
+                  <a class="dropdown-item text-success menu" href="/index.html#portfolio-pie-chart">Portfolio pie chart</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item text-success menu" href="#project-dashboard">Project dashboard</a>
+                </div>
+            </li>
+
+            <li id="menuInstallation" class="nav-item">
+                <a class="nav-link text-light" href="/installation.html">Install</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/evaluate.html">Run</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="sect1">
+<h2 id="_a_project_declared_in_fitzhì">A PROJECT DECLARED IN FITZHÌ</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="class-diagram-project.png" alt="class diagram project" width="966" height="564"/>
+</div>
+</div>
+<div class="paragraph">
+<p>A project in Fitzhì</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is defined by an <code><strong>id</strong></code>, and a <code><strong>name</strong></code>.</p>
+</li>
+<li>
+<p>has an url hosting the Git repository set in <code><strong>urlRepository</strong></code></p>
+</li>
+<li>
+<p>has a <code>connectionSettings</code> which might be equal to <strong>1</strong>, or <strong>2</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>1</strong>, the backend will connect to the Git SCM, with the given <code><strong>username</strong></code> and <code><strong>password</strong></code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The password will be encrypted in the project record. For this first release, we assume that the NSA, or a very skilled hacker, might be able to break this code. But we remind you as well that <strong>this projects file is stored on your file system on your own network</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If equal to <strong>2</strong>, the backend will connect to the Git SCM, using a settings file declared in <code><strong>filename</strong></code>. The location of this file is setup in the <code><strong>application.properties</strong></code> file.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#
+# Local directory where are stored the properties files containing the connection settings to GIT
+# Each file contains 3 properties
+# - an optional property with the SCM URL
+# - a "user" property
+# - a "password" property
+#
+versionControl.ConnectionSettings=../data/application/repository-settings/</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the Fitzhì project has the url of the Sonar server deployed on your network <code><strong>urlSonarServer</strong></code> to validate your own code.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Multiple Sonar servers might be available on your network. This list is declared inside the referential file <code><strong>sonar-servers.json</strong></code>. <strong>But we assume that your project has not been distributed on multiple servers</strong>. This is a relation (n) Fitzhì projects &lt;&#8594; (1) Sonar server.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>has an array of <code><strong>SonarProject</strong></code> associated with the Fitzhì project. The applicaiton Fitzhì has declared for example 2 Sonar projects, one for Java, one for Angular.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Each Sonar project has its own configuration with the chosen evaluation metrics and their relative weights. The file <code>/deploy/data/referential/<strong>supported-metrics.json</strong></code> contains the default template of settings which might be overriden for each project.</p>
+</li>
+<li>
+<p>Each Sonar project has an array of <code><strong>FileStats</strong></code> with the <code><strong>language</strong></code> and the <code><strong>numberOfFiles</strong>`</code> detected for this language</p>
+</li>
+<li>
+<p>A global <code><strong>SonarEvaluation</strong></code> and the <code><strong>totalNumberLinesOfCode</strong></code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_developer_inside_fitzhì">A DEVELOPER INSIDE FITZHÌ</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="class-diagram-staff.png" alt="class diagram staff" width="376" height="847"/>
+</div>
+</div>
+</div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2021</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+
+</html>

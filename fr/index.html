@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-158908694-1');
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description"
+		content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal.">
+	<meta name="keywords" content="Portfolio, skills, quality, management">
+	<meta name="author" content="Fitzhì">
+	<title>Fitzhì : Quality IT assets portal and skills management</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- Favicons -->
+	<link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/assets/img/zhi.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/assets/img/zhi.ico">
+	<!--
+		<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+		<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+		<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+	-->
+	<meta name="theme-color" content="#563d7c">
+
+	<!-- Custom styles for this template -->
+	<link href="fitzhi.css" rel="stylesheet">
+
+	<!-- Custom javascript -->
+	<script src="/fitzhi.js" crossorigin="anonymous"></script>
+
+	<!-- dependencies for the Project staff coverage -->
+	<script src="https://unpkg.com/d3"></script>
+	<script src="https://unpkg.com/sunburst-chart"></script>
+	<!--<script src="../../dist/sunburst-chart.js"></script>-->
+	<style>
+		body {
+			margin: 0
+		}
+		.sunburst-viz .text-contour {
+			stroke: none;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- We load the navigation bar -->
+	<div id="nav-placeholder">
+	</div>
+
+	<h1 style="visibility: hidden;height: 0px;margin: 0px">
+		Presentation of Fitzhì, Single Point Of Contact pour la qualité de votre portfolio d'applications informatiques
+	</h1>
+
+	<main role="main">
+		<div class="container-fluid">
+			<br/>
+			<div class="row my-0 my-sm-5">
+				<div class=" col-12 col-sm-4 d-flex justify-content-sm-end justify-content-center">
+					<span class="gradient logo-big">质</span>
+					<span class="navbar-toggler-icon"></span>
+				</div>
+				<div class="col-12 col-sm-8 mt-1 mt-md-1 text-sm-left h-100 align-self-center">
+					<br/>
+					<p class="h1 text-center text-sm-left text-success">
+						Bienvenue sur le site de Fitzhì ! <br/>
+						la synthèse technique...
+					</p>
+
+					<!--
+						<h6 class="text-center text-sm-left text-dark ml-0 ml-sm-4">
+							Un peu d'étymologie pour commencer, synthèse vient du grec <b>"sun"&nbsp;"thesis"</b>
+						</h6>
+						<h6 class="text-center text-sm-left text-dark ml-0 ml-sm-5">
+							"sun" (σὺν), qui signifie " ensemble ", " avec "<br/>
+							"thesis" (θέσις) qui signifie "&nbsp;action de poser&nbsp;".
+						</h6>
+						<h6 class="text-center text-sm-left text-dark ml-0 ml-sm-4">
+							Fitzhì est un mélange <b>"fit"&nbsp;"zhì"</b>
+						</h6>
+						<h6 class="text-center text-sm-left text-dark ml-0 ml-sm-5">
+							"fit" (), qui signifie " capable, prêt, équipé, en bonne santé "<br/>
+							"zhì " (质) qui signifie "qualité en chinois".
+						</h6>
+					-->
+				</div>
+			</div>
+			<div class="row mt-3 mt-md-5 ml-1 ms-md-5 px-1 px-md-5">
+				<div class="d-flex flex-column justify-content-center">
+					<p class="h5 text-justify">
+						Fitzhì est une startup Bordelaise, à l'origine d'une solution open-source éponyme.
+						Fitzhì établit une synthèse technique globale d'un système d'information, d'un portefeuille d'applications ou plus simplement d'un progiciel.
+						<em style="font-size: xx-large" class="font-weight-bold text-nowrap text-success">&laquo; Où en sommes nous ? &raquo;</em>
+						<span>
+							A cette question simple, Fitzhì veut répondre, simplement, avec un minimum d'efforts.
+							Cette solution adresse deux dimensions des DSI : les applications et les équipes autour d'elles.
+							<br/>
+						</span>
+						<span style="font-size: smaller" class="text-muted font-italic">&nbsp;&nbsp;&nbsp;&nbsp;- Une écurie de formule 1, c'est une voiture, et c'est un paddock. </span> 
+
+					</p>
+				</div>
+			</div>
+			<div class="row mt-1 mt-md-5 mx-0 mx-md-5 px-0 px-md-5">
+				<h5>
+					Fitzhì se propose de répondre à ces questions :
+				</h5>
+			</div>
+			<div class="row m-0 ml-md-5 justify-content-center">
+				<ul class="question">
+					<li>Notre SI s'est-il techniquement amélioré depuis l'année dernière ?</li>
+					<li>Le turnover de la société dégrade-t'il notre maitrise des applications ?</li>
+					<li>Quelles sont les personnes clés de ma DSI, visibles ou cachées, de par leur connaissance des applications ?</li>
+					<li>De quelles compétences risque-t'on de manquer pour couvrir l'écosystème de nos applications ?</li>
+					<li>Peut-on évaluer techniquement la DSI de l'entreprise dont nous venons de prendre le contrôle ?</li>
+					<li>Quel niveau de couverture des écosystèmes de notre portfolio est opéré par nos équipes IT ?</li>
+				</ul>
+			</div>
+
+			<div class="row mt-1 mt-md-3 mx-0 mx-md-5 px-0 px-md-5">
+				<h5>
+					Plusieurs exemples de synthèses vous sont présentés ci-dessous :
+				</h5>
+			</div>
+
+			<!--            LE PATCHWORK           -->
+			<div class="row m-1 m-md-5 mb-mt-0">
+				<div id="patchwork" class="col-12"></div>
+				<h1 class="head-title gradient m-0">LE PATCHWORK DU PORTFOLIO</h1>
+			</div>
+			<div class="row m-1 ml-md-3 mr-md-3">
+				<div class="col-12 col-md-6">
+					<img class="img-fluid" src="/assets/img/vision/patchwork.png"></img>
+				</div>
+				<div class="col-12 col-md-6 align-self-center">
+					<blockquote class="blockquote">
+						<p class="m-0 p-0">
+							Ce patchwork représente toutes les applications d'une DSI. 
+						</p>
+						<footer class="blockquote-footer">
+							<cite>
+								Dans cette exemple, nous avons créé un patrimoine factice à partir de tous les projets open-source dont dépend Fitzhì.
+							</cite>
+						</footer>
+					</blockquote>
+					<p>
+						Chaque tuile représente une application. Sa dimension est proportionnelle au nombre de lignes.
+						Sa couleur figure le niveau de risque mesuré par Fitzhì sur le plan Staffing, Qualité du code et Conception.
+					</p>
+				</div>
+			</div>
+
+
+			<!--            THE RISING SKYLINE           -->
+			<div class="row m-1 m-md-5 mb-mt-0">
+				<div id="rising-skyline" class="col-12"></div>
+				<h1 class="head-title gradient m-0 text-uppercase">la ligne d'horizon du portfolio</h1>
+			</div>
+			<div class="row m-1 ml-md-3 mr-md-3">
+				<div class="col-12 col-md-6">
+					<img class="img-fluid" src="/assets/img/vision/controlled-rising-skyline.gif"></img>
+				</div>
+				<div class="col-12 col-md-6 align-self-center">
+					<p>
+						Cette ligne d'horizon qui s'élève représente l'historique d'un portefeuille depuis son premier commit jusque la date du jour. <br/>
+						C'est l'histoire de vos projets, du point de vue du code source, qui s'élève ici.
+					</p>
+					<p>
+						Chaque &laquo; bâtiment &raquo; est un projet qui grimpe à la  vitesse du nombre de lignes de code.<br/>
+						La couleur varie dans le temps suivant le risque Staffing pour le projet.
+					</p>
+				</div>
+			</div>
+
+			<!--            THE SKILLS COVERAGE           -->
+			<div class="row m-1 m-md-5">
+				<div id="skills-treechart" class="col-12"></div>
+				<h1 class="gradient m-0 text-uppercase">la couverture des compétences</h1>
+			</div>
+
+			<div class="row m-1 ml-md-3 mr-md-3">
+				<div class="d-flex col-12 col-md-5 justify-content-lg-end justify-content-center">
+					<img class="img-fluid" style="height: 100%; width: 100%" src="/assets/img/vision/skill-tiles.png" /></img>
+				</div>
+				<div class="col-12 col-md-7 justify-content-center align-self-center">
+					<p class="m-0 text-justify">
+						Cette carte proportionnelle represente la couverture des compétences sur l'ensemble des projets enregistré dans Fitzhì.
+					<p class="m-0 mb-2 text-justify">
+						Il évalue le volume des écosystèmes présents dans votre DSI et les équipes actives qui sont prêtes à les maintenir.
+					</p>
+					<ul class="lateral-coins">
+						<li>Chaque tuile represente un ecosystème <span class="text-muted font-italic">(avec un maximum de 10 tuiles dans cette exemple)</span>, 
+							en proportion de son importance dans le portfolio.</li>
+						<li>Chaque tuile a une couleur qui figure the niveau de risque evaluaé pour cet écosystème. <br />
+							<p class=" m-0 ml-3 good">&laquo; Vert &raquo; est sous control.</p>
+							<p class="m-0 ml-3 bad">&laquo; Rouge &raquo; est à risque.</p>
+							<span class="font-italic">Dans cet exemple, Javascript est mieux couvert que Java. 
+								Typescript quant à lui, est à risque modéré.</span>
+						</li>
+						<li>Il est possible d'inclure, ou pas,  dans l'analyse les developpeurs externes.</li>
+						<li>Il est possible aussi de filtrer les developpeurs par seniorité 
+							<span class="text-muted font-italic"></span>(du 1 à 5)<span>.</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--            THE COMPOSITE PIE            -->
+			<div class="row m-0 ml-md-5 mt-md-5 mb-md-0">
+				<div id="portfolio-pie-chart" class="col-12"></div>
+				<h1 class="gradient m-0 text-uppercase">le diagramme sectoriel composite</h1>
+			</div>
+
+			<div class="row m-1 ml-md-3 mr-md-3">
+				<div class="col-12 col-md-5 m-0 p-0 justify-content-md-end justify-content-center global-pie">
+					<img class="img-fluid" src="../assets/img/vision/global-pie.png" />
+				</div>
+				<div class="col-12 col-md-7 align-self-center">
+					<p class="text-justify">
+						Le diagramme sectoriel résume sur un seul graphique, la qualité du portefeuille 
+						sur les 3 dimensions qui sont actuellement étudiées par Fitzhì :
+					</p>
+					<p>
+						<ul>
+							<li>la couverture des compétences vis à vis des projets</li>
+							<li>la qualité du code</li>
+							<li>la conception des applications</li>
+						</ul>
+					</p>
+					<p class="text-justify">
+						Par conséquent, le diagramme est divisée en 3 parties, et chaque partie a 4 secteurs possibles de taille différente.
+					</p>
+				</div>
+			</div>
+
+			<!-- THE PROJECT -->
+			<div class="row m-0 ml-md-5 mt-md-5 mb-md-0">
+				<div id="project-dashboard" class="col-12"></div>
+				<div class="col-12 p-0 m-0">
+					<h1 class="gradient text-uppercase">les tableaux de bord &laquo;&nbsp;Project&nbsp;&raquo;</h1>
+				</div>
+				<div>
+					Chaque projet déclaré dans Fitzhì, se voit attribuer une une médaille, qui regroupe sa synthèse technique.
+				</div>
+			</div>
+			<div class="row m-1 ml-md-5 mr-md-3 mt-md-0">
+				<div class="col-0 col-md-1"></div>
+				<div class="col-12 col-md-3 m-0 justify-content-sm-end justify-content-center tech-medal">
+					<img class="img-fluid" src="../assets/img/vision/tech-medal.png" />
+				</div>
+				<div class="col-12 col-md-8 align-self-center">
+					<p>
+						Cette médaille regroupe 3 indicateurs :
+					</p>
+
+					<ul class="nav flex-column">
+						<li class="nav-item">
+						  	<a class="nav-link text-success p-1 p-md-2" href="#project-dashboard-staff">
+								Le niveau de couverture du code justifiée par l'actuelle équipe de développement
+							</a>
+						</li>
+						<li class="nav-item">
+						  	<a class="nav-link text-success p-1 p-md-2" href="#project-dashboard-sonar">
+								L'évaluation technique de l'application, selon la perspective Sonar
+							</a>
+						</li>
+						<li class="nav-item">
+						  	<a class="nav-link text-success p-1 p-md-2" href="#project-dashboard-audit">
+								L'évaluation technique de l'application à dire d'experts
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row m-1 mt-md-1 ml-md-5 mr-md-5 mb-md-0">
+				<div id="project-dashboard-staff" class="col-12"></div>
+				<h3 class="gradient">le tableau de bord Staffing</h3>
+			</div>
+			<div class="row m-1 ml-md-5 mr-md-5">
+				<div class="col-12 col-md-4">
+
+					<div id="chart"></div>
+					<script>
+						const color = d3.scaleOrdinal(d3.schemePaired);
+				
+						fetch('../spring-framework-sunburst.json', { method: 'GET', headers: {"Content-Type": "application/json",
+							Accept: "application/json"}, mode: 'cors', cache: 'default' })
+									.then(res => res.json()).then(data => {
+									Sunburst()
+										.data(data)
+										.width(350)
+										.height(350)
+										.minSliceAngle(2)
+										.label('location')
+										.size('importance')
+										.color('color')
+										(document.getElementById('chart'));
+								});
+					</script>
+
+					<p class="good p-0 m-0 text-justify">
+						Les sections vertes sont des packages avec suffisamment de développeurs actifs.
+					</p>
+					<p class="bad p-0 m-0 text-justify">
+						Les sections rouges sont les déserts. Il n'y a plus personne pour maintenir le code.
+					</p>
+				</div>
+				<div class="col-12 col-md-8 align-self-center">
+					<p class="text-justify">
+						Notre niveau de maîtrise avec nos effectifs est-il suffisant pour sécurisuer le suivi de cette application?
+						L'efficacité opérationnelle est souvent tributaire du turnover.
+					</p>
+					<p class="text-justify">
+						Disposez-vous d'une équipe crédible, avec les compétences, et les connaissances requises,
+						qui puisse assurer le maintien en condition opérationnelle de cette application ?
+					</p>
+					<p>
+						Vous devez être en mesure de répondre à des questions telles que
+					</p>
+					<p>
+						<ul>
+							<li>Qui a travaillé sur ce projet ? Sont-ils encore là ?</li>
+							<li>Avons-nous quelqu'un de disponible pour fixer ce problème dans cette application archaïque ?</li>
+							<li>La maîtrise technique de l'équipe actuelle couvre-t-elle toutes les parties du projet ? Ou prenons-nous des risques quelque part ?</li>
+						</ul>
+					</p>
+					<p class="mx-0 mx-md-5 text-justify text-secondary font-italic">
+						Vous pouvez naviguer dans l'arborescence du project en clickant sur les sections du diagramme.
+					</p>
+				</div>
+			</div>
+
+			<div class="row m-1 mt-md-1 ml-md-5 mr-md-5 mb-md-0">
+				<div id="project-dashboard-sonar" class="col-12"></div>
+				<h3 class="gradient">le tableau de bord Sonar</h3>
+			</div>
+			<div class="row m-1 ml-md-5">
+				<div class="col-12 col-md-6 align-self-center">					
+					<p class="text-justify">
+						Fitzhì connecte chaque application avec sa perspective Sonar™. 
+						Il en tire une note <u>unique</u>, basée sur le produit vectoriel des métriques Sonar pondérées par leurs poids relatifs.
+					</p>
+					<p>
+						<span>Notre application Fitzhì avait une note de 52,</span> 
+						<span class="font-italic text-secondary">il y a bien longtemps dans le passé...</span>.
+					</p>
+				</div>
+				<div class="col-12 col-md-6">
+					<img class="img-fluid" src="../assets/img/vision/project-sonar.png"></img>
+				</div>
+			</div>
+
+
+			<!--  THE AUDIT STAFF-->
+			<div class="row m-1 ml-md-5">
+				<div id="project-dashboard-audit" class="col-12"></div>
+				<h3 class="gradient">le tableau de bord Audit</h3>
+			</div>
+			<div class="row m-1 ml-md-5 mr-md-5">
+				<div class="col-12">
+					<p class="text-justify">
+						Aucun outil automatisé ne peut pas évaluer intégralement une application.
+					</p>
+					<p class="text-justify">
+						Plus ou moins régulièrement, des experts sont mandatés pour les auditer.
+						Ils les évaluent sur des thèmes qui vous apparaissent comme clés, et significatifs 
+						pour celles-ci.
+					</p>
+					<p class="text-justify">
+						Dans l'exemple ci-dessous, l'<mark>organisation générale</mark>, le <mark>processus de construction</mark> et la <mark>documentation</mark> ont été considérés 
+						comme importants pour couvrir l'évaluation.
+					</p>
+					<p class="text-justify">
+						Nous pourrions ajouter <mark>Performance</mark>, <mark>Conception technique</mark>...
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 m-0 p-1 pl-md-5 pr-md-5 justify-content-center">
+					<img class="img-fluid" src="../assets/img/vision/project-audit.png" />
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="bg-light w-100 mw-100">
+		<div class="row w-100 py-2">
+			<div class="col-12 col-md-3 px-4">
+				Fitzhì 2021
+			</div>
+			<div class="col-9 d-none d-md-block text-right px-4">
+				Concerning the website, you can contact <a href="mailto://webmaster@fitzhi.com">the
+					webmaster</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+		crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$("#nav-placeholder").load("nav.html");
+		});
+	</script>
+
+</body>
+
+</html>

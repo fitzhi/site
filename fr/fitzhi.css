@@ -1,0 +1,128 @@
+:root {
+	--color-selected: #198754;
+	--color-error: #dc3545;
+	--nav-height: 100px;
+}
+
+p.good {
+	color: var(--color-selected);
+}
+
+p.bad {
+	color: var(--color-error);
+}
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+#nav-placeholder {
+	height: var(--nav-height);
+}
+
+#rising-skyline, #skills-treechart, #portfolio-pie-chart, #project-dashboard, 
+#project-dashboard-staff, #project-dashboard-sonar, #project-dashboard-audit    {
+	padding-top: var(--nav-height);
+	height: 1px;
+}
+
+span.logo-big {
+	font-size: 200px;
+}
+
+span.logo-small {
+	font-size: 35px;
+	text-align: center;
+}
+
+#navigationMenus {
+	font-size: 30px;
+}
+
+.gradient {
+	background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@keyframes pulse {
+	0% {
+		color:var(--color-error);
+		font-size: 39px;
+	}
+	100% {
+		color: var(--color-selected);
+		font-size: 40px;
+	}
+}
+
+#install {
+	top: 50px;
+	bottom: 10;
+}
+
+div.my-footer {
+	position: fixed;
+	bottom: 0;
+	background-color: whitesmoke;
+	height: 35px;
+	width: 100%;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+
+.menu {
+	font-size: 24px;
+}
+
+div.text span.bold {
+	font-weight: 600;
+}
+
+ul.lateral-coins li {
+	margin-bottom: 10px;
+}
+
+div.equation {
+	padding: 30px;
+}
+
+div.equation img {
+	margin: 0 auto;
+}
+
+div.project-dashboard {
+	width: 100%;
+	padding: 10px;
+}
+
+mark {
+	background-color: lightgreen !important;
+}
+
+img.fitzhi-screen-copy {
+	border: 3px solid var(--color-selected);
+	border-radius: 5%;
+}
+
+img.fitzhi-screen-copy:hover {
+	border: 5px solid green;
+}
+
+.my-footer {
+	position: absolute;
+	bottom: 0;
+}
+
+/* To overide a setting for asciidoctor.css margin-left: 1.5em */
+#navigationMenus ul {
+	margin-left: 0;
+}
+
+ul.question li {
+	font-style: italic;
+}
+
+img.logo-country {
+	width: 50px;
+	height: 50px;
+}
