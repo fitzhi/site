@@ -107,7 +107,7 @@
 						<em style="font-size: xx-large" class="font-weight-bold text-nowrap text-success">&laquo; Où en sommes nous ? &raquo;</em>
 						<span>
 							A cette question simple, Fitzhì veut répondre, simplement, avec un minimum d'efforts.
-							Cette solution adresse deux dimensions des DSI : les applications et les équipes autour d'elles.
+							Notre solution adresse deux dimensions des DSI : les applications et les équipes qui gravitent autour d'elles.
 							<br/>
 						</span>
 						<span style="font-size: smaller" class="text-muted font-italic">&nbsp;&nbsp;&nbsp;&nbsp;- Une écurie de formule 1, c'est une voiture, et c'est un paddock. </span> 
@@ -197,21 +197,27 @@
 					<img class="img-fluid" style="height: 100%; width: 100%" src="/assets/img/vision/skill-tiles.png" /></img>
 				</div>
 				<div class="col-12 col-md-7 justify-content-center align-self-center">
-					<p class="m-0 text-justify">
-						Cette carte proportionnelle represente la couverture des compétences sur l'ensemble des projets enregistré dans Fitzhì.
-					<p class="m-0 mb-2 text-justify">
-						Il évalue le volume des écosystèmes présents dans votre DSI et les équipes actives qui sont prêtes à les maintenir.
+					<p class="m-0 mb-md-1 text-justify">
+						Cette carte proportionnelle (en anglais treemap) représente la couverture des compétences sur l'ensemble des projets enregistrés dans Fitzhì.
 					</p>
-					<ul class="lateral-coins">
-						<li>Chaque tuile represente un ecosystème <span class="text-muted font-italic">(avec un maximum de 10 tuiles dans cette exemple)</span>, 
-							en proportion de son importance dans le portfolio.</li>
-						<li>Chaque tuile a une couleur qui figure the niveau de risque evaluaé pour cet écosystème. <br />
+					<p class="m-0 mb-2 text-justify">
+						Ce diagramme représente le volume des écosystèmes présents dans votre DSI, et les équipes actives qui sont disponibles pour les maintenir.
+						Ces développeurs ne connaissent pas nécessairement ces applications, mais ils sont compétents dans l'écosystème.
+					</p>
+					<ul class="lateral-coins text-justify">
+						<li>Chaque tuile represente un ecosystème <span class="text-muted font-italic">(avec un maximum de 10 tuiles dans cet exemple)</span>.
+							Sa taille est proportionnelle à son importance dans le portfolio. 
+							Dans cet exemple, Java et JavaScript sont très majoritaires.
+						</li>
+						<li>Chaque tuile porte une couleur qui figure le niveau de risque evalué pour cet écosystème. <br />
 							<p class=" m-0 ml-3 good">&laquo; Vert &raquo; est sous control.</p>
 							<p class="m-0 ml-3 bad">&laquo; Rouge &raquo; est à risque.</p>
-							<span class="font-italic">Dans cet exemple, Javascript est mieux couvert que Java. 
-								Typescript quant à lui, est à risque modéré.</span>
+							<span class="font-italic">
+								Dans cet exemple, Javascript est mieux loti que Java. 
+								On mesure un risque modéré sur Typescript.
+							</span>
 						</li>
-						<li>Il est possible d'inclure, ou pas,  dans l'analyse les developpeurs externes.</li>
+						<li>Il est possible d'intégrer, ou pas,  dans l'évaluations les developpeurs externes.</li>
 						<li>Il est possible aussi de filtrer les developpeurs par seniorité 
 							<span class="text-muted font-italic"></span>(du 1 à 5)<span>.</li>
 					</ul>
@@ -230,18 +236,20 @@
 				</div>
 				<div class="col-12 col-md-7 align-self-center">
 					<p class="text-justify">
-						Le diagramme sectoriel résume sur un seul graphique, la qualité du portefeuille 
+						Le diagramme sectoriel (pie chart en anglais, camenbert en français) résume sur un seul graphique, la qualité du portefeuille 
 						sur les 3 dimensions qui sont actuellement étudiées par Fitzhì :
 					</p>
 					<p>
 						<ul>
-							<li>la couverture des compétences vis à vis des projets</li>
-							<li>la qualité du code</li>
-							<li>la conception des applications</li>
+							<li>la couverture des compétences vis à vis des projets (<mark>Staff</mark>)</li>
+							<li>la qualité générale du code (<mark>Sonar</mark>)</li>
+							<li>le design général des applications (<mark>audit</mark>)</li>
 						</ul>
 					</p>
 					<p class="text-justify">
-						Par conséquent, le diagramme est divisée en 3 parties, et chaque partie a 4 secteurs possibles de taille différente.
+						Le diagramme est donc divisée en 3 parties. Chaque partie a 4 secteurs possibles de taille différente
+						qui classent les projets en 3 quartiers (niveaux) de risque.
+						<span class="text-muted">Le quartier gris est attribué aux projets sans évaluation.</span>
 					</p>
 				</div>
 			</div>
@@ -253,7 +261,7 @@
 					<h1 class="gradient text-uppercase">les tableaux de bord &laquo;&nbsp;Project&nbsp;&raquo;</h1>
 				</div>
 				<div>
-					Chaque projet déclaré dans Fitzhì, se voit attribuer une une médaille, qui regroupe sa synthèse technique.
+					Chaque projet déclaré dans Fitzhì, se voit attribuer une médaille, qui représente sa synthèse technique.
 				</div>
 			</div>
 			<div class="row m-1 ml-md-5 mr-md-3 mt-md-0">
@@ -269,7 +277,7 @@
 					<ul class="nav flex-column">
 						<li class="nav-item">
 						  	<a class="nav-link text-success p-1 p-md-2" href="#project-dashboard-staff">
-								Le niveau de couverture du code justifiée par l'actuelle équipe de développement
+								Le niveau de couverture du code justifié par l'équipe actuelle de développement
 							</a>
 						</li>
 						<li class="nav-item">
@@ -352,7 +360,7 @@
 				<div class="col-12 col-md-6 align-self-center">					
 					<p class="text-justify">
 						Fitzhì connecte chaque application avec sa perspective Sonar™. 
-						Il en tire une note <u>unique</u>, basée sur le produit vectoriel des métriques Sonar pondérées par leurs poids relatifs.
+						Il en tire une note <u>unique</u>, basée sur le produit vectoriel des métriques Sonar pondérées de leurs poids relatifs.
 					</p>
 					<p>
 						<span>Notre application Fitzhì avait une note de 52,</span> 
@@ -373,19 +381,19 @@
 			<div class="row m-1 ml-md-5 mr-md-5">
 				<div class="col-12">
 					<p class="text-justify">
-						Aucun outil automatisé ne peut pas évaluer intégralement une application.
-					</p>
-					<p class="text-justify">
-						Plus ou moins régulièrement, des experts sont mandatés pour les auditer.
-						Ils les évaluent sur des thèmes qui vous apparaissent comme clés, et significatifs 
-						pour celles-ci.
+						Aucun outil automatisé ne peut évaluer intégralement, sous l'ensemble de ces aspects, une application.
+						L'humain tient sa place.
+						Plus ou moins régulièrement, des experts sont mandatés pour auditer.
+						Ils choisissent des thèmes qui paraissent pertinents pour cette typologie de projets, et concentrent leurs effors sur ceux-ci.
 					</p>
 					<p class="text-justify">
 						Dans l'exemple ci-dessous, l'<mark>organisation générale</mark>, le <mark>processus de construction</mark> et la <mark>documentation</mark> ont été considérés 
-						comme importants pour couvrir l'évaluation.
+						comme nécessaires et suffisants pour couvrir l'évaluation. Chacun est doté d'un poids, et d'une note. 
+						L'ensemble donne une moyenne générale que l'on retrouve sur la médaille.
+						Il est possible bien sûr d'enregistrer le détail de ses constatations sur chacun des thèmes.
 					</p>
 					<p class="text-justify">
-						Nous pourrions ajouter <mark>Performance</mark>, <mark>Conception technique</mark>...
+						Nous pourrions pu ajouter d'autres thèmes comme <mark>Performance</mark>, <mark>Conception technique</mark>...
 					</p>
 				</div>
 			</div>
