@@ -1,6 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158908694-1');
+    </script>
+
+    <title>Fitzhì : Quality IT assets portal and skills management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Frédéric VIDAL @Fitzhì" />
+    <meta name="description" content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal." />
+    <meta name="keywords" content="Open Source Skills Management software" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.ico" />
+    <meta name="theme-color" content="#563d7c" />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="fitzhi.css" rel="stylesheet" />
+    <link href="fedora.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body class="article">
+    <h1 style="visibility: hidden;">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
+    <div id="content">
+<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+
+	<a class="navbar-brand" href="./index.html">
+		<span class="gradient logo-small">质 Fitzhì</span>
+	</a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationMenus"
+		aria-expanded="false" 
+		aria-controls="navbarsExampleDefault"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+
+	<div class="collapse navbar-collapse" id="navigationMenus">
+
+		<ul class="navbar-nav mr-auto">
+
+			<li id="menuHome" class="nav-item">
+				<a class="nav-link text-light" href="./index.html">Accueil</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link text-light" 
+					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					&nbsp;Tableaux de bord&nbsp;
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item text-success menu" href="./index.html#patchwork">Le &laquo; patchwork &raquo; des projets</a>
+					<a class="dropdown-item text-success menu" href="./index.html#rising-skyline">La &laquo; skyline &raquo; des projets</a>
+				  	<a class="dropdown-item text-success menu" href="./index.html#skills-treechart">La couverture des compétences</a>
+				  	<a class="dropdown-item text-success menu" href="./index.html#portfolio-pie-chart">Le disque synthèse</a>
+				  	<div role="separator" class="dropdown-divider"></div>
+				  	<a class="dropdown-item text-success menu" href="./index.html#project-dashboard">Le tableau de bord Projets</a>
+				</div>
+			</li>
+
+			<li id="menuInstallation" class="nav-item">
+				<a class="nav-link text-light" href="./installation.html">Installation</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link text-light" href="./contact.html">Contact</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link text-light" href="./evaluate.html">Test</a>
+			</li>
+		</ul>
+
+		<a href="#" onClick="redirect();">
+			<img class="logo-country" src="../img/uk.png" ></img>
+		</a>
+	</div>
+</nav>
 <div class="sect1">
-<h2 id="_overview">OVERVIEW</h2>
+<h2 id="_starting_with_fitzhì">STARTING WITH FITZHÌ</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview">OVERVIEW</h3>
 <div class="paragraph">
 <p>The architecture of Fitzhì is quite simple.</p>
 </div>
@@ -20,133 +141,28 @@
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_installation_of_fitzhi">INSTALLATION OF FITZHI</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_installation_in_a_docker_cointainer">Installation in a Docker cointainer</h3>
-<div class="paragraph">
-<p>You can download a Docker container of the Fitzhi application directly from <a href="http://hub.docker.com/u/fitzhi/" class="bare">http://hub.docker.com/u/fitzhi/</a>.
-The current tag is 1.6.</p>
+<h3 id="_installation">INSTALLATION</h3>
+<div class="sect3">
+<h4 id="_docker_hub_installation">Docker HUB installation</h4>
+
 </div>
-<div class="listingblock">
-<div class="title">Download Docker container</div>
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">docker pull fitzhi/application:1.6</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The Fitzhi container constains :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a <code>Java</code> <code>Spring</code> rest server</p>
-</li>
-<li>
-<p>an <code>Angular</code> application</p>
-</li>
-<li>
-<p>an <code>nginx</code> instance</p>
-</li>
-<li>
-<p>a <code>Git</code> client</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Fitzhi can be linked with a Sonar server, if any. This component is not mandatory.
-Each Sonar server is considered as a source of information useful to reach the project.
-The connection settings to access your Sonar server from inside the container has to be provided at startup of your container.</p>
-</div>
-<div class="paragraph">
-<p>The parameters are :</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;"/>
-<col style="width: 50%;"/>
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">urlSonarServer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL where the Sonar server is deployed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">login</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The recommended authentification credential : the Sonar token login. This token has been generated by the Sonar security module.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The alternative connection mode. First authentification credential : user/password. User required to be identified by Sonar. Default is "admin"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password required to be identified in Sonar. This property is mandatory if the connection is made with the pair user/password</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Fitzhi shares its internal deployment directory <code>/fitzhi/deploy/</code> with your host machine.</p>
-</div>
-<div class="listingblock">
-<div class="title">Starting the Fitzhì application.</div>
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
--e "login=youLoginTokenToSonar" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Starting the Fitzhì application with the alternative mode.</div>
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
--e "user=youSonarUser" \
--e "password=yourSonarPassword" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_direct_installation_on_a_local_server">Direct installation on a local server</h3>
-<div class="paragraph">
-<p>You just have to download the executable of Fitzhì.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">curl --insecure https://spoq.fitzhi.com/release/back-fitzhi.zip --output deploy.zip
-tar xvf deploy.zip
-cd ./deploy/backend-fitzhi/</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To start the Rest backend server, just type :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">java -Xmx1g -jar fitzhi.jar --spring.profiles.active=HTTP</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_direct_build_and_installation_on_a_local_server">Direct build and installation on a local server</h3>
+<div class="sect3">
+<h4 id="_direct_on_premise_installation">Direct on-premise installation</h4>
 <div class="paragraph">
 <p>First of all, you will need to export the GitHub repository.</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download fitzhì</p>
+</li>
+</ol>
+</div>
 <div class="listingblock">
-<div class="title">Download the source of Fitzhì</div>
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">git clone https://www.github.com/fitzhi/application.git
-rm -rf .git</code></pre>
+<pre>git clone https://www.github.com/fitzhi/application.git
+rm -rf .git</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -162,8 +178,8 @@ rm -rf .git</code></pre>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_back_end_installation">BACK-END INSTALLATION</h4>
+<div class="sect4">
+<h5 id="_back_end_installation">BACK-END INSTALLATION</h5>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">fitzhì has the following prerequisites</dt>
@@ -247,8 +263,8 @@ The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare
 A <strong>Pong</strong> response is expected.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_front_end_installation">FRONT-END INSTALLATION</h4>
+<div class="sect4">
+<h5 id="_front_end_installation">FRONT-END INSTALLATION</h5>
 <div class="paragraph">
 <p>The easiest installation involved no-installation.<br/>
 The last stable release of front-fitzhì is available here <a href="https://fitzhi.github.io/spoq" class="bare" target="_blank" rel="noopener">https://fitzhi.github.io/spoq</a>.<br/>
@@ -272,8 +288,8 @@ For more precision, just RTFM, <a href="https://angular.io/guide/deployment" cla
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_the_brower_and_the_cors_issue">THE BROWER AND THE CORS ISSUE</h3>
+<div class="sect3">
+<h4 id="_the_brower_and_the_cors_issue">THE BROWER AND THE CORS ISSUE</h4>
 <div class="paragraph">
 <p>If you are not familiar with the mechanism of CORS, you can refer to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noopener">this simple presentation</a>.<br/>
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests.<br/>
@@ -292,8 +308,8 @@ With Fitzhì, you have 2 cross domain sources.</p>
 <div class="paragraph">
 <p>Therefore you might have have to configure 2 types of servers.</p>
 </div>
-<div class="sect3">
-<h4 id="_the_pirate_way">THE PIRATE WAY</h4>
+<div class="sect4">
+<h5 id="_the_pirate_way">THE PIRATE WAY</h5>
 <div class="paragraph">
 <p>The first solution, and the simplest one, is <strong>NO SECURITY, NO PROBLEM WITH SECURITY&#8230;&#8203;</strong><br/>
 <strong>For testing purpose</strong>, your can disable the CORS protection inside your browser.</p>
@@ -325,8 +341,8 @@ Avoid using that instance to surf on the Web.
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_the_backend_of_fitzhì">THE BACKEND OF FITZHÌ</h4>
+<div class="sect4">
+<h5 id="_the_backend_of_fitzhì">THE BACKEND OF FITZHÌ</h5>
 <div class="paragraph">
 <p>You will setup your CORS policy with the property <code><strong>allowedOrigins</strong></code> located in the <code><strong>application.properties</strong></code> file.<br/>
 You will find below an extract from this file.</p>
@@ -341,6 +357,7 @@ You will find below an extract from this file.</p>
 # - the https://spoq.io hosting the front-end on the WWW
 #
 allowedOrigins=http://localhost:4200,https://spoq.io</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -399,9 +416,8 @@ For some unexplained reason, some versions of Sonar are inert with respect to th
 </table>
 </div>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_allowing_the_fitzhi_origin_from_sonar">ALLOWING THE FITZHI ORIGIN FROM SONAR</h5>
+<div class="sect5">
+<h6 id="_allowing_the_fitzhi_origin_from_sonar">ALLOWING THE FITZHI ORIGIN FROM SONAR</h6>
 <div class="paragraph">
 <p>First, you need to download <a href="http://nginx.org/en/docs/njs/index.html" target="_blank" rel="noopener">NGINX</a> if you have not.</p>
 </div>
@@ -490,14 +506,14 @@ sonar.web.port=9000</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_first_start_of_fitzhi">FIRST START OF FITZHI</h3>
+<div class="sect3">
+<h4 id="_first_start_of_fitzhi">FIRST START OF FITZHI</h4>
 <div class="paragraph">
 <p>The common sense might consider that there can be <strong>only</strong> one first launch.
 In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.<br/></p>
 </div>
-<div class="sect3">
-<h4 id="_the_very_first_start">THE VERY FIRST START</h4>
+<div class="sect4">
+<h5 id="_the_very_first_start">THE VERY FIRST START</h5>
 <div class="paragraph">
 <p>The first ever user inside Fitzhì will be the first administrative user, and therefore its owner.<br/>
 <em>At the beginning, God enters in Fitzhì and performs all initialization</em>.<br/>
@@ -522,8 +538,8 @@ The first panel saves in the permanent local storage the URL of your backend ser
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_the_first_start">THE FIRST START</h4>
+<div class="sect4">
+<h5 id="_the_first_start">THE FIRST START</h5>
 <div class="paragraph">
 <p>Each user in Fitzhì will experience a first launch.<br/>
 Depending on a property set in file <code><strong>application.properties</strong></code>, Fitzhi users can self-register themselves, or not. If not, they have to be already created <em>(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)</em>.<br/>
@@ -543,3 +559,19 @@ allowSelfRegistration=true</code></pre>
 </div>
 </div>
 </div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2021</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+
+</html>

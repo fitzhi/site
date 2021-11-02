@@ -21,33 +21,44 @@
 /* Text styles */
 
 body {
-  font-family: "Open Sans",sans-serif;
-  background-color: var(--maincolor);
-  color:var(--black);
+	font-family: "Open Sans",sans-serif;
+	background-color: var(--maincolor);
+	color:var(--black);
 }
 
 #_our_ambition, #_starting_with_fitzhì, #_whats_next, #_documentation, #_a_project_declared_in_fitzhì, #_contact {
-  margin-top: 80px;
+	margin-top: 80px;
 }
 
 h1 {
-  color:var(--primarycolor) !important;
-  font-family:"Montserrat",sans-serif;
+	color:var(--primarycolor) !important;
+	font-family:"Montserrat",sans-serif;
 }
 
 h2 {
-  background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  font-family:"Montserrat",sans-serif;
-  font-size: 40px;
+	background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	font-family:"Montserrat",sans-serif;
+	font-size: 50px;
+	margin-left: 10px !important;
 }
 
 h3,h4,h5,h6 {
-  color:var(--color-selected) !important;
-  font-family:"Montserrat",sans-serif;
+	color:var(--color-selected) !important;
+	font-family:"Montserrat",sans-serif;
 }
+
+h3 {
+	margin-left: 40px !important;
+	font-size: 40px;
+}
+
+h4 {
+	margin-left: 60px !important;
+}
+
 
 .title{color:var(--black) !important;font-family:"Open Sans",sans-serif;font-style: normal; font-weight: normal;}
 a{text-decoration: none;}
@@ -57,8 +68,8 @@ blockquote{color:var(--linkcoloralternate) !important}
 .quoteblock blockquote:before{color:var(--linkcoloralternate)}
 
 code {
-  color: var(--black);
-  background-color: #F7F7F8 !important
+	color: var(--black);
+	background-color: #F7F7F8 !important
 }
 
 mark{background-color: var(--highlightcolor)} /* Text highlighting color */
@@ -73,14 +84,11 @@ td{background-color: var(--maincolor);color: var(--black) !important}
 
 /* Responsiveness fixes */
 video {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 @media all and (max-width: 600px) {
 table {
-  width: 55vw!important;
-  font-size: 3vw;
-}
-
-
+	width: 55vw!important;
+	font-size: 3vw;
 }
