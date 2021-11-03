@@ -178,7 +178,10 @@ cd spoq
 tar xvf ../spoq.zip
 ----
 
-=== **Build** and installation on a server
+WARNING: Your internet browser will have to handle 2 servers simultaneously. +
+Therefore your will face some CORS issues. So please read the chapter further on the subject of CORS.
+
+=== **Building** and installation on a server
 
 First of all, you need to export the GitHub repository.
 
@@ -219,7 +222,7 @@ NOTE: To test if the server is correctly started, just visit the url http://loca
 A **Pong** response is expected.
 
 
-=== FRONT-END INSTALLATION
+=== Building the frontend application
 
 The easiest installation involved no-installation. +
 The last stable release of front-fitzhì is available here https://fitzhi.github.io/spoq[window=_blank]. +
@@ -265,7 +268,6 @@ The solution is composed of these directories
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
 The back-end URL, therefore, will be http://localhost:8080 if you start the server in HTTP mode, and 
 http://localhost:8443 in HTTPS mode.
-
 
 
 == THE BROWER AND THE CORS ISSUE
