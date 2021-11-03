@@ -141,24 +141,23 @@
 <h2 id="_installation_of_fitzhi">INSTALLATION OF FITZHI</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_installation_in_a_docker_cointainer">Installation in a Docker cointainer</h3>
+<h3 id="_using_fitzhì_in_a_docker_cointainer">Using Fitzhì in a Docker cointainer</h3>
 <div class="paragraph">
-<p>You can download a Docker container of the Fitzhi application directly from <a href="http://hub.docker.com/u/fitzhi/" class="bare">http://hub.docker.com/u/fitzhi/</a>.
+<p>You can download a container of application directly from <a href="http://hub.docker.com/u/fitzhi/" class="bare" target="_blank" rel="noopener">http://hub.docker.com/u/fitzhi/</a>.
 The current tag is 1.6.</p>
 </div>
 <div class="listingblock">
-<div class="title">Download Docker container</div>
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">docker pull fitzhi/application:1.6</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The Fitzhi container constains :</p>
+<p>The container contains :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>a <code>Java</code> <code>Spring</code> rest server</p>
+<p>a <code>Java</code> <code>Spring</code> Rest server</p>
 </li>
 <li>
 <p>an <code>Angular</code> application</p>
@@ -172,9 +171,9 @@ The current tag is 1.6.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Fitzhi can be linked with a Sonar server, if any. This component is not mandatory.
-Each Sonar server is considered as a source of information useful to reach the project.
-The connection settings to access your Sonar server from inside the container has to be provided at startup of your container.</p>
+<p>Fitzhi should be linked with your Sonar server, if any. This component is not mandatory.
+A Sonar server is considered as a source of information useful to assess the quality of a project.
+The connection settings required to access your Sonar server from inside the container has to be provided at startup.</p>
 </div>
 <div class="paragraph">
 <p>The parameters are :</p>
@@ -199,19 +198,24 @@ The connection settings to access your Sonar server from inside the container ha
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The alternative connection mode. First authentification credential : user/password. User required to be identified by Sonar. Default is "admin"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The alternative connection mode :<br/>
+The basic authentication credential : user/password.<br/>
+This user is required to be identified by Sonar. Default is "admin"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Password required to be identified in Sonar. This property is mandatory if the connection is made with the pair user/password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password required to be identified by Sonar.<br/>
+This property is mandatory if the connection mode is the user/password mode.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>Fitzhi shares its internal deployment directory <code>/fitzhi/deploy/</code> with your host machine.</p>
 </div>
+<div class="paragraph">
+<p>To start the application in the Sonar recommended way, you just can type :</p>
+</div>
 <div class="listingblock">
-<div class="title">Starting the Fitzhì application.</div>
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
 -e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
@@ -220,8 +224,10 @@ The connection settings to access your Sonar server from inside the container ha
 -p 80:80 -d --rm fitzhi/application:1.6</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>To start the application in an alternative way, you can type :</p>
+</div>
 <div class="listingblock">
-<div class="title">Starting the Fitzhì application with the alternative mode.</div>
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
 -e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
@@ -233,30 +239,61 @@ The connection settings to access your Sonar server from inside the container ha
 </div>
 </div>
 <div class="sect2">
-<h3 id="_direct_installation_on_a_local_server">Direct installation on a local server</h3>
+<h3 id="_installation_on_a_server">Installation on a server</h3>
+<div class="sect3">
+<h4 id="_the_backend_server">the Backend server</h4>
 <div class="paragraph">
-<p>You just have to download the executable of Fitzhì.</p>
+<p>To deploy the backend on a local server, you first have to download the archive of Fitzhì.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">curl --insecure https://spoq.fitzhi.com/release/back-fitzhi.zip --output deploy.zip
-tar xvf deploy.zip
-cd ./deploy/backend-fitzhi/</code></pre>
+<pre class="highlight"><code class="language-shell" data-lang="shell">curl https://spoq.fitzhi.com/release/back-fitzhi.zip --output deploy.zip
+tar xvf deploy.zip</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To start the Rest backend server, just type :</p>
+<p>To start the server, you just have to type :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">java -Xmx1g -jar fitzhi.jar --spring.profiles.active=HTTP</code></pre>
+<pre class="highlight"><code class="language-shell" data-lang="shell">cd ./deploy/backend-fitzhi/
+java -Xmx1g -jar fitzhi.jar --spring.profiles.active=HTTP</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+To check the server status, and verify that the server has been successfully launched, just visit the url <a href="http://localhost:80/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:80/api/test/ping</a> , or <a href="http://hostname:80/api/test/ping" class="bare">http://hostname:80/api/test/ping</a> <br/>
+A text <strong>Pong</strong> response is expected.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_frontend_server">the Frontend server</h4>
+<div class="paragraph">
+<p>The Angular project has to be downloaded. A local webserver is necessary to publish the application.<br/>
+Our documentation proposes the use of <code>nginx</code> for this task, among others.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">curl https://spoq.fitzhi.com/release/front-fitzhi.zip --output spoq.zip
+mkdir spoq
+cd spoq
+tar xvf ../spoq.zip</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_direct_build_and_installation_on_a_local_server">Direct build and installation on a local server</h3>
+<h3 id="_build_and_installation_on_a_server"><strong>Build</strong> and installation on a server</h3>
 <div class="paragraph">
-<p>First of all, you will need to export the GitHub repository.</p>
+<p>First of all, you need to export the GitHub repository.</p>
 </div>
 <div class="listingblock">
 <div class="title">Download the source of Fitzhì</div>
@@ -278,22 +315,23 @@ rm -rf .git</code></pre>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_back_end_installation">BACK-END INSTALLATION</h4>
+</div>
+<div class="sect2">
+<h3 id="_building_the_backend_server">Building the backend server</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">fitzhì has the following prerequisites</dt>
+<dt class="hdlist1">The building script requires the following prerequisites</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p>Java 8 or higher</p>
+<p>Java 11 or higher</p>
 </li>
 <li>
 <p>Maven 3 or higher</p>
 </li>
 <li>
-<p>Git 2 or higher installed on the back-end server</p>
+<p>Git 2 or higher installed on the backend server</p>
 </li>
 </ul>
 </div>
@@ -301,13 +339,80 @@ rm -rf .git</code></pre>
 </dl>
 </div>
 <div class="paragraph">
-<p>The installation of the back-end is very simple. Just type :</p>
+<p>The build of the backend is very simple. Just type :</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">cd application
 ./init.sh</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>To start the back-end of Fitzhì, just type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">./run.sh HTTP (or HTTPS)</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+To test if the server is correctly started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:8080/api/test/ping</a> , or <a href="http://hostname:8080/api/test/ping" class="bare">http://hostname:8080/api/test/ping</a> <br/>
+A <strong>Pong</strong> response is expected.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_front_end_installation">FRONT-END INSTALLATION</h3>
+<div class="paragraph">
+<p>The easiest installation involved no-installation.<br/>
+The last stable release of front-fitzhì is available here <a href="https://fitzhi.github.io/spoq" class="bare" target="_blank" rel="noopener">https://fitzhi.github.io/spoq</a>.<br/>
+This URL hosts only a static web server which delivers JS files. So just go there.</p>
+</div>
+<div class="paragraph">
+<p>If you prefer to deploy the front-end on-premise, like any other Angular application.<br/>
+Just type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">cd front-fitzhi
+npm install
+ng build --prod</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <strong>dist</strong> (by default) directory will be created.<br/>
+Just copy everything within the output folder to a folder on your server.
+For more precision, just RTFM, <a href="https://angular.io/guide/deployment" class="bare">https://angular.io/guide/deployment</a></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Your internet browser will have to handle 2 servers simultaneously.<br/>
+Therefore your will face some CORS issues. So read the chapter further on the subject of CORS.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deployment_description">Deployment description</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The solution is composed of these directories</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -317,7 +422,7 @@ rm -rf .git</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Directory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy</p></td>
@@ -350,46 +455,11 @@ rm -rf .git</code></pre>
 The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare">http://localhost:8080</a> if you start the server in HTTP mode, and
 <a href="http://localhost:8443" class="bare">http://localhost:8443</a> in HTTPS mode.</p>
 </div>
-<div class="paragraph">
-<p>To start the back-end fitzhì, just type:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">./run.sh HTTP (or HTTPS)</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>To test if the server is started, just visit the url <a href="http://localhost:8080/api/test/ping" class="bare" target="_blank" rel="noopener">http://localhost:8080/api/test/ping</a> , or <a href="http://hostname:8080/api/test/ping" class="bare">http://hostname:8080/api/test/ping</a> <br/>
-A <strong>Pong</strong> response is expected.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_front_end_installation">FRONT-END INSTALLATION</h4>
-<div class="paragraph">
-<p>The easiest installation involved no-installation.<br/>
-The last stable release of front-fitzhì is available here <a href="https://fitzhi.github.io/spoq" class="bare" target="_blank" rel="noopener">https://fitzhi.github.io/spoq</a>.<br/>
-This URL hosts only a static web server which delivers JS files. So just go there.</p>
-</div>
-<div class="paragraph">
-<p>If you prefer to deploy the front-end on-premise, like any other Angular application.<br/>
-Just type</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">cd front-fitzhi
-npm install
-ng build --prod</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A <strong>dist</strong> (by default) directory will be created.<br/>
-Just copy everything within the output folder to a folder on your server.
-For more precision, just RTFM, <a href="https://angular.io/guide/deployment" class="bare">https://angular.io/guide/deployment</a></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_the_brower_and_the_cors_issue">THE BROWER AND THE CORS ISSUE</h3>
+<div class="sect1">
+<h2 id="_the_brower_and_the_cors_issue">THE BROWER AND THE CORS ISSUE</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If you are not familiar with the mechanism of CORS, you can refer to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noopener">this simple presentation</a>.<br/>
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests.<br/>
@@ -408,8 +478,8 @@ With Fitzhì, you have 2 cross domain sources.</p>
 <div class="paragraph">
 <p>Therefore you might have have to configure 2 types of servers.</p>
 </div>
-<div class="sect3">
-<h4 id="_the_pirate_way">THE PIRATE WAY</h4>
+<div class="sect2">
+<h3 id="_the_pirate_way">THE PIRATE WAY</h3>
 <div class="paragraph">
 <p>The first solution, and the simplest one, is <strong>NO SECURITY, NO PROBLEM WITH SECURITY&#8230;&#8203;</strong><br/>
 <strong>For testing purpose</strong>, your can disable the CORS protection inside your browser.</p>
@@ -441,8 +511,8 @@ Avoid using that instance to surf on the Web.
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_the_backend_of_fitzhì">THE BACKEND OF FITZHÌ</h4>
+<div class="sect2">
+<h3 id="_the_backend_of_fitzhì">THE BACKEND OF FITZHÌ</h3>
 <div class="paragraph">
 <p>You will setup your CORS policy with the property <code><strong>allowedOrigins</strong></code> located in the <code><strong>application.properties</strong></code> file.<br/>
 You will find below an extract from this file.</p>
@@ -459,10 +529,11 @@ You will find below an extract from this file.</p>
 allowedOrigins=http://localhost:4200,https://spoq.io</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_the_sonar_configuration">THE SONAR CONFIGURATION</h5>
-<div class="sect5">
-<h6 id="_allowing_the_fitzhi_origin_into_sonar">ALLOWING THE FITZHI ORIGIN INTO SONAR</h6>
+</div>
+<div class="sect2">
+<h3 id="_the_sonar_configuration">THE SONAR CONFIGURATION</h3>
+<div class="sect3">
+<h4 id="_allowing_the_fitzhi_origin_into_sonar">ALLOWING THE FITZHI ORIGIN INTO SONAR</h4>
 <div class="paragraph">
 <p>Sonar server is deployed on a Tomcat server.<br/>
 Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file <code><strong>web.xml</strong></code>.</p>
@@ -509,12 +580,10 @@ Your can add the lines below to your <code>web.xml</code> file. We guess that th
 <div class="title">Warning</div>
 </td>
 <td class="content">
-For some unexplained reason, some versions of Sonar are inert with respect to these parameters. The installation of a reverse proxy, such as NGINX becomes essential.
+For some unexplained reason, some versions of Sonar are inert with respect to these parameters. The installation of a reverse proxy, such as NGINX becomes therefore essential.
 </td>
 </tr>
 </table>
-</div>
-</div>
 </div>
 <div class="sect4">
 <h5 id="_allowing_the_fitzhi_origin_from_sonar">ALLOWING THE FITZHI ORIGIN FROM SONAR</h5>
@@ -606,14 +675,17 @@ sonar.web.port=9000</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_first_start_of_fitzhi">FIRST START OF FITZHI</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_first_start_of_fitzhi">FIRST START OF FITZHI</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The common sense might consider that there can be <strong>only</strong> one first launch.
 In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.<br/></p>
 </div>
-<div class="sect3">
-<h4 id="_the_very_first_start">THE VERY FIRST START</h4>
+<div class="sect2">
+<h3 id="_the_very_first_start">THE VERY FIRST START</h3>
 <div class="paragraph">
 <p>The first ever user inside Fitzhì will be the first administrative user, and therefore its owner.<br/>
 <em>At the beginning, God enters in Fitzhì and performs all initialization</em>.<br/>
@@ -636,7 +708,6 @@ The first panel saves in the permanent local storage the URL of your backend ser
 </td>
 </tr>
 </table>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_the_first_start">THE FIRST START</h4>
