@@ -94,7 +94,15 @@ This property is mandatory if the connection mode is the user/password mode.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Fitzhi shares its internal deployment directory <code>/fitzhi/deploy/</code> with your host machine.</p>
+<p>Fitzhi shares its internal deployment directory <code>/fitzhi/deploy/</code> with your host machine.<br/>
+This directory contains the server, the settings and the referential and application data of fitzhì<br/>
+You should first create a volume to store the Fitzhi data.<br/>
+The content of the volume is described <a href="#_deployment_description">here</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">docker volume create fitzhi-data</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>To start the application in the Sonar recommended way, you just can type :</p>
@@ -102,9 +110,9 @@ This property is mandatory if the connection mode is the user/password mode.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
+-e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "login=youLoginTokenToSonar" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
+-v fitzhi-data:/fitzhi/deploy/ \
 -p 80:80 -d --rm fitzhi/application:1.6</code></pre>
 </div>
 </div>
@@ -114,10 +122,10 @@ This property is mandatory if the connection mode is the user/password mode.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
+-e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "user=youSonarUser" \
 -e "password=yourSonarPassword" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
+-v fitzhi-data:/fitzhi/deploy/ \
 -p 80:80 -d --rm fitzhi/application:1.6</code></pre>
 </div>
 </div>
@@ -318,8 +326,8 @@ Therefore your will face some CORS issues. So read the chapter further on the su
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Directory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Directory</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy</p></td>
@@ -327,23 +335,29 @@ Therefore your will face some CORS issues. So read the chapter further on the su
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/backend-fitzhi</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the directory of the executable fitzhì.jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This directory contains executable <code>fitzhi.jar`</code> and the <code>application.properties</code> file.<br/>
+Specific settings for fitzhi are declared in this file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories used by fitzhì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data store of fitzhì</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/application</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the data directories where your corporate data will be stored (e.g. staff.json, project.json &amp; skill.json). All of your updates will be stored there.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data directories where your corporate data will be stored (e.g. staff.json, project.json &amp; skill.json).<br/>
+All of your updates will be stored there.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/referential</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the referential data which contains the static data used by the application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The referential data which contains the static data used by the application</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy/data/repos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the directory which contains all local GIT repositories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The directory which contains all local GIT repositories</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy/docker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The files necessary for the container to run correctly.</p></td>
 </tr>
 </tbody>
 </table>
@@ -534,7 +548,10 @@ With this setting, your appplication will be available at <a href="http://localh
           chunked_transfer_encoding off;
 	}
 
-	location /sonarqube {
+	location ~ ^/sonar/(.+) {
+		# We rewrite and remove the sonar directory in the path.
+		rewrite ^/sonar/(.+)$ /$1 break;
+
 		proxy_pass http://localhost:9000/sonarqube;
 
 		proxy_set_header Host $http_host;

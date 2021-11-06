@@ -117,16 +117,23 @@ This property is mandatory if the connection mode is the user/password mode.
 
 |===
 
-Fitzhi shares its internal deployment directory `/fitzhi/deploy/` with your host machine.
+Fitzhi shares its internal deployment directory `/fitzhi/deploy/` with your host machine. +
+This directory contains the server, the settings and the referential and application data of fitzhì +
+You should first create a volume to store the Fitzhi data. +
+The content of the volume is described link:#_deployment_description[here].
+[source, shell]
+----
+docker volume create fitzhi-data
+----
 
 To start the application in the Sonar recommended way, you just can type :
 
 [source, shell]
 ----
 docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
+-e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "login=youLoginTokenToSonar" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
+-v fitzhi-data:/fitzhi/deploy/ \
 -p 80:80 -d --rm fitzhi/application:1.6
 ----
 
@@ -135,13 +142,12 @@ To start the application in an alternative way, you can type :
 [source, shell]
 ----
 docker run --name fitzhi \
--e "urlSonarServer=http://yourSonarHostname:9000/sonar" \
+-e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "user=youSonarUser" \
 -e "password=yourSonarPassword" \
--v ~/yourLocalStorage:/fitzhi/deploy/ \
+-v fitzhi-data:/fitzhi/deploy/ \
 -p 80:80 -d --rm fitzhi/application:1.6
 ----
-
 
 === Installation on a server
 
@@ -250,19 +256,23 @@ Therefore your will face some CORS issues. So read the chapter further on the su
 The solution is composed of these directories
 
 |===
-|Directory |Description
+|**Directory** |**Description**
 |deploy
 |Main deployment directory
 |deploy/backend-fitzhi
-|the directory of the executable fitzhì.jar
+|This directory contains executable `fitzhi.jar`` and the `application.properties` file. +
+Specific settings for fitzhi are declared in this file.
 |deploy/data
-|the data directories used by fitzhì
+|The data store of fitzhì
 |deploy/data/application
-|the data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). All of your updates will be stored there.
+|The data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). +
+All of your updates will be stored there.
 |deploy/data/referential
-|the referential data which contains the static data used by the application
+|The referential data which contains the static data used by the application
 |deploy/data/repos
-|the directory which contains all local GIT repositories
+|The directory which contains all local GIT repositories
+|deploy/docker
+|The files necessary for the container to run correctly.
 |===
 
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
@@ -390,8 +400,11 @@ server {
           chunked_transfer_encoding off;
 	}
 	
-	location /sonarqube {
-		proxy_pass http://localhost:9000/sonarqube;
+	location ~ ^/sonar/(.+) {
+		# We rewrite and remove the sonar directory in the path.
+		rewrite ^/sonar/(.+)$ /$1 break;
+
+		proxy_pass http://localhost:9000;
 		
 		proxy_set_header Host $http_host;
 		proxy_set_header X-Real-IP $remote_addr;
@@ -401,18 +414,8 @@ server {
 }
 ----
 
-CAUTION: The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at http://localhost:8081/sonarqube 
+CAUTION: The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at http://localhost:8081/sonar.
 
-We assume in this configuration file that your Sonar instance is located behind the url http://localhost:9000/sonarqube. Your **sonar.properties** has these settings :
-
-[source, json]
-----
-# Web context. When set, it must start with forward slash (for example /sonarqube).
-# The default value is root context (empty value).
-sonar.web.context=/sonarqube
-# TCP port for incoming HTTP connections. Default value is 9000.
-sonar.web.port=9000
-----
 
 == FIRST START OF FITZHI
 
