@@ -18,7 +18,7 @@ p.bad {
 }
 
 #patchwork, #rising-skyline, #skills-treechart, #portfolio-pie-chart, #project-dashboard, 
-#project-dashboard-staff, #project-dashboard-sonar, #project-dashboard-audit    {
+#project-dashboard-staff, #project-dashboard-sonar, #project-dashboard-audit, #starfield    {
 	padding-top: var(--nav-height);
 	height: 1px;
 }
