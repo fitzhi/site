@@ -32,7 +32,7 @@ The current tag is 1.6.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">docker pull fitzhi/application:1.6</code></pre>
+<pre class="highlight"><code class="language-shell" data-lang="shell">docker pull fitzhi/application:1.6.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -113,7 +113,7 @@ The content of the volume is described <a href="#_deployment_description">here</
 -e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "login=youLoginTokenToSonar" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6</code></pre>
+-p 80:80 -d --rm fitzhi/application:1.6.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -126,7 +126,7 @@ The content of the volume is described <a href="#_deployment_description">here</
 -e "user=youSonarUser" \
 -e "password=yourSonarPassword" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6</code></pre>
+-p 80:80 -d --rm fitzhi/application:1.6.1</code></pre>
 </div>
 </div>
 </div>
@@ -529,30 +529,30 @@ With this setting, your appplication will be available at <a href="http://localh
 	}
 
 	location /api {
-          proxy_pass http://localhost:8080;
+		  proxy_pass http://localhost:8080;
 
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
+		  proxy_set_header Host $http_host;
+		  proxy_set_header X-Real-IP $remote_addr;
+		  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		  proxy_set_header X-Forwarded-Proto $scheme;
 
-          # When we create new entitiy like 'project',the API returns a 201 response with a 'location' header
-          # We add this setting to ensure that the https scheme is present in the response
-          # cf. http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect
-          proxy_redirect http://$host https://$host;
+		  # When we create new entitiy like 'project',the API returns a 201 response with a 'location' header
+		  # We add this setting to ensure that the https scheme is present in the response
+		  # cf. http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect
+		  proxy_redirect http://$host https://$host;
 
-          # These 3 settings are set to enable the event-stream flow from the server
-          # https://stackoverflow.com/questions/13672743/eventsource-server-sent-events-through-nginx
-          proxy_set_header Connection '';
-          proxy_http_version 1.1;
-          chunked_transfer_encoding off;
+		  # These 3 settings are set to enable the event-stream flow from the server
+		  # https://stackoverflow.com/questions/13672743/eventsource-server-sent-events-through-nginx
+		  proxy_set_header Connection '';
+		  proxy_http_version 1.1;
+		  chunked_transfer_encoding off;
 	}
 
 	location ~ ^/sonar/(.+) {
 		# We rewrite and remove the sonar directory in the path.
 		rewrite ^/sonar/(.+)$ /$1 break;
 
-		proxy_pass http://localhost:9000/sonarqube;
+		proxy_pass http://localhost:9000;
 
 		proxy_set_header Host $http_host;
 		proxy_set_header X-Real-IP $remote_addr;
@@ -569,22 +569,10 @@ With this setting, your appplication will be available at <a href="http://localh
 <div class="title">Caution</div>
 </td>
 <td class="content">
-The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at <a href="http://localhost:8081/sonarqube" class="bare">http://localhost:8081/sonarqube</a>
+The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at <a href="http://localhost:8081/sonar" class="bare">http://localhost:8081/sonar</a>.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>We assume in this configuration file that your Sonar instance is located behind the url <a href="http://localhost:9000/sonarqube" class="bare">http://localhost:9000/sonarqube</a>. Your <strong>sonar.properties</strong> has these settings :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json"># Web context. When set, it must start with forward slash (for example /sonarqube).
-# The default value is root context (empty value).
-sonar.web.context=/sonarqube
-# TCP port for incoming HTTP connections. Default value is 9000.
-sonar.web.port=9000</code></pre>
-</div>
 </div>
 </div>
 </div>

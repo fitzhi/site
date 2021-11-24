@@ -82,7 +82,7 @@ The current tag is 1.6.
 
 [source, shell]
 ----
-docker pull fitzhi/application:1.6
+docker pull fitzhi/application:1.6.1
 ----
 
 The container contains :
@@ -134,7 +134,7 @@ docker run --name fitzhi \
 -e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "login=youLoginTokenToSonar" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6
+-p 80:80 -d --rm fitzhi/application:1.6.1
 ----
 
 To start the application in an alternative way, you can type :
@@ -146,7 +146,7 @@ docker run --name fitzhi \
 -e "user=youSonarUser" \
 -e "password=yourSonarPassword" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6
+-p 80:80 -d --rm fitzhi/application:1.6.1
 ----
 
 === Installation on a server
