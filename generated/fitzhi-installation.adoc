@@ -75,28 +75,40 @@ digraph G {
 
 == INSTALLATION OF FITZHI
 
-=== Using Fitzhì in a Docker cointainer
+There are currently 3 ways to install Fitzhì on your environments.
 
-You can download a container of application directly from http://hub.docker.com/u/fitzhi/[window=_blank]. 
-The current tag is 1.6.
+=== USING FITZHI IN A DOCKER CONTAINER
+
+The easiest way to install Fitzhi is to use a preinstalled version of Fitzhi inside a Docker container.
+
+You can download a container directly from http://hub.docker.com/u/fitzhi/[window=_blank]. 
+The current tag is 1.6.1.
 
 [source, shell]
 ----
 docker pull fitzhi/application:1.6.1
 ----
 
-The container contains :
+The container provides :
 
 - a `Java` `Spring` Rest server 
 - an `Angular` application
 - an `nginx` instance 
 - a `Git` client
 
-Fitzhi should be linked with your Sonar server, if any. This component is not mandatory.
-A Sonar server is considered as a source of information useful to assess the quality of a project.
-The connection settings required to access your Sonar server from inside the container has to be provided at startup.
+[.text-justify] 
+Fitzhi might be linked with your Sonar server, if any. This component is not mandatory for the proper functioning of fitzhi
+Sonar server is considered a useful source of information to assess the quality of projects.
+If you want to link the container with your Sonar instance, you has to provide some connection settings at startup.
+These settings will allow the `reverse-proxy` deployed in the container to access your Sonar server [.underline]#from inside#.
 
-The parameters are :
+.RESOLUTION OF THE SONAR URL
+****
+[.text-justify] 
+The URL given to the container must be resolvable from inside the environment that will host the application. If you test Fitzhi from your local machine and the URL https://mysonar:9000 is reachable from there, then you can pass this url. Otherwise check that the destination of the container will resolve the given url.
+****
+
+**The parameters are :**
 
 |===
 | **Parameter name** |**Description**
@@ -118,7 +130,7 @@ This property is mandatory if the connection mode is the user/password mode.
 |===
 
 Fitzhi shares its internal deployment directory `/fitzhi/deploy/` with your host machine. +
-This directory contains the server, the settings and the referential and application data of fitzhì +
+This directory contains the server, the settings and the referential and application data of Fitzhì +
 You should first create a volume to store the Fitzhi data. +
 The content of the volume is described link:#_deployment_description[here].
 [source, shell]
@@ -149,9 +161,9 @@ docker run --name fitzhi \
 -p 80:80 -d --rm fitzhi/application:1.6.1
 ----
 
-=== Installation on a server
+=== INSTALLATION ON YOUR LOCAL ENVIRONMENTS
 
-==== the Backend server
+==== INSTALLATION OF THE BACKEND SERVER
 
 To deploy the backend on a local server, you first have to download the archive of Fitzhì.
 
@@ -168,10 +180,12 @@ cd ./deploy/backend-fitzhi/
 java -Xmx1g -jar fitzhi.jar --spring.profiles.active=HTTP
 ----
 
-NOTE: To check the server status, and verify that the server has been successfully launched, just visit the url http://localhost:80/api/test/ping[window=_blank] , or http://hostname:80/api/test/ping  +
+NOTE: The Backend server will listen by default the port number `8080`.
+
+TIP: To check the server status, and verify that the server has been successfully launched, just visit the url http://localhost:80/api/test/ping[window=_blank] , or http://hostname:80/api/test/ping  +
 A text **Pong** response is expected.
 
-==== the Frontend server
+==== INSTALLATION OF THE FRONTEND SERVER
 
 The Angular project has to be downloaded. A local webserver is necessary to publish the application. +
 Our documentation proposes the use of `nginx` for this task, among others.
@@ -185,11 +199,12 @@ tar xvf ../spoq.zip
 ----
 
 WARNING: Your internet browser will have to handle 2 servers simultaneously. +
-Therefore your will face some CORS issues. So please read the chapter further on the subject of CORS.
+Therefore your will face some CORS issues. So please read the chapter related to the configuration of NGINX.
 
-=== **Building** and installation on a server
 
-First of all, you need to export the GitHub repository.
+=== **BUILD** AND INSTALLATION ON YOUR LOCAL ENVIRONMENTS
+
+First you need to export the GitHub repository.
 
 .Download the source of Fitzhì
 [source, shell]
@@ -203,7 +218,7 @@ A directory Application will be downloaded with this content :
 * front-fitzhi (the Angular front-end project)
 * back-fitzhi  (the Spring back-end project)
 
-=== Building the backend server
+=== BUILDING THE BACKEND SERVER
 
 The building script requires the following prerequisites:::
 * Java 11 or higher
@@ -228,7 +243,7 @@ NOTE: To test if the server is correctly started, just visit the url http://loca
 A **Pong** response is expected.
 
 
-=== Building the frontend application
+=== BUILDING THE FRONTEND CLIENT
 
 The easiest installation involved no-installation. +
 The last stable release of front-fitzhì is available here https://fitzhi.github.io/spoq[window=_blank]. +
@@ -247,33 +262,8 @@ A *dist* (by default) directory will be created. +
 Just copy everything within the output folder to a folder on your server.
 For more precision, just RTFM, https://angular.io/guide/deployment
 
-
-WARNING: Your internet browser will have to handle 2 servers simultaneously. +
+WARNING: Your internet browser will have to handle 2 servers simultaneously.
 Therefore your will face some CORS issues. So read the chapter further on the subject of CORS.
-
-== Deployment description
-
-The solution is composed of these directories
-
-|===
-|**Directory** |**Description**
-|deploy
-|Main deployment directory
-|deploy/backend-fitzhi
-|This directory contains executable `fitzhi.jar`` and the `application.properties` file. +
-Specific settings for fitzhi are declared in this file.
-|deploy/data
-|The data store of fitzhì
-|deploy/data/application
-|The data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). +
-All of your updates will be stored there.
-|deploy/data/referential
-|The referential data which contains the static data used by the application
-|deploy/data/repos
-|The directory which contains all local GIT repositories
-|deploy/docker
-|The files necessary for the container to run correctly.
-|===
 
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
 The back-end URL, therefore, will be http://localhost:8080 if you start the server in HTTP mode, and 
@@ -281,94 +271,32 @@ http://localhost:8443 in HTTPS mode.
 
 
 == THE BROWER AND THE CORS ISSUE
+
+IMPORTANT: First of all, you do not have to read this chapter if you are using the Docker container.
+The reverse-proxy is already pre-installed and pre-configured.
+
 If you are not familiar with the mechanism of CORS, you can refer to https://en.wikipedia.org/wiki/Cross-origin_resource_sharing[this simple presentation, window=_blank]. +
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests. +
 With Fitzhì, you have 2 cross domain sources.
 
-* Your single back-end of Fitzhì
+Therefore you might have to configure 3 types of servers.
+* the HTTP server of the Angular application
+* the backend of Fitzhì
 * The Sonar server(s) available on your network.
 
-Therefore you might have have to configure 2 types of servers.
+The software `NGINX` is not a prerequisite, you can use either `Apache`, or `Haproxy`, or any other solution as well. The procedure below is just limited to NGINX.
 
-=== THE PIRATE WAY
-The first solution, and the simplest one, is **NO SECURITY, NO PROBLEM WITH SECURITY...** +
-*For testing purpose*, your can disable the CORS protection inside your browser. 
+First you need to download link:http://nginx.org/en/docs/njs/index.html[NGINX, window=_blank] and follow the instuctions.
 
-With Chrome, you just need to pass the argument `--disable-web-security` at start-up. +
-A startup file `*chrome.sh*`, is provided in the project folder. 
+After the installation, the configuration is very simple. Depending on your distribution, you might have to configure the **nginx.conf** file, or the **default** file as below. 
 
-* Control that no instance of Chrome is running
-* and then just launch that script.
+**3 entries have to be declared :**
 
-CAUTION: Avoid using that instance to surf on the Web.
+- the full path of the Angular distribution files
+- the URL behind which the backend server will be reachable
+- The URL behind which your Sonar server is reachable from your environment
 
-=== THE BACKEND OF FITZHÌ
-You will setup your CORS policy with the property `*allowedOrigins*` located in the `*application.properties*` file. +
-You will find below an extract from this file.
-
-[source]
-----
-#
-# This property is necessary to declare the host from where the front-end will access this server.
-# In order to prevent any CORS exception, you have to setup your front-end URL.
-# Default setting accepts 2 URL :
-# - The local default URL is you have installed the front-end directly on your machine
-# - the https://spoq.io hosting the front-end on the WWW
-#
-allowedOrigins=http://localhost:4200,https://spoq.io
-----
-
-=== THE SONAR CONFIGURATION
-
-==== ALLOWING THE FITZHI ORIGIN INTO SONAR
-
-Sonar server is deployed on a Tomcat server. +
-Therefore, the CORS policy of Sonar is in fact the CORS policy of Tomcat, which stands in the file `*web.xml*`.
-
-You just need to declare the CORS filter and its settings. +
-Your can add the lines below to your `web.xml` file. We guess that these tag are enoughly explicit.
-
-https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter[You can refer to this documentation if you need further explanation, window=_blank].
-
-[source, xml]
-----
-<filter>
-	<filter-name>CorsFilter</filter-name>
-	<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-	<init-param>
-		<param-name>cors.allowed.origins</param-name>
-		<param-value>http://localhost:4200, https://spoq.io</param-value>
-	</init-param>
-	<init-param>
-		<param-name>cors.allowed.methods</param-name>
-		<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
-	</init-param>
-	<init-param>
-		<param-name>cors.allowed.headers</param-name>
-		<param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
-	</init-param>
-	<init-param>
-		<param-name>cors.exposed.headers</param-name>
-		<param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
-	</init-param>
-</filter>
-<filter-mapping>
-	<filter-name>CorsFilter</filter-name>
-	<url-pattern>/*</url-pattern>
-</filter-mapping>
-
-----
-
-WARNING: For some unexplained reason, some versions of Sonar are inert with respect to these parameters. The installation of a reverse proxy, such as NGINX becomes therefore essential.
-
-===== ALLOWING THE FITZHI ORIGIN FROM SONAR
-
-First, you need to download link:http://nginx.org/en/docs/njs/index.html[NGINX, window=_blank] if you have not. 
-
-TIP: NGINX is not a prerequisite, you can use either Apache, or Haproxy, or any other solution as well.
-
-After installation, the configuration is very simple. You just have to configure the **nginx.conf** file as below. 
-With this setting, your appplication will be available at http://localhost:8081
+With these settings, your appplication will be available at http://localhost:8081
 [source, json]
 ----
 server {
@@ -417,7 +345,32 @@ server {
 CAUTION: The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at http://localhost:8081/sonar.
 
 
-== FIRST START OF FITZHI
+
+== DEPLOYMENT DESCRIPTION
+
+The backend solution is composed of these directories.
+
+|===
+|**Directory** |**Description**
+|deploy
+|Main deployment directory
+|deploy/backend-fitzhi
+|This directory contains executable `fitzhi.jar`` and the `application.properties` file. +
+Specific settings for fitzhi are declared in this file.
+|deploy/data
+|The data store of fitzhì
+|deploy/data/application
+|The data directories where your corporate data will be stored (e.g. staff.json, project.json & skill.json). +
+All of your updates will be stored there.
+|deploy/data/referential
+|The referential data which contains the static data used by the application
+|deploy/data/repos
+|The directory which contains all local GIT repositories
+|deploy/docker
+|The files necessary for the container to run correctly.
+|===
+
+== GESTTING STARTED WITH FITZHI
 
 The common sense might consider that there can be *only* one first launch. 
 In fact, *two* are available for Fitzhì : the first launch and the *very* first launch. +

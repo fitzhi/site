@@ -31,18 +31,20 @@ body {
 }
 
 h1 {
+	font-size: 50px;
 	color:var(--primarycolor) !important;
 	font-family:"Montserrat",sans-serif;
 }
 
 h2 {
 	background: -webkit-linear-gradient(var(--color-selected), var(--color-error));
+	border-bottom: 1px solid lightgray;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent; 
 	font-family:"Montserrat",sans-serif;
-	font-size: 50px;
-	margin-left: 10px !important;
+	font-size: 40px;
+	margin-left: 0px !important;
 }
 
 h3,h4,h5,h6 {
@@ -51,8 +53,8 @@ h3,h4,h5,h6 {
 }
 
 h3 {
-	margin-left: 40px !important;
-	font-size: 40px;
+	margin-left: 30px !important;
+	font-size: 30px;
 }
 
 h4 {
