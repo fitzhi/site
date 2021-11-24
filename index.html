@@ -62,9 +62,13 @@
 	if (lang !== null) {
 		redirect(lang);
 	} else {
-		const url = 'https://ipapi.co/' + myIp + '/country/';
-		console.log ('url', url);
-		$.get(url, redirect);
+		try {
+			const url = 'https://ipapi.co/' + myIp + '/country/';
+			$.get(url, redirect);
+		} catch (error) {
+			// By default, if an error occurs, we jump to the English version.s
+			redirect('EN');
+		}
 	}
 </script>
 	  
