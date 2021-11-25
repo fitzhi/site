@@ -16,6 +16,7 @@
 --linkcoloralternate:#db3279; /* Friends Magneta */
 --white:#FFFFFF;
 --black:#000000;
+--tableHeaderColor: #28a745;
 }
 
 /* Text styles */
@@ -77,7 +78,7 @@ code {
 mark{background-color: var(--highlightcolor)} /* Text highlighting color */
 
 /* Table styles */
-th{background-color: var(--maincolor);color:var(--black) !important;}
+th{background-color: var(--tableHeaderColor); color:var(--white) !important; opacity: 0.8;}
 td{background-color: var(--maincolor);color: var(--black) !important}
 
 
@@ -93,4 +94,6 @@ video {
 table {
 	width: 55vw!important;
 	font-size: 3vw;
+}
+
 }

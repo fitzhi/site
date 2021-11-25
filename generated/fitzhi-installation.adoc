@@ -105,13 +105,16 @@ These settings will allow the `reverse-proxy` deployed in the container to acces
 .RESOLUTION OF THE SONAR URL
 ****
 [.text-justify] 
-The URL given to the container must be resolvable from inside the environment that will host the application. If you test Fitzhi from your local machine and the URL https://mysonar:9000 is reachable from there, then you can pass this url. Otherwise check that the destination of the container will resolve the given url.
+The URL given to the container must be resolvable from inside the environment that will host the application. If you test Fitzhi from your local machine and the URL https://mysonar:9000 is reachable from there, then you can pass this url. Otherwise check that the destination of the container will resolve the given url. +
+The container currently does only support **one** Sonar server. Please install Fitzhi on your local environments if you have multiple Sonar servers in your IT.
 ****
 
 **The parameters are :**
 
+[cols="1,1"]
 |===
-| **Parameter name** |**Description**
+| **Name** | **Description**
+
 |urlSonarServer
 |URL where the Sonar server is deployed.
 
@@ -265,6 +268,7 @@ For more precision, just RTFM, https://angular.io/guide/deployment
 WARNING: Your internet browser will have to handle 2 servers simultaneously.
 Therefore your will face some CORS issues. So read the chapter further on the subject of CORS.
 
+[.text-justify] 
 You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
 The back-end URL, therefore, will be http://localhost:8080 if you start the server in HTTP mode, and 
 http://localhost:8443 in HTTPS mode.
@@ -275,6 +279,7 @@ http://localhost:8443 in HTTPS mode.
 IMPORTANT: First of all, you do not have to read this chapter if you are using the Docker container.
 The reverse-proxy is already pre-installed and pre-configured.
 
+[.text-justify] 
 If you are not familiar with the mechanism of CORS, you can refer to https://en.wikipedia.org/wiki/Cross-origin_resource_sharing[this simple presentation, window=_blank]. +
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests. +
 With Fitzhì, you have 2 cross domain sources.
@@ -284,10 +289,13 @@ Therefore you might have to configure 3 types of servers.
 * the backend of Fitzhì
 * The Sonar server(s) available on your network.
 
+[.text-justify] 
 The software `NGINX` is not a prerequisite, you can use either `Apache`, or `Haproxy`, or any other solution as well. The procedure below is just limited to NGINX.
 
+[.text-justify] 
 First you need to download link:http://nginx.org/en/docs/njs/index.html[NGINX, window=_blank] and follow the instuctions.
 
+[.text-justify] 
 After the installation, the configuration is very simple. Depending on your distribution, you might have to configure the **nginx.conf** file, or the **default** file as below. 
 
 **3 entries have to be declared :**
@@ -344,14 +352,13 @@ server {
 
 CAUTION: The sonar-servers.json file contains the list of all Sonar servers available on your network. This file is hosted on the Fitzhi backend server. It should contain the URL(s) of the Sonar instance(s) FROM THE PERSPECTIVE OF THE WEB BROWSER. In the case above, your Sonar server will be declared at http://localhost:8081/sonar.
 
-
-
 == DEPLOYMENT DESCRIPTION
 
 The backend solution is composed of these directories.
 
 |===
 |**Directory** |**Description**
+
 |deploy
 |Main deployment directory
 |deploy/backend-fitzhi
@@ -372,8 +379,9 @@ All of your updates will be stored there.
 
 == GESTTING STARTED WITH FITZHI
 
+[.text-justify] 
 The common sense might consider that there can be *only* one first launch. 
-In fact, *two* are available for Fitzhì : the first launch and the *very* first launch. +
+In fact, *two* are available for Fitzhì : the first launch and the *very* first launch.
 
 
 === THE VERY FIRST START
@@ -387,8 +395,9 @@ image::/assets/img/installation/very-first-connection-1.png[600,500]
 IMPORTANT: The first panel saves in the permanent local storage the URL of your backend server. Default is localhost:8080. You will have to remove this entry if you plan to move this server _(an entry in the backlog will simplify this operation)_.
 
 ==== THE FIRST START 
+[.text-justify] 
 Each user in Fitzhì will experience a first launch. +
-Depending on a property set in file `*application.properties*`, Fitzhi users can self-register themselves, or not. If not, they have to be already created _(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)_. + 
+Depending on a property set in file `*application.properties*`, Fitzhi users can self-register themselves, or not. If not, they have to be already created. + 
 Default settings allow the self-registration.
 
 [source]

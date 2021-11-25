@@ -70,7 +70,8 @@ These settings will allow the <code>reverse-proxy</code> deployed in the contain
 <div class="content">
 <div class="title">RESOLUTION OF THE SONAR URL</div>
 <div class="paragraph text-justify">
-<p>The URL given to the container must be resolvable from inside the environment that will host the application. If you test Fitzhi from your local machine and the URL <a href="https://mysonar:9000" class="bare">https://mysonar:9000</a> is reachable from there, then you can pass this url. Otherwise check that the destination of the container will resolve the given url.</p>
+<p>The URL given to the container must be resolvable from inside the environment that will host the application. If you test Fitzhi from your local machine and the URL <a href="https://mysonar:9000" class="bare">https://mysonar:9000</a> is reachable from there, then you can pass this url. Otherwise check that the destination of the container will resolve the given url.<br/>
+The container currently does only support <strong>one</strong> Sonar server. Please install Fitzhi on your local environments if you have multiple Sonar servers in your IT.</p>
 </div>
 </div>
 </div>
@@ -82,11 +83,13 @@ These settings will allow the <code>reverse-proxy</code> deployed in the contain
 <col style="width: 50%;"/>
 <col style="width: 50%;"/>
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">urlSonarServer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL where the Sonar server is deployed.</p></td>
@@ -337,7 +340,7 @@ Therefore your will face some CORS issues. So read the chapter further on the su
 </tr>
 </table>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>You can copy the deploy directory on a remote server, or leave it, on your machine, for testing purpose.
 The back-end URL, therefore, will be <a href="http://localhost:8080" class="bare">http://localhost:8080</a> if you start the server in HTTP mode, and
 <a href="http://localhost:8443" class="bare">http://localhost:8443</a> in HTTPS mode.</p>
@@ -361,7 +364,7 @@ The reverse-proxy is already pre-installed and pre-configured.
 </tr>
 </table>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>If you are not familiar with the mechanism of CORS, you can refer to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noopener">this simple presentation</a>.<br/>
 This protection feature is activated inside your browser, when your executes multiple cross-domain requests.<br/>
 With Fitzhì, you have 2 cross domain sources.</p>
@@ -372,13 +375,13 @@ With Fitzhì, you have 2 cross domain sources.</p>
 * the backend of Fitzhì
 * The Sonar server(s) available on your network.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>The software <code>NGINX</code> is not a prerequisite, you can use either <code>Apache</code>, or <code>Haproxy</code>, or any other solution as well. The procedure below is just limited to NGINX.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>First you need to download <a href="http://nginx.org/en/docs/njs/index.html" target="_blank" rel="noopener">NGINX</a> and follow the instuctions.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>After the installation, the configuration is very simple. Depending on your distribution, you might have to configure the <strong>nginx.conf</strong> file, or the <strong>default</strong> file as below.</p>
 </div>
 <div class="paragraph">
@@ -470,11 +473,13 @@ The sonar-servers.json file contains the list of all Sonar servers available on 
 <col style="width: 50%;"/>
 <col style="width: 50%;"/>
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Directory</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<th class="tableblock halign-left valign-top"><strong>Directory</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deploy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Main deployment directory</p></td>
@@ -512,9 +517,9 @@ All of your updates will be stored there.</p></td>
 <div class="sect1">
 <h2 id="_gestting_started_with_fitzhi">GESTTING STARTED WITH FITZHI</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>The common sense might consider that there can be <strong>only</strong> one first launch.
-In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.<br/></p>
+In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.</p>
 </div>
 <div class="sect2">
 <h3 id="_the_very_first_start">THE VERY FIRST START</h3>
@@ -543,9 +548,9 @@ The first panel saves in the permanent local storage the URL of your backend ser
 </div>
 <div class="sect3">
 <h4 id="_the_first_start">THE FIRST START</h4>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>Each user in Fitzhì will experience a first launch.<br/>
-Depending on a property set in file <code><strong>application.properties</strong></code>, Fitzhi users can self-register themselves, or not. If not, they have to be already created <em>(Yogi Berrism, Una perogrullada, Une verità lapalissiana, une lapalissade, Een waarheid als een koe, Tårta på tårta)</em>.<br/>
+Depending on a property set in file <code><strong>application.properties</strong></code>, Fitzhi users can self-register themselves, or not. If not, they have to be already created.<br/>
 Default settings allow the self-registration.</p>
 </div>
 <div class="listingblock">
