@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158908694-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158908694-1');
+    </script>
+
+    <title>Fitzhì : Quality IT assets portal and skills management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Frédéric VIDAL @Fitzhì" />
+    <meta name="description" content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal." />
+    <meta name="keywords" content="Open Source Skills Management software" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="/assets/img/zhi.ico" />
+    <meta name="theme-color" content="#563d7c" />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/fitzhi.css" rel="stylesheet" />
+    <link href="/fedora.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body class="article">
+    <h1 style="visibility: hidden;">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
+    <div id="content">
+<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+
+	<a class="navbar-brand" href="./index.html">
+		<span class="gradient logo-small">质 Fitzhì</span>
+	</a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationMenus"
+		aria-expanded="false" 
+		aria-controls="navbarsExampleDefault"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+
+	<div class="collapse navbar-collapse" id="navigationMenus">
+
+		<ul class="navbar-nav mr-auto">
+
+			<li id="menuHome" class="nav-item">
+				<a class="nav-link text-light" href="./index.html">Accueil</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link text-light" 
+					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tableaux de bord&nbsp;
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item text-success menu" href="./index.html#patchwork">&laquo; Patchwork &raquo; des projets</a>
+					<a class="dropdown-item text-success menu" href="./index.html#rising-skyline">Ligne d'horizon du portfolio</a>
+				  	<a class="dropdown-item text-success menu" href="./index.html#skills-treechart">Couverture des compétences</a>
+				  	<a class="dropdown-item text-success menu" href="./index.html#starfield">Capital compétences de l'organisation</a>
+				  	<a class="dropdown-item text-success menu" href="./index.html#portfolio-pie-chart">Diagramme sectoriel composite</a>
+				  	<div role="separator" class="dropdown-divider"></div>
+				  	<a class="dropdown-item text-success menu" href="./index.html#project-dashboard">Tableau de bord individuel par Projet</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link text-light" 
+					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Application&nbsp;
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item text-success menu" href="./installation.html">Installation</a>
+					<a class="dropdown-item text-success menu" href="./architecture.html">Architecture</a>
+				  	<a class="dropdown-item text-success menu" href="./getting-started.html">Getting started</a>
+				</div>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link text-light" href="./contact.html">Contact</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link text-light" href="./evaluate.html">Test</a>
+			</li>
+		</ul>
+
+		<a href="#" onClick="redirect();">
+			<img class="logo-country" src="../img/uk.png" ></img>
+		</a>
+	</div>
+</nav>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fitzhi is of course configurable. Its configuration is distributed in</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>one <mark>application.properties</mark> file next to the server executable, and loaded at startup,</p>
+</li>
+<li>
+<p>a serie of referential files located in the referential directory.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_applications_properties">applications.properties</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 50.0001%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1</th>
+<th class="tableblock halign-left valign-top">Column 2</th>
+<th class="tableblock halign-left valign-top">Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This column has a proportional width of 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This.column.has.a.proportional.width.of.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This column has a proportional width of 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_referential_files">Referential files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+        <!-- end of DIV with ID = "content" -->
+       </div>
+       <br/>
+       <div class="my-footer">
+            <table width="100%">
+                <tr>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2021</td>
+                    <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+
+</html>

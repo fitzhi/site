@@ -1,0 +1,18 @@
+= CONFIGURATION
+:nofooter:
+
+
+Fitzhi is of course configurable. Its configuration is distributed in 
+
+- one ##application.properties## file next to the server executable, and loaded at startup,
+- a serie of referential files located in the referential directory.
+
+== applications.properties
+
+
+include::application.properties.adoc[]
+
+
+== Referential files
+
+...

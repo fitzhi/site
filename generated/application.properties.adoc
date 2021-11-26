@@ -1,0 +1,8 @@
+[cols="2,1,3"]
+|===
+|Column 1 |Column 2 |Column 3
+
+|This column has a proportional width of 2
+|This.column.has.a.proportional.width.of.1
+|This column has a proportional width of 3
+|===

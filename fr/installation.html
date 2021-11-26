@@ -99,8 +99,15 @@
 				</div>
 			</li>
 
-			<li id="menuInstallation" class="nav-item">
-				<a class="nav-link text-light" href="./installation.html">Installation</a>
+			<li class="nav-item dropdown">
+				<a class="nav-link text-light" 
+					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Application&nbsp;
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item text-success menu" href="./installation.html">Installation</a>
+					<a class="dropdown-item text-success menu" href="./architecture.html">Architecture</a>
+				  	<a class="dropdown-item text-success menu" href="./getting-started.html">Getting started</a>
+				</div>
 			</li>
 
 			<li class="nav-item">
@@ -117,29 +124,6 @@
 		</a>
 	</div>
 </nav>
-<div class="sect1">
-<h2 id="_overview">OVERVIEW</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The architecture of Fitzhì is quite simple.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A Javascript frontend which might be launched from a remote host</p>
-</li>
-<li>
-<p>A Backend which has to be installed on a computer inside your network.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="main.png" alt="main" width="950" height="644"/>
-</div>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_installation_of_fitzhi">INSTALLATION OF FITZHI</h2>
 <div class="sectionbody">
@@ -631,59 +615,6 @@ All of your updates will be stored there.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gestting_started_with_fitzhi">GESTTING STARTED WITH FITZHI</h2>
-<div class="sectionbody">
-<div class="paragraph text-justify">
-<p>The common sense might consider that there can be <strong>only</strong> one first launch.
-In fact, <strong>two</strong> are available for Fitzhì : the first launch and the <strong>very</strong> first launch.</p>
-</div>
-<div class="sect2">
-<h3 id="_the_very_first_start">THE VERY FIRST START</h3>
-<div class="paragraph">
-<p>The first ever user inside Fitzhì will be the first administrative user, and therefore its owner.<br/>
-<em>At the beginning, God enters in Fitzhì and performs all initialization</em>.<br/>
-Fitzhì detects the first ever interaction &amp; creates the file <strong>connection.txt</strong> to save &amp; <em>(in a way)</em> celebrate this first connection.<br/>
-Then you just have to follow the steppers<br/></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/img/installation/very-first-connection-1.png" alt="600" width="500"/>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-The first panel saves in the permanent local storage the URL of your backend server. Default is localhost:8080. You will have to remove this entry if you plan to move this server <em>(an entry in the backlog will simplify this operation)</em>.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_the_first_start">THE FIRST START</h4>
-<div class="paragraph text-justify">
-<p>Each user in Fitzhì will experience a first launch.<br/>
-Depending on a property set in file <code><strong>application.properties</strong></code>, Fitzhi users can self-register themselves, or not. If not, they have to be already created.<br/>
-Default settings allow the self-registration.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>#
-# Does Fitzhì allow self registration ?
-# Either, everyone can create his own user, by simply connecting to the Fitzhi URL
-# Or a login must be already present for each new user in the staff collection.
-#
-allowSelfRegistration=true</code></pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
         <!-- end of DIV with ID = "content" -->

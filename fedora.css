@@ -75,11 +75,9 @@ code {
 	background-color: #F7F7F8 !important
 }
 
-mark{background-color: var(--highlightcolor)} /* Text highlighting color */
-
 /* Table styles */
-th{background-color: var(--tableHeaderColor); color:var(--white) !important; opacity: 0.8;}
-td{background-color: var(--maincolor);color: var(--black) !important}
+th{ background-color: var(--tableHeaderColor); color:var(--white) !important; opacity: 0.8; }
+td{ background-color: var(--maincolor);color: var(--black) !important }
 
 
 #toc.toc2{background-color:var(--sidebarbackground);}
