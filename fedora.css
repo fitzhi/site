@@ -89,9 +89,12 @@ video {
 }
 
 @media all and (max-width: 600px) {
-table {
-	width: 55vw!important;
-	font-size: 3vw;
+	table {
+		width: 55vw!important;
+		font-size: 3vw;
+	}
 }
 
+#content {
+	margin-top: 50px;
 }
