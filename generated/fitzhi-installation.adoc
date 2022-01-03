@@ -8,11 +8,11 @@ There are currently 3 ways to install Fitzhì on your environments.
 The easiest way to install Fitzhi is to use a preinstalled version of Fitzhi inside a Docker container.
 
 You can download a container directly from http://hub.docker.com/u/fitzhi/[window=_blank]. 
-The current tag is 1.6.1.
+The current tag is 1.7.
 
 [source, shell]
 ----
-docker pull fitzhi/application:1.6.1
+docker pull fitzhi/application:1.7
 ----
 
 The container provides :
@@ -75,7 +75,7 @@ docker run --name fitzhi \
 -e "urlSonarServer=http://yourSonarHostname:9000" \
 -e "login=youLoginTokenToSonar" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6.1
+-p 80:80 -d --rm fitzhi/application:1.7
 ----
 
 To start the application in an alternative way, you can type :
@@ -87,7 +87,7 @@ docker run --name fitzhi \
 -e "user=youSonarUser" \
 -e "password=yourSonarPassword" \
 -v fitzhi-data:/fitzhi/deploy/ \
--p 80:80 -d --rm fitzhi/application:1.6.1
+-p 80:80 -d --rm fitzhi/application:1.7
 ----
 
 === INSTALLATION ON YOUR LOCAL ENVIRONMENTS
