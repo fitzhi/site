@@ -1,8 +1,283 @@
-[cols="2,1,3"]
+[cols="1,2,4"]
 |===
-|Column 1 |Column 2 |Column 3
+| Name | Default Value | Description
+|spring.servlet.multipart.max-file-size
+|4MB
+|Upload properties +
 
-|This column has a proportional width of 2
-|This.column.has.a.proportional.width.of.1
-|This column has a proportional width of 3
+
+
+|spring.servlet.multipart.max-request-size
+|4MB
+|
+
+|spring.servlet.multipart.enabled
+|false
+|
+
+|thread.core.pool.size
+|4
+|Number of concurrent active threads. +
+
+this size is given to ThreadPoolTaskExecutor initialized in the class AsyncConfig. +
+With a value of 1, One single asynchronous test will be run +
+This will be roughly equivalent to Executors.newSingleThreadExecutor() +
+
+
+|logging.config
+|file:logback-spring.xml
+|Logging configuration +
+
+
+
+|storage.applications.location
+|../data/application/upload/app...
+|Upload location where upload applications are stored. +
+
+
+
+|management.endpoints.web.exposure.include
+|shutdown
+|Enabling endpoints to allow a gracefull shutdown of the application. +
+
+cf. https://www.baeldung.com/spring-boot-shutdown +
+
+
+|management.endpoint.shutdown.enabled
+|true
+|
+
+|endpoints.shutdown.enabled
+|true
+|
+
+|storage.attachments.location
+|../data/application/upload/att...
+|Upload location where audit attachments are stored. +
+
+
+
+|gitcrawler.repositories.location
+|../data/repos
+|This setting is optional. +
+
+If this setting is empty, the application will store the local repo in a temporary directory. +
+Otherwise, the clones destination will be stored in the indicated directory +
+
+
+|patternsCleanup
+|/src/main/java/;/src/test/java...
+|These directories will be removed from the full path of class files +
+
+For example : /src/main/java/java/util/List.java will be treated like java/util/List.java +
+
+
+|patternsInclusion
+|(.java$\|.js$\|.cs$\|.css$\|.s...
+|Patterns to take account, OR NOT, a file within the parsing process +
+
+IMPORTANT : THE SEPARATOR BETWEEN EACH PATTERN IS ; +
+
+
+|prefilterEligibility
+|true
+|This boolean is setting the fact that the eligibility validation is made : +
+
+prior to the creation of the repository-chart data file, +
+or after. +
+ +
+Fitzhi is storing intermediate data on a file named 'project.id'-'project.name'.json. +
+The consequence of this settings is : +
+- if TRUE, the full global generation will be faster, because data are already filtered. +
+But, if you want to change the pattern of inclusion, on the fly, +
+you will have to regenerate the full chart. +
+- If FALSE, the crawler catch all files in the repository (the whole repository), +
+before working, or filtering on it. +
+The generation will be slower, but the chart will be faster to filter. +
+Our recommendation is to set this property to true +
+
+
+|autoStaffCreation
+|true
+|Do we create dynamicaly staff member from the ghosts list ? +
+
+true : we automaticaly create staff member if the author looks like a "firstname surname" +
+false: multiple words author are considered as ghost +
+
+
+|dependenciesMarker
+|/jquery/;/bootstrap/;/axis2/;/...
+|Marker for dependencies +
+
+The pathnames which contains theses keywords, and have only commit ADDs or DELETEs, +
+and NEVER a commit for UPDATE are excluded from the analysis +
+
+
+|cache.working.dir
+|../data/application/sunburst-d...
+|Cache directory for intermediate files representing the repositories. +
+
+(This property is used in CacheDataHandlerImpl) +
+
+
+|cache_duration
+|30
+|Cache duration (in days) +
+
+
+
+|staffHandler.inactivity.delay
+|60
+|The inactivity delay is the number of days without inactivity (as detected in the SCM) which is the condition to desactivate a staff member +
+
+If John Doe did not show any activity (in GIT only for the actual release,), during "staffHandler.inactivity.delay" days, then John Doe will be deactivated. +
+As soon as the system detect a new activiy earlier that "staffHandler.inactivity.delay" days ago, then the developer will be reactivated. +
+
+
+|versionControl.ConnectionSettings
+|../data/application/repository...
+|Local directory where are stored the properties files containing the connection settings to GIT +
+
+Each file contains 3 properties +
+- an optional property with the SCM URL +
+- a "user" property +
+- a "password" property +
+
+
+|Sunburst.fillTheHoles
+|true
+|Should the slices without source be average to the value of their children, or stayed in the void color. +
+
+
+
+|applicationOutDirectory
+|../data/application
+|Output directory of the FileServer service. +
+
+The saving files for the entities Staff, Projects and Skills are located there. +
+applicationOutDirectory=../data/application/ +
+
+
+|shuffleData
+|0
+|Settings to force that some critical properties have to be shuffled. +
+
+
+
+|referential.dir
+|../data/referential/
+|Directory containing referential data +
+
+
+
+|dataSaver.timeDelay
+|10000
+|Time delay between each saving invocation. (in milliseconds) +
+
+
+
+|allowedOrigins
+|http://localhost:4200,https://...
+|This property is necessary to declare the host from where the front-end will access this server. +
+
+In order to prevent any CORS exception, you have to setup your front-end URL. +
+Default setting accepts 2 URL : +
+- The local default URL if you have installed the front-end directly on your machine +
+- THe local HTTPS version of teh default URL if you have installed the front-end directly on your machine +
+- the https://spoq.io hosting the front-end on the WWW +
+
+
+|collapseEmptyDirectory
+|true
+|If set to TRUE, empty directories will be aggregated on the chart. +
+
+The node "com" & the node "google" will become one single node com.google +
+
+
+|allowSelfRegistration
+|true
+|Does Fitzhi allow self registration ? +
+
+Either, everyone can create his own user, by simply connecting to the Fitzhi URL +
+Or a login must be already present for each new user in the staff collection. +
+
+
+|accessTokenDuration
+|900
+|Duration of the access token in second +
+
+
+
+|refreshTokenDuration
+|7200
+|Duration of the refreh token in second +
+
+By default, this parameter is set to 3600s. Every our, the user needs to re-connect himself. +
+
+
+|logAllCommitRecords
+|false
+|Do we log each commit records in the logger ? +
+
+When true, this settings will produce a large amount of data +
+
+
+|supportedMetrics.file
+|supported-metrics.json
+|File containing the Sonar supported metrics for this application +
+
+Some metrics have default value, which means that they are taking in account in the Sonar evaluation of the project +
+
+
+|startup.code.analysis
+|true
+|Start the code analysis for the whole repositoryt after the Spring boot completion. +
+
+
+
+|cron.code.analysis
+|0 0 1 pass:[*] pass:[*] SAT
+|This CRON is used by the scheduler to execute the souce code analysis +
+
+
+
+|cron.experiences.detection
+|0 0 15 pass:[*] pass:[*] MON,T...
+|This CRON is used by the scheduler to execute the experiences detection process +
+
+
+
+|cron.tasks.report
+|pass:[*] 0/5 pass:[*] pass:[*]...
+|This CRON is used by the scheduler to periodicaly report the active tasks on the server. +
+
+
+
+|cron.constellations.generation
+|0 5 19 pass:[*] pass:[*] MON,T...
+|This CRON is used by the scheduler to periodicaly start the generation of constellations. +
+
+
+
+|code.parser
+|1
+|This setting activates, or not, the code parser execution. +
+
+It has been setup to avoid memory problems on some platforms. +
+The nominal behavior of the application is to run the code parser. +
+
+
+|logging.level.org.springframework.security
+|INFO
+|For testing purpose. +
+
+
+
+|development.unplugged.security
+|0
+|For development purpose, the security is disengaged for development purpose. +
+
+
+
+
 |===
