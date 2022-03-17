@@ -24,7 +24,15 @@ p.bad {
 }
 
 span.logo-big {
-	font-size: 200px;
+	font-size: 110px;
+}
+
+span.fitzhi-big {
+	font-size: 90px;
+}
+
+span.fitzhi-title {
+	font-size: 50px;
 }
 
 span.logo-small {

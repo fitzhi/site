@@ -14,4 +14,3 @@ cat header.html en/nav.html generated/fitzhi-architecture.html footer.html > en/
 #cat header.html nav.html generated/fitzhi-documentation.html footer.html > documentation.html
 #cat header.html nav.html generated/fitzhi-vision.html footer.html > vision.html
 #cat header.html nav.html generated/fitzhi-contact.html footer.html > contact.html
-

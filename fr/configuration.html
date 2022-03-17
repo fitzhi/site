@@ -19,9 +19,14 @@
     <meta name="description" content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal." />
     <meta name="keywords" content="Open Source Skills Management software" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+	<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" 
+		integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" 
+		crossorigin="anonymous">
+	</script>
 
     <!-- Favicons -->
     <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png" />
@@ -49,14 +54,6 @@
     <link href="/fitzhi.css" rel="stylesheet" />
     <link href="/fedora.css" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        crossorigin="anonymous">
-    </script>
-    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous">
-    </script>
-
 	<!-- Custom javascript -->
 	<script src="/fitzhi.js" crossorigin="anonymous"></script>
 
@@ -64,8 +61,9 @@
 
 <body class="article">
     <h1 style="visibility: hidden; height: 20px">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
+    <p class="d-none d-md-flex my-5">&nbsp;</p>
     <div id="content" >
-<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+<nav class="navbar navbar-light navbar-expand-md fixed-top p-1 p-sm-3 bg-white">
 
 	<a class="navbar-brand" href="./index.html">
 		<span class="gradient logo-small">质 Fitzhì</span>
@@ -84,48 +82,44 @@
 		<ul class="navbar-nav mr-auto">
 
 			<li id="menuHome" class="nav-item">
-				<a class="nav-link text-light" href="./index.html">Accueil</a>
+				<a class="nav-link text-secondary" href="./index.html">Accueil</a>
 			</li>
 
 			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tableaux de bord&nbsp;
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item text-success menu" href="./index.html#patchwork">&laquo; Patchwork &raquo; des projets</a>
-					<a class="dropdown-item text-success menu" href="./index.html#rising-skyline">Ligne d'horizon du portfolio</a>
-				  	<a class="dropdown-item text-success menu" href="./index.html#skills-treechart">Couverture des compétences</a>
-				  	<a class="dropdown-item text-success menu" href="./index.html#starfield">Capital compétences de l'organisation</a>
-				  	<a class="dropdown-item text-success menu" href="./index.html#portfolio-pie-chart">Diagramme sectoriel composite</a>
-				  	<div role="separator" class="dropdown-divider"></div>
-				  	<a class="dropdown-item text-success menu" href="./index.html#project-dashboard">Tableau de bord individuel par Projet</a>
-				</div>
-			</li>
-
-			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Application&nbsp;
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item text-success menu" href="./installation.html">Installation</a>
-					<a class="dropdown-item text-success menu" href="./architecture.html">Architecture</a>
-				  	<a class="dropdown-item text-success menu" href="./getting-started.html">Getting started</a>
-				</div>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Application
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="./installation.html">Installation</a></li>
+					<li><a class="dropdown-item" href="./architecture.html">Architecture</a></li>
+					<li><a class="dropdown-item" href="./getting-started.html">Getting started</a></li>
+				</ul>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./contact.html">Contact</a>
+				<a class="nav-link text-secondary" href="./contact.html">Contact</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./evaluate.html">Test</a>
+				<a class="nav-link text-secondary" href="./evaluate.html">Test</a>
 			</li>
-		</ul>
 
+			<li class="d-flex d-md-none nav-item">
+				<a class="nav-link text-secondary" href="#" onClick="redirect();">English</a>
+			</li>
+
+		<ul>
+
+	<div class="d-none d-md-flex position-absolute mx-2 end-0">
 		<a href="#" onClick="redirect();">
 			<img class="logo-country" src="../img/uk.png" ></img>
 		</a>
 	</div>
+
+
+	</div>
+
+
 </nav>
 <div id="preamble">
 <div class="sectionbody">
@@ -149,22 +143,261 @@
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;"/>
-<col style="width: 16.6666%;"/>
-<col style="width: 50.0001%;"/>
+<col style="width: 14.2857%;"/>
+<col style="width: 28.5714%;"/>
+<col style="width: 57.1429%;"/>
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Column 1</th>
-<th class="tableblock halign-left valign-top">Column 2</th>
-<th class="tableblock halign-left valign-top">Column 3</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This column has a proportional width of 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This.column.has.a.proportional.width.of.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This column has a proportional width of 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spring.servlet.multipart.max-file-size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload properties<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spring.servlet.multipart.max-request-size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4MB</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spring.servlet.multipart.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thread.core.pool.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of concurrent active threads.<br/></p>
+<p class="tableblock">this size is given to ThreadPoolTaskExecutor initialized in the class AsyncConfig.<br/>
+With a value of 1, One single asynchronous test will be run<br/>
+This will be roughly equivalent to Executors.newSingleThreadExecutor()<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logging.config</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file:logback-spring.xml</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logging configuration<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storage.applications.location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/application/upload/app&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload location where upload applications are stored.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">management.endpoints.web.exposure.include</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shutdown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enabling endpoints to allow a gracefull shutdown of the application.<br/></p>
+<p class="tableblock">cf. <a href="https://www.baeldung.com/spring-boot-shutdown" class="bare">https://www.baeldung.com/spring-boot-shutdown</a><br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">management.endpoint.shutdown.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endpoints.shutdown.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storage.attachments.location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/application/upload/att&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload location where audit attachments are stored.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gitcrawler.repositories.location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/repos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting is optional.<br/></p>
+<p class="tableblock">If this setting is empty, the application will store the local repo in a temporary directory.<br/>
+Otherwise, the clones destination will be stored in the indicated directory<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patternsCleanup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/src/main/java/;/src/test/java&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These directories will be removed from the full path of class files<br/></p>
+<p class="tableblock">For example : /src/main/java/java/util/List.java will be treated like java/util/List.java<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patternsInclusion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(.java$|.js$|.cs$|.css$|.s&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patterns to take account, OR NOT, a file within the parsing process<br/></p>
+<p class="tableblock">IMPORTANT : THE SEPARATOR BETWEEN EACH PATTERN IS ;<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prefilterEligibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This boolean is setting the fact that the eligibility validation is made :<br/></p>
+<p class="tableblock">prior to the creation of the repository-chart data file,<br/>
+or after.<br/>
+<br/>
+Fitzhi is storing intermediate data on a file named 'project.id'-'project.name'.json.<br/>
+The consequence of this settings is :<br/>
+- if TRUE, the full global generation will be faster, because data are already filtered.<br/>
+But, if you want to change the pattern of inclusion, on the fly,<br/>
+you will have to regenerate the full chart.<br/>
+- If FALSE, the crawler catch all files in the repository (the whole repository),<br/>
+before working, or filtering on it.<br/>
+The generation will be slower, but the chart will be faster to filter.<br/>
+Our recommendation is to set this property to true<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoStaffCreation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do we create dynamicaly staff member from the ghosts list ?<br/></p>
+<p class="tableblock">true : we automaticaly create staff member if the author looks like a "firstname surname"<br/>
+false: multiple words author are considered as ghost<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependenciesMarker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/jquery/;/bootstrap/;/axis2/;/&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marker for dependencies<br/></p>
+<p class="tableblock">The pathnames which contains theses keywords, and have only commit ADDs or DELETEs,<br/>
+and NEVER a commit for UPDATE are excluded from the analysis<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache.working.dir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/application/sunburst-d&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache directory for intermediate files representing the repositories.<br/></p>
+<p class="tableblock">(This property is used in CacheDataHandlerImpl)<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache_duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache duration (in days)<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">staffHandler.inactivity.delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The inactivity delay is the number of days without inactivity (as detected in the SCM) which is the condition to desactivate a staff member<br/></p>
+<p class="tableblock">If John Doe did not show any activity (in GIT only for the actual release,), during "staffHandler.inactivity.delay" days, then John Doe will be deactivated.<br/>
+As soon as the system detect a new activiy earlier that "staffHandler.inactivity.delay" days ago, then the developer will be reactivated.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">versionControl.ConnectionSettings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/application/repository&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local directory where are stored the properties files containing the connection settings to GIT<br/></p>
+<p class="tableblock">Each file contains 3 properties<br/>
+- an optional property with the SCM URL<br/>
+- a "user" property<br/>
+- a "password" property<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sunburst.fillTheHoles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should the slices without source be average to the value of their children, or stayed in the void color.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applicationOutDirectory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Output directory of the FileServer service.<br/></p>
+<p class="tableblock">The saving files for the entities Staff, Projects and Skills are located there.<br/>
+applicationOutDirectory=../data/application/<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shuffleData</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Settings to force that some critical properties have to be shuffled.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">referential.dir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">../data/referential/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory containing referential data<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataSaver.timeDelay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time delay between each saving invocation. (in milliseconds)<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowedOrigins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://localhost:4200,https://&#8230;&#8203" class="bare">http://localhost:4200,https://&#8230;&#8203</a>;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This property is necessary to declare the host from where the front-end will access this server.<br/></p>
+<p class="tableblock">In order to prevent any CORS exception, you have to setup your front-end URL.<br/>
+Default setting accepts 2 URL :<br/>
+- The local default URL if you have installed the front-end directly on your machine<br/>
+- THe local HTTPS version of teh default URL if you have installed the front-end directly on your machine<br/>
+- the <a href="https://spoq.io" class="bare">https://spoq.io</a> hosting the front-end on the WWW<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collapseEmptyDirectory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set to TRUE, empty directories will be aggregated on the chart.<br/></p>
+<p class="tableblock">The node "com" &amp; the node "google" will become one single node com.google<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowSelfRegistration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Does Fitzhi allow self registration ?<br/></p>
+<p class="tableblock">Either, everyone can create his own user, by simply connecting to the Fitzhi URL<br/>
+Or a login must be already present for each new user in the staff collection.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accessTokenDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration of the access token in second<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refreshTokenDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duration of the refreh token in second<br/></p>
+<p class="tableblock">By default, this parameter is set to 3600s. Every our, the user needs to re-connect himself.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logAllCommitRecords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do we log each commit records in the logger ?<br/></p>
+<p class="tableblock">When true, this settings will produce a large amount of data<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">supportedMetrics.file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">supported-metrics.json</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File containing the Sonar supported metrics for this application<br/></p>
+<p class="tableblock">Some metrics have default value, which means that they are taking in account in the Sonar evaluation of the project<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startup.code.analysis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start the code analysis for the whole repositoryt after the Spring boot completion.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cron.code.analysis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 1 * * SAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This CRON is used by the scheduler to execute the souce code analysis<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cron.experiences.detection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 15 * * MON,T&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This CRON is used by the scheduler to execute the experiences detection process<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cron.tasks.report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 0/5 * *&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This CRON is used by the scheduler to periodicaly report the active tasks on the server.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cron.constellations.generation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 5 19 * * MON,T&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This CRON is used by the scheduler to periodicaly start the generation of constellations.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code.parser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting activates, or not, the code parser execution.<br/></p>
+<p class="tableblock">It has been setup to avoid memory problems on some platforms.<br/>
+The nominal behavior of the application is to run the code parser.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logging.level.org.springframework.security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For testing purpose.<br/></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">development.unplugged.security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For development purpose, the security is disengaged for development purpose.<br/></p></td>
 </tr>
 </tbody>
 </table>
@@ -184,12 +417,16 @@
        <div class="my-footer">
             <table width="100%">
                 <tr>
-                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2021</td>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2022</td>
                     <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </div>
 
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+    
     </body>
 
 </html>
