@@ -1,4 +1,9 @@
-<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+<style>
+	.dropdown-toggle::after {
+		content: none;
+	}
+</style>
+<nav class="navbar navbar-light navbar-expand-md fixed-top p-1 p-sm-3 bg-white">
 
 	<a class="navbar-brand" href="./index.html">
 		<span class="gradient logo-small">质 Fitzhì</span>
@@ -11,48 +16,47 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
+
 	<div class="collapse navbar-collapse" id="navigationMenus">
+
 		<ul class="navbar-nav mr-auto">
 
 			<li id="menuHome" class="nav-item">
-				<a class="nav-link text-light" href="./index.html">Home</a>
+				<a class="nav-link text-secondary" href="./index.html">Home</a>
 			</li>
 
 			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-					Dashboards
-				</a>
-				<div class="dropdown-menu">
-				  <a class="dropdown-item text-success menu" href="./index.html#rising-skyline">Portfolio skyline</a>
-				  <a class="dropdown-item text-success menu" href="./index.html#skills-treechart">Skills treechart</a>
-				  <a class="dropdown-item text-success menu" href="./index.html#portfolio-pie-chart">Composite pie chart</a>
-				  <div role="separator" class="dropdown-divider"></div>
-				  <a class="dropdown-item text-success menu" href="./index.html#project-dashboard">Project dashboard</a>
-				</div>
-			</li>
-
-			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Application&nbsp;
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item text-success menu" href="./installation.html">Installation</a>
-					<a class="dropdown-item text-success menu" href="./architecture.html">Architecture</a>
-				  	<a class="dropdown-item text-success menu" href="./getting-started.html">Getting started</a>
-				</div>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Application
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="./installation.html">Installation</a></li>
+					<li><a class="dropdown-item" href="./architecture.html">Architecture</a></li>
+					<li><a class="dropdown-item" href="./getting-started.html">Getting started</a></li>
+				</ul>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./contact.html">Contact</a>
+				<a class="nav-link text-secondary" href="./contact.html">Contact</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./evaluate.html">Run</a>
+				<a class="nav-link text-secondary" href="./evaluate.html">Run</a>
 			</li>
+
+			<li class="d-flex d-md-none nav-item">
+				<a class="nav-link text-secondary" href="#" onClick="redirect();">English</a>
+			</li>
+
 		</ul>
-		<a href="#" onClick="redirect();">
-			<img class="logo-country" src="../img/fr.png"></img>
-		</a>
+
+		<div class="d-none d-md-flex position-absolute mx-2 end-0">
+			<a href="#" onClick="redirect();">
+				<img class="logo-country" src="../img/fr.png" ></img>
+			</a>
+		</div>
+
 	</div>
+
 </nav>

@@ -19,9 +19,14 @@
     <meta name="description" content="Fitzhì aims to gather all technical data regarding your application portfolio into ONE single portal." />
     <meta name="keywords" content="Open Source Skills Management software" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+	<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" 
+		integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" 
+		crossorigin="anonymous">
+	</script>
 
     <!-- Favicons -->
     <link rel="icon" href="/assets/img/zhi.png" sizes="32x32" type="image/png" />
@@ -49,14 +54,6 @@
     <link href="/fitzhi.css" rel="stylesheet" />
     <link href="/fedora.css" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        crossorigin="anonymous">
-    </script>
-    <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous">
-    </script>
-
 	<!-- Custom javascript -->
 	<script src="/fitzhi.js" crossorigin="anonymous"></script>
 
@@ -65,7 +62,12 @@
 <body class="article">
     <h1 style="visibility: hidden; height: 20px">Presentation of Fitzhì, Single Point Of Contact for all quality IT metrics</h1>
     <div id="content" >
-<nav class="navbar navbar-dark bg-success navbar-expand-md fixed-top p-1 p-sm-3">
+<style>
+	.dropdown-toggle::after {
+		content: none;
+	}
+</style>
+<nav class="navbar navbar-light navbar-expand-md fixed-top p-1 p-sm-3 bg-white">
 
 	<a class="navbar-brand" href="./index.html">
 		<span class="gradient logo-small">质 Fitzhì</span>
@@ -78,50 +80,49 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
+
 	<div class="collapse navbar-collapse" id="navigationMenus">
+
 		<ul class="navbar-nav mr-auto">
 
 			<li id="menuHome" class="nav-item">
-				<a class="nav-link text-light" href="./index.html">Home</a>
+				<a class="nav-link text-secondary" href="./index.html">Home</a>
 			</li>
 
 			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-					Dashboards
-				</a>
-				<div class="dropdown-menu">
-				  <a class="dropdown-item text-success menu" href="./index.html#rising-skyline">Portfolio skyline</a>
-				  <a class="dropdown-item text-success menu" href="./index.html#skills-treechart">Skills treechart</a>
-				  <a class="dropdown-item text-success menu" href="./index.html#portfolio-pie-chart">Composite pie chart</a>
-				  <div role="separator" class="dropdown-divider"></div>
-				  <a class="dropdown-item text-success menu" href="./index.html#project-dashboard">Project dashboard</a>
-				</div>
-			</li>
-
-			<li class="nav-item dropdown">
-				<a class="nav-link text-light" 
-					data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Application&nbsp;
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item text-success menu" href="./installation.html">Installation</a>
-					<a class="dropdown-item text-success menu" href="./architecture.html">Architecture</a>
-				  	<a class="dropdown-item text-success menu" href="./getting-started.html">Getting started</a>
-				</div>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Application
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="./installation.html">Installation</a></li>
+					<li><a class="dropdown-item" href="./architecture.html">Architecture</a></li>
+					<li><a class="dropdown-item" href="./getting-started.html">Getting started</a></li>
+				</ul>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./contact.html">Contact</a>
+				<a class="nav-link text-secondary" href="./contact.html">Contact</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link text-light" href="./evaluate.html">Run</a>
+				<a class="nav-link text-secondary" href="./evaluate.html">Run</a>
 			</li>
+
+			<li class="d-flex d-md-none nav-item">
+				<a class="nav-link text-secondary" href="#" onClick="redirect();">English</a>
+			</li>
+
 		</ul>
-		<a href="#" onClick="redirect();">
-			<img class="logo-country" src="../img/fr.png"></img>
-		</a>
+
+		<div class="d-none d-md-flex position-absolute mx-2 end-0">
+			<a href="#" onClick="redirect();">
+				<img class="logo-country" src="../img/uk.png" ></img>
+			</a>
+		</div>
+
 	</div>
+
 </nav>
 <div class="sect1">
 <h2 id="_getting_started_with_fitzhi">GETTING STARTED WITH FITZHI</h2>
@@ -182,11 +183,17 @@ allowSelfRegistration=true</code></pre>
        <div class="my-footer">
             <table width="100%">
                 <tr>
-                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2021</td>
+                    <td align="left">&nbsp;&nbsp;&nbsp;&copy; Fitzhì 2022</td>
                     <td align="right">Concerning this site, please contact <a href="mailto://webmaster@fitzhi.com">the webmaster</a>&nbsp;&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous">
+        </script>
 
     </body>
 
